@@ -1,0 +1,2830 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Docolight\Support\Collection | Doco[L]ight API</title>
+
+	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
+	<link rel="stylesheet" href="resources/style.css?49f43d3208c5d7e33fa16d36107a345bf11cc00d">
+
+</head>
+
+<body>
+	<nav id="navigation" class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="index.html" class="navbar-brand">Doco[L]ight API</a>
+			</div>
+			<div class="collapse navbar-collapse">
+
+                <form id="search" class="navbar-form navbar-left" role="search">
+                    <input type="hidden" name="cx" value="">
+                    <input type="hidden" name="ie" value="UTF-8">
+                    <div class="form-group">
+                        <input type="text" name="q" class="search-query form-control" placeholder="Search">
+					</div>
+				</form>
+
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="namespace-Docolight.Support.html" title="Summary of Docolight\Support"><span>Namespace</span></a>
+					</li>
+					<li class="active">
+<span>Class</span>					</li>
+
+
+
+
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div id="left">
+	<div id="menu">
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+					<li class="active">
+						<a href="namespace-Docolight.html">
+							Docolight<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Docolight.Container.html">
+							Container						</a>
+							</li>
+					<li>
+						<a href="namespace-Docolight.Http.html">
+							Http<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Docolight.Http.Contracts.html">
+							Contracts						</a>
+							</li>
+								</ul></li>
+					<li class="active">
+						<a href="namespace-Docolight.Support.html">
+							Support<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Docolight.Support.Debug.html">
+							Debug						</a>
+							</li>
+					<li>
+						<a href="namespace-Docolight.Support.Traits.html">
+							Traits						</a>
+							</li>
+								</ul></li></ul></li>
+					<li>
+						<a href="namespace-None.html">
+							None						</a>
+							</li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Docolight.Support.ActiveRecordWrapper.html">ActiveRecordWrapper</a></li>
+				<li><a href="class-Docolight.Support.Arr.html">Arr</a></li>
+				<li><a href="class-Docolight.Support.Carbonate.html">Carbonate</a></li>
+				<li><a href="class-Docolight.Support.ClassLoader.html">ClassLoader</a></li>
+				<li class="active"><a href="class-Docolight.Support.Collection.html">Collection</a></li>
+				<li><a href="class-Docolight.Support.Facade.html">Facade</a></li>
+				<li><a href="class-Docolight.Support.Factory.html">Factory</a></li>
+				<li><a href="class-Docolight.Support.Fluent.html">Fluent</a></li>
+				<li><a href="class-Docolight.Support.Html.html">Html</a></li>
+				<li><a href="class-Docolight.Support.IterablePager.html">IterablePager</a></li>
+				<li><a href="class-Docolight.Support.Repository.html">Repository</a></li>
+				<li><a href="class-Docolight.Support.Set.html">Set</a></li>
+				<li><a href="class-Docolight.Support.Str.html">Str</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class Collection</h1>
+
+
+	<div class="description">
+	<p>Fluent collection.</p>
+	</div>
+
+	<dl class="tree well">
+		<dd style="padding-left:0px">
+<b><span>Docolight\Support\Collection</span></b>			
+			 implements 
+<span>ArrayAccess</span>, 
+			
+<span>Countable</span>, 
+			
+<span>IteratorAggregate</span>, 
+			
+<span>JsonSerializable</span>, 
+			
+				<a href="class-Docolight.Http.Contracts.Arrayable.html"><span>Docolight\Http\Contracts\Arrayable</span></a>
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Docolight.html">Docolight</a>\<a href="namespace-Docolight.Support.html">Support</a><br>
+		
+
+				<b>Author:</b>
+				Krisan Alfa Timur <a href="&#109;&#97;&#105;&#x6c;&#x74;o&#58;&#107;&#114;&#x69;&#x73;a&#110;&#97;&#108;&#x66;&#x61;&#64;&#100;&#111;&#x63;&#x6f;&#x74;e&#108;&#46;&#x63;&#x6f;&#x2e;&#105;&#100;">&#107;&#114;&#x69;&#x73;a&#110;&#97;&#108;&#x66;&#x61;&#64;&#100;&#111;&#x63;&#x6f;&#x74;e&#108;&#46;&#x63;&#x6f;&#x2e;&#105;&#100;</a><br>
+			<b>Located at</b> <a href="source-class-Docolight.Support.Collection.html#14-1039" title="Go to source code">Support/Collection.php</a>
+		<br>
+	</div>
+
+
+
+		<div class="panel panel-default">
+			<div class="panel-heading"><h2>Methods summary</h2></div>
+			<table class="summary table table-bordered table-striped methods" id="methods">
+		<tr data-order="__construct" id="___construct">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___construct">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#28-36" title="Go to source code">__construct</a>( <span>mixed <var>$items</var> = []</span> )</code>
+
+			<div class="description short">
+				<p>Create a new collection.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Create a new collection.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$items</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="make" id="_make">
+
+			<td class="attributes"><code>
+				 public static
+				static
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_make">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#38-48" title="Go to source code">make</a>( <span>mixed <var>$items</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Create a new collection instance if the value isn't one already.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Create a new collection instance if the value isn't one already.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$items</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						static
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="fill" id="_fill">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_fill">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#50-58" title="Go to source code">fill</a>( <span>mixed <var>$attributes</var></span> )</code>
+
+			<div class="description short">
+				<p>Bulk insert attributes.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Bulk insert attributes.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$attributes</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Docolight.Http.Contracts.Arrayable.html#_fill">Docolight\Http\Contracts\Arrayable::fill()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="all" id="_all">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_all">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#60-68" title="Go to source code">all</a>( )</code>
+
+			<div class="description short">
+				<p>Get all of the items in the collection.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get all of the items in the collection.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="collapse" id="_collapse">
+
+			<td class="attributes"><code>
+				 public 
+				static
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_collapse">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#70-78" title="Go to source code">collapse</a>( )</code>
+
+			<div class="description short">
+				<p>Collapse the collection of items into a single array.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Collapse the collection of items into a single array.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						static
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="contains" id="_contains">
+
+			<td class="attributes"><code>
+				 public 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_contains">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#80-101" title="Go to source code">contains</a>( <span>mixed <var>$key</var></span>, <span>mixed <var>$value</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Determine if an item exists in the collection.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Determine if an item exists in the collection.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+						<dt><var>$value</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="diff" id="_diff">
+
+			<td class="attributes"><code>
+				 public 
+				static
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_diff">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#103-113" title="Go to source code">diff</a>( <span>mixed <var>$items</var></span> )</code>
+
+			<div class="description short">
+				<p>Diff the collection with the given items.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Diff the collection with the given items.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$items</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						static
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="each" id="_each">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_each">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#115-131" title="Go to source code">each</a>( <span>callable <var>$callback</var></span> )</code>
+
+			<div class="description short">
+				<p>Execute a callback over each item.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Execute a callback over each item.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$callback</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<br>$this
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="fetch" id="_fetch" class="deprecated">
+
+			<td class="attributes"><code>
+				 public 
+				static
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_fetch">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#133-145" title="Go to source code">fetch</a>( <span>string <var>$key</var></span> )</code>
+
+			<div class="description short">
+				<p>Fetch a nested element of the collection.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Fetch a nested element of the collection.</p>
+
+					<h4>Deprecated</h4>
+					<div class="list">
+							since version 5.1. Use pluck instead.<br>
+					</div>
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						static
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="filter" id="_filter">
+
+			<td class="attributes"><code>
+				 public 
+				static
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_filter">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#147-161" title="Go to source code">filter</a>( <span>callable <var>$callback</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Run a filter over each of the items.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Run a filter over each of the items.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$callback</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						static
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="where" id="_where">
+
+			<td class="attributes"><code>
+				 public 
+				static
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_where">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#163-178" title="Go to source code">where</a>( <span>string <var>$key</var></span>, <span>mixed <var>$value</var></span>, <span>boolean <var>$strict</var> = <span class="php-keyword1">true</span></span> )</code>
+
+			<div class="description short">
+				<p>Filter items by the given key value pair.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Filter items by the given key value pair.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+						<dt><var>$value</var></dt>
+						<dd></dd>
+						<dt><var>$strict</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						static
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="whereLoose" id="_whereLoose">
+
+			<td class="attributes"><code>
+				 public 
+				static
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_whereLoose">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#180-191" title="Go to source code">whereLoose</a>( <span>string <var>$key</var></span>, <span>mixed <var>$value</var></span> )</code>
+
+			<div class="description short">
+				<p>Filter items by the given key value pair using loose comparison.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Filter items by the given key value pair using loose comparison.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+						<dt><var>$value</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						static
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="first" id="_first">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_first">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#193-208" title="Go to source code">first</a>( <span>callable <var>$callback</var> = <span class="php-keyword1">null</span></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Get the first item from the collection.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get the first item from the collection.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$callback</var></dt>
+						<dd></dd>
+						<dt><var>$default</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="flatten" id="_flatten">
+
+			<td class="attributes"><code>
+				 public 
+				static
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_flatten">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#210-218" title="Go to source code">flatten</a>( )</code>
+
+			<div class="description short">
+				<p>Get a flattened array of the items in the collection.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get a flattened array of the items in the collection.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						static
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="flip" id="_flip">
+
+			<td class="attributes"><code>
+				 public 
+				static
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_flip">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#220-228" title="Go to source code">flip</a>( )</code>
+
+			<div class="description short">
+				<p>Flip the items in the collection.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Flip the items in the collection.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						static
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="forget" id="_forget">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_forget">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#230-242" title="Go to source code">forget</a>( <span>mixed <var>$key</var></span> )</code>
+
+			<div class="description short">
+				<p>Remove an item from the collection by key.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Remove an item from the collection by key.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<br>$this
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="get" id="_get">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_get">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#244-259" title="Go to source code">get</a>( <span>mixed <var>$key</var></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Get an item from the collection by key.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get an item from the collection by key.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+						<dt><var>$default</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="groupBy" id="_groupBy">
+
+			<td class="attributes"><code>
+				 public 
+				static
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_groupBy">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#261-286" title="Go to source code">groupBy</a>( <span>callable|string <var>$groupBy</var></span>, <span>boolean <var>$preserveKeys</var> = <span class="php-keyword1">false</span></span> )</code>
+
+			<div class="description short">
+				<p>Group an associative array by a field or using a callback.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Group an associative array by a field or using a callback.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$groupBy</var></dt>
+						<dd></dd>
+						<dt><var>$preserveKeys</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						static
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="keyBy" id="_keyBy">
+
+			<td class="attributes"><code>
+				 public 
+				static
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_keyBy">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#288-306" title="Go to source code">keyBy</a>( <span>callable|string <var>$keyBy</var></span> )</code>
+
+			<div class="description short">
+				<p>Key an associative array by a field or using a callback.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Key an associative array by a field or using a callback.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$keyBy</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						static
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="has" id="_has">
+
+			<td class="attributes"><code>
+				 public 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_has">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#308-318" title="Go to source code">has</a>( <span>mixed <var>$key</var></span> )</code>
+
+			<div class="description short">
+				<p>Determine if an item exists in the collection by key.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Determine if an item exists in the collection by key.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="implode" id="_implode">
+
+			<td class="attributes"><code>
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_implode">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#320-337" title="Go to source code">implode</a>( <span>string <var>$value</var></span>, <span>string <var>$glue</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Concatenate values of a given key as a string.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Concatenate values of a given key as a string.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$value</var></dt>
+						<dd></dd>
+						<dt><var>$glue</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						string
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="intersect" id="_intersect">
+
+			<td class="attributes"><code>
+				 public 
+				static
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_intersect">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#339-349" title="Go to source code">intersect</a>( <span>mixed <var>$items</var></span> )</code>
+
+			<div class="description short">
+				<p>Intersect the collection with the given items.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Intersect the collection with the given items.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$items</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						static
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="isEmpty" id="_isEmpty">
+
+			<td class="attributes"><code>
+				 public 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_isEmpty">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#351-359" title="Go to source code">isEmpty</a>( )</code>
+
+			<div class="description short">
+				<p>Determine if the collection is empty or not.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Determine if the collection is empty or not.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="useAsCallable" id="_useAsCallable">
+
+			<td class="attributes"><code>
+				 protected 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_useAsCallable">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#361-371" title="Go to source code">useAsCallable</a>( <span>mixed <var>$value</var></span> )</code>
+
+			<div class="description short">
+				<p>Determine if the given value is callable, but not a string.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Determine if the given value is callable, but not a string.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$value</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="keys" id="_keys">
+
+			<td class="attributes"><code>
+				 public 
+				static
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_keys">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#373-381" title="Go to source code">keys</a>( )</code>
+
+			<div class="description short">
+				<p>Get the keys of the collection items.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get the keys of the collection items.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						static
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="last" id="_last">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_last">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#383-398" title="Go to source code">last</a>( <span>callable <var>$callback</var> = <span class="php-keyword1">null</span></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Get the last item from the collection.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get the last item from the collection.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$callback</var></dt>
+						<dd></dd>
+						<dt><var>$default</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="pluck" id="_pluck">
+
+			<td class="attributes"><code>
+				 public 
+				static
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_pluck">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#400-411" title="Go to source code">pluck</a>( <span>string <var>$value</var></span>, <span>string <var>$key</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Get an array with the values of a given key.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get an array with the values of a given key.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$value</var></dt>
+						<dd></dd>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						static
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="lists" id="_lists">
+
+			<td class="attributes"><code>
+				 public 
+				static
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_lists">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#413-424" title="Go to source code">lists</a>( <span>string <var>$value</var></span>, <span>string <var>$key</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Alias for the "pluck" method.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Alias for the "pluck" method.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$value</var></dt>
+						<dd></dd>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						static
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="map" id="_map">
+
+			<td class="attributes"><code>
+				 public 
+				static
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_map">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#426-440" title="Go to source code">map</a>( <span>callable <var>$callback</var></span> )</code>
+
+			<div class="description short">
+				<p>Run a map over each of the items.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Run a map over each of the items.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$callback</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						static
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="merge" id="_merge">
+
+			<td class="attributes"><code>
+				 public 
+				static
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_merge">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#442-452" title="Go to source code">merge</a>( <span>mixed <var>$items</var></span> )</code>
+
+			<div class="description short">
+				<p>Merge the collection with the given items.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Merge the collection with the given items.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$items</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						static
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="forPage" id="_forPage">
+
+			<td class="attributes"><code>
+				 public 
+				static
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_forPage">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#454-465" title="Go to source code">forPage</a>( <span>integer <var>$page</var></span>, <span>integer <var>$perPage</var></span> )</code>
+
+			<div class="description short">
+				<p>"Paginate" the collection by slicing it into a smaller collection.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>"Paginate" the collection by slicing it into a smaller collection.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$page</var></dt>
+						<dd></dd>
+						<dt><var>$perPage</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						static
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="pop" id="_pop">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_pop">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#467-475" title="Go to source code">pop</a>( )</code>
+
+			<div class="description short">
+				<p>Get and remove the last item from the collection.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get and remove the last item from the collection.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="prepend" id="_prepend">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_prepend">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#477-489" title="Go to source code">prepend</a>( <span>mixed <var>$value</var></span> )</code>
+
+			<div class="description short">
+				<p>Push an item onto the beginning of the collection.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Push an item onto the beginning of the collection.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$value</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<br>$this
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="push" id="_push">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_push">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#491-503" title="Go to source code">push</a>( <span>mixed <var>$value</var></span> )</code>
+
+			<div class="description short">
+				<p>Push an item onto the end of the collection.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Push an item onto the end of the collection.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$value</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<br>$this
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="pull" id="_pull">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_pull">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#505-516" title="Go to source code">pull</a>( <span>mixed <var>$key</var></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Pulls an item from the collection.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Pulls an item from the collection.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+						<dt><var>$default</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="put" id="_put">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_put">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#518-531" title="Go to source code">put</a>( <span>mixed <var>$key</var></span>, <span>mixed <var>$value</var></span> )</code>
+
+			<div class="description short">
+				<p>Put an item in the collection by key.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Put an item in the collection by key.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+						<dt><var>$value</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<br>$this
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="random" id="_random">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_random">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#533-555" title="Go to source code">random</a>( <span>integer <var>$amount</var> = <span class="php-num">1</span></span> )</code>
+
+			<div class="description short">
+				<p>Get one or more items randomly from the collection.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get one or more items randomly from the collection.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$amount</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+					<h4>Throws</h4>
+					<div class="list">
+						InvalidArgumentException
+					</div>
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="reduce" id="_reduce">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_reduce">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#557-568" title="Go to source code">reduce</a>( <span>callable <var>$callback</var></span>, <span>mixed <var>$initial</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Reduce the collection to a single value.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Reduce the collection to a single value.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$callback</var></dt>
+						<dd></dd>
+						<dt><var>$initial</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="reject" id="_reject">
+
+			<td class="attributes"><code>
+				 public 
+				static
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_reject">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#570-588" title="Go to source code">reject</a>( <span>callable|mixed <var>$callback</var></span> )</code>
+
+			<div class="description short">
+				<p>Create a collection of all elements that do not pass a given truth test.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Create a collection of all elements that do not pass a given truth test.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$callback</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						static
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="reverse" id="_reverse">
+
+			<td class="attributes"><code>
+				 public 
+				static
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_reverse">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#590-598" title="Go to source code">reverse</a>( )</code>
+
+			<div class="description short">
+				<p>Reverse items order.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Reverse items order.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						static
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="search" id="_search">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_search">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#600-621" title="Go to source code">search</a>( <span>mixed <var>$value</var></span>, <span>boolean <var>$strict</var> = <span class="php-keyword1">false</span></span> )</code>
+
+			<div class="description short">
+				<p>Search the collection for a given value and return the corresponding key if successful.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Search the collection for a given value and return the corresponding key if successful.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$value</var></dt>
+						<dd></dd>
+						<dt><var>$strict</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="shift" id="_shift">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_shift">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#623-631" title="Go to source code">shift</a>( )</code>
+
+			<div class="description short">
+				<p>Get and remove the first item from the collection.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get and remove the first item from the collection.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="shuffle" id="_shuffle">
+
+			<td class="attributes"><code>
+				 public 
+				static
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_shuffle">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#633-645" title="Go to source code">shuffle</a>( )</code>
+
+			<div class="description short">
+				<p>Shuffle the items in the collection.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Shuffle the items in the collection.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						static
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="slice" id="_slice">
+
+			<td class="attributes"><code>
+				 public 
+				static
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_slice">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#647-659" title="Go to source code">slice</a>( <span>integer <var>$offset</var></span>, <span>integer <var>$length</var> = <span class="php-keyword1">null</span></span>, <span>boolean <var>$preserveKeys</var> = <span class="php-keyword1">false</span></span> )</code>
+
+			<div class="description short">
+				<p>Slice the underlying collection array.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Slice the underlying collection array.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$offset</var></dt>
+						<dd></dd>
+						<dt><var>$length</var></dt>
+						<dd></dd>
+						<dt><var>$preserveKeys</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						static
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="chunk" id="_chunk">
+
+			<td class="attributes"><code>
+				 public 
+				static
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_chunk">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#661-678" title="Go to source code">chunk</a>( <span>integer <var>$size</var></span>, <span>boolean <var>$preserveKeys</var> = <span class="php-keyword1">false</span></span> )</code>
+
+			<div class="description short">
+				<p>Chunk the underlying collection array.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Chunk the underlying collection array.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$size</var></dt>
+						<dd></dd>
+						<dt><var>$preserveKeys</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						static
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="sort" id="_sort">
+
+			<td class="attributes"><code>
+				 public 
+				static
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_sort">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#680-694" title="Go to source code">sort</a>( <span>callable <var>$callback</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Sort through each item with a callback.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Sort through each item with a callback.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$callback</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						static
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="sortBy" id="_sortBy">
+
+			<td class="attributes"><code>
+				 public 
+				static
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_sortBy">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#696-729" title="Go to source code">sortBy</a>( <span>callable|string <var>$callback</var></span>, <span>integer <var>$options</var> = SORT_REGULAR</span>, <span>boolean <var>$descending</var> = <span class="php-keyword1">false</span></span> )</code>
+
+			<div class="description short">
+				<p>Sort the collection using the given callback.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Sort the collection using the given callback.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$callback</var></dt>
+						<dd></dd>
+						<dt><var>$options</var></dt>
+						<dd></dd>
+						<dt><var>$descending</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						static
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="sortByDesc" id="_sortByDesc">
+
+			<td class="attributes"><code>
+				 public 
+				static
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_sortByDesc">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#731-742" title="Go to source code">sortByDesc</a>( <span>callable|string <var>$callback</var></span>, <span>integer <var>$options</var> = SORT_REGULAR</span> )</code>
+
+			<div class="description short">
+				<p>Sort the collection in descending order using the given callback.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Sort the collection in descending order using the given callback.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$callback</var></dt>
+						<dd></dd>
+						<dt><var>$options</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						static
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="splice" id="_splice">
+
+			<td class="attributes"><code>
+				 public 
+				static
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_splice">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#744-760" title="Go to source code">splice</a>( <span>integer <var>$offset</var></span>, <span>integer|null <var>$length</var> = <span class="php-keyword1">null</span></span>, <span>mixed <var>$replacement</var> = []</span> )</code>
+
+			<div class="description short">
+				<p>Splice a portion of the underlying collection array.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Splice a portion of the underlying collection array.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$offset</var></dt>
+						<dd></dd>
+						<dt><var>$length</var></dt>
+						<dd></dd>
+						<dt><var>$replacement</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						static
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="sum" id="_sum">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_sum">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#762-780" title="Go to source code">sum</a>( <span>callable|string|null <var>$callback</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Get the sum of the given values.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get the sum of the given values.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$callback</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="take" id="_take">
+
+			<td class="attributes"><code>
+				 public 
+				static
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_take">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#782-796" title="Go to source code">take</a>( <span>integer <var>$limit</var></span> )</code>
+
+			<div class="description short">
+				<p>Take the first or last {$limit} items.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Take the first or last {$limit} items.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$limit</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						static
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="transform" id="_transform">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_transform">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#798-810" title="Go to source code">transform</a>( <span>callable <var>$callback</var></span> )</code>
+
+			<div class="description short">
+				<p>Transform each item in the collection using a callback.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Transform each item in the collection using a callback.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$callback</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<br>$this
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="unique" id="_unique">
+
+			<td class="attributes"><code>
+				 public 
+				static
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_unique">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#812-836" title="Go to source code">unique</a>( <span>string|callable|null <var>$key</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Return only unique items from the collection array.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Return only unique items from the collection array.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						static
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="values" id="_values">
+
+			<td class="attributes"><code>
+				 public 
+				static
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_values">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#838-846" title="Go to source code">values</a>( )</code>
+
+			<div class="description short">
+				<p>Reset the keys on the underlying array.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Reset the keys on the underlying array.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						static
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="valueRetriever" id="_valueRetriever">
+
+			<td class="attributes"><code>
+				 protected 
+				callable
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_valueRetriever">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#848-864" title="Go to source code">valueRetriever</a>( <span>string <var>$value</var></span> )</code>
+
+			<div class="description short">
+				<p>Get a value retrieving callback.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get a value retrieving callback.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$value</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						callable
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="zip" id="_zip">
+
+			<td class="attributes"><code>
+				 public 
+				static
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_zip">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#866-887" title="Go to source code">zip</a>( <span>mixed <var>$items</var></span> )</code>
+
+			<div class="description short">
+				<p>Zip the collection together with one or more arrays.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Zip the collection together with one or more arrays.</p>
+
+<p>e.g. new Collection([1, 2, 3])->zip([4, 5, 6]); => [[1, 4], [2, 5], [3, 6]]</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$items</var></dt>
+						<dd>$items</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						static
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="toArray" id="_toArray">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_toArray">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#889-899" title="Go to source code">toArray</a>( )</code>
+
+			<div class="description short">
+				<p>Get the collection of items as a plain array.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get the collection of items as a plain array.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="castToArray" id="_castToArray">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_castToArray">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#901-907" title="Go to source code">castToArray</a>( )</code>
+
+			<div class="description short">
+				<p>Convert implementation to an array.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Convert implementation to an array.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Docolight.Http.Contracts.Arrayable.html#_castToArray">Docolight\Http\Contracts\Arrayable::castToArray()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="jsonSerialize" id="_jsonSerialize">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_jsonSerialize">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#909-917" title="Go to source code">jsonSerialize</a>( )</code>
+
+			<div class="description short">
+				<p>Convert the object into something JSON serializable.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Convert the object into something JSON serializable.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code>JsonSerializable::jsonSerialize()</code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="toJson" id="_toJson">
+
+			<td class="attributes"><code>
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_toJson">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#919-929" title="Go to source code">toJson</a>( <span>integer <var>$options</var> = <span class="php-num">0</span></span> )</code>
+
+			<div class="description short">
+				<p>Get the collection of items as JSON.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get the collection of items as JSON.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$options</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						string
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getIterator" id="_getIterator">
+
+			<td class="attributes"><code>
+				 public 
+				ArrayIterator
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getIterator">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#931-939" title="Go to source code">getIterator</a>( )</code>
+
+			<div class="description short">
+				<p>Get an iterator for the items.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get an iterator for the items.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						ArrayIterator
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code>IteratorAggregate::getIterator()</code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getCachingIterator" id="_getCachingIterator">
+
+			<td class="attributes"><code>
+				 public 
+				CachingIterator
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getCachingIterator">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#941-951" title="Go to source code">getCachingIterator</a>( <span>integer <var>$flags</var> = Docolight\Support\CachingIterator::CALL_TOSTRING</span> )</code>
+
+			<div class="description short">
+				<p>Get a CachingIterator instance.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get a CachingIterator instance.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$flags</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						CachingIterator
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="count" id="_count">
+
+			<td class="attributes"><code>
+				 public 
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_count">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#953-961" title="Go to source code">count</a>( )</code>
+
+			<div class="description short">
+				<p>Count the number of items in the collection.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Count the number of items in the collection.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code>Countable::count()</code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="offsetExists" id="_offsetExists">
+
+			<td class="attributes"><code>
+				 public 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_offsetExists">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#963-973" title="Go to source code">offsetExists</a>( <span>mixed <var>$key</var></span> )</code>
+
+			<div class="description short">
+				<p>Determine if an item exists at an offset.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Determine if an item exists at an offset.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code>ArrayAccess::offsetExists()</code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="offsetGet" id="_offsetGet">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_offsetGet">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#975-985" title="Go to source code">offsetGet</a>( <span>mixed <var>$key</var></span> )</code>
+
+			<div class="description short">
+				<p>Get an item at a given offset.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get an item at a given offset.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code>ArrayAccess::offsetGet()</code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="offsetSet" id="_offsetSet">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_offsetSet">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#987-1000" title="Go to source code">offsetSet</a>( <span>mixed <var>$key</var></span>, <span>mixed <var>$value</var></span> )</code>
+
+			<div class="description short">
+				<p>Set the item at a given offset.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Set the item at a given offset.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+						<dt><var>$value</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code>ArrayAccess::offsetSet()</code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="offsetUnset" id="_offsetUnset">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_offsetUnset">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#1002-1010" title="Go to source code">offsetUnset</a>( <span>string <var>$key</var></span> )</code>
+
+			<div class="description short">
+				<p>Unset the item at a given offset.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Unset the item at a given offset.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code>ArrayAccess::offsetUnset()</code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="__toString" id="___toString">
+
+			<td class="attributes"><code>
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___toString">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#1012-1020" title="Go to source code">__toString</a>( )</code>
+
+			<div class="description short">
+				<p>Convert the collection to its string representation.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Convert the collection to its string representation.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						string
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getArrayableItems" id="_getArrayableItems">
+
+			<td class="attributes"><code>
+				 protected 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getArrayableItems">#</a>
+			<code><a href="source-class-Docolight.Support.Collection.html#1022-1038" title="Go to source code">getArrayableItems</a>( <span>mixed <var>$items</var></span> )</code>
+
+			<div class="description short">
+				<p>Results array of items from Collection or Arrayable.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Results array of items from Collection or Arrayable.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$items</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+			</table>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+		<div class="panel panel-default">
+            <div class="panel-heading"><h2>Properties summary</h2></div>
+			<table class="summary table table-bordered table-striped properties" id="properties">
+		<tr data-order="items" id="$items">
+			<td class="attributes"><code>
+				protected  
+				array
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Docolight.Support.Collection.html#21-26" title="Go to source code"><var>$items</var></a>
+
+				<div class="description short">
+					<p>The items contained in the collection.</p>
+				</div>
+
+				<div class="description detailed hidden">
+					<p>The items contained in the collection.</p>
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$items" class="anchor">#</a>
+					<code>[]</code>
+				</div>
+			</td>
+		</tr>
+			</table>
+		</div>
+
+
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		Doco[L]ight API API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

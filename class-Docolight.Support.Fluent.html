@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Docolight\Support\Fluent | Doco[L]ight API</title>
+
+	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
+	<link rel="stylesheet" href="resources/style.css?49f43d3208c5d7e33fa16d36107a345bf11cc00d">
+
+</head>
+
+<body>
+	<nav id="navigation" class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="index.html" class="navbar-brand">Doco[L]ight API</a>
+			</div>
+			<div class="collapse navbar-collapse">
+
+                <form id="search" class="navbar-form navbar-left" role="search">
+                    <input type="hidden" name="cx" value="">
+                    <input type="hidden" name="ie" value="UTF-8">
+                    <div class="form-group">
+                        <input type="text" name="q" class="search-query form-control" placeholder="Search">
+					</div>
+				</form>
+
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="namespace-Docolight.Support.html" title="Summary of Docolight\Support"><span>Namespace</span></a>
+					</li>
+					<li class="active">
+<span>Class</span>					</li>
+
+
+
+
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div id="left">
+	<div id="menu">
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+					<li class="active">
+						<a href="namespace-Docolight.html">
+							Docolight<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Docolight.Container.html">
+							Container						</a>
+							</li>
+					<li>
+						<a href="namespace-Docolight.Http.html">
+							Http<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Docolight.Http.Contracts.html">
+							Contracts						</a>
+							</li>
+								</ul></li>
+					<li class="active">
+						<a href="namespace-Docolight.Support.html">
+							Support<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Docolight.Support.Debug.html">
+							Debug						</a>
+							</li>
+					<li>
+						<a href="namespace-Docolight.Support.Traits.html">
+							Traits						</a>
+							</li>
+								</ul></li></ul></li>
+					<li>
+						<a href="namespace-None.html">
+							None						</a>
+							</li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Docolight.Support.ActiveRecordWrapper.html">ActiveRecordWrapper</a></li>
+				<li><a href="class-Docolight.Support.Arr.html">Arr</a></li>
+				<li><a href="class-Docolight.Support.Carbonate.html">Carbonate</a></li>
+				<li><a href="class-Docolight.Support.ClassLoader.html">ClassLoader</a></li>
+				<li><a href="class-Docolight.Support.Collection.html">Collection</a></li>
+				<li><a href="class-Docolight.Support.Facade.html">Facade</a></li>
+				<li><a href="class-Docolight.Support.Factory.html">Factory</a></li>
+				<li class="active"><a href="class-Docolight.Support.Fluent.html">Fluent</a></li>
+				<li><a href="class-Docolight.Support.Html.html">Html</a></li>
+				<li><a href="class-Docolight.Support.IterablePager.html">IterablePager</a></li>
+				<li><a href="class-Docolight.Support.Repository.html">Repository</a></li>
+				<li><a href="class-Docolight.Support.Set.html">Set</a></li>
+				<li><a href="class-Docolight.Support.Str.html">Str</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class Fluent</h1>
+
+
+	<div class="description">
+	<p>Magic class like a model.</p>
+	</div>
+
+	<dl class="tree well">
+		<dd style="padding-left:0px">
+<b><span>Docolight\Support\Fluent</span></b>			
+			 implements 
+<span>ArrayAccess</span>, 
+			
+<span>JsonSerializable</span>, 
+			
+				<a href="class-Docolight.Http.Contracts.Arrayable.html"><span>Docolight\Http\Contracts\Arrayable</span></a>
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Docolight.html">Docolight</a>\<a href="namespace-Docolight.Support.html">Support</a><br>
+		
+
+				<b>Author:</b>
+				Krisan Alfa Timur <a href="&#109;&#97;&#105;&#x6c;&#x74;o&#58;&#107;&#114;&#x69;&#x73;a&#110;&#97;&#108;&#x66;&#x61;&#64;&#100;&#111;&#x63;&#x6f;&#x74;e&#108;&#46;&#x63;&#x6f;&#x2e;&#105;&#100;">&#107;&#114;&#x69;&#x73;a&#110;&#97;&#108;&#x66;&#x61;&#64;&#100;&#111;&#x63;&#x6f;&#x74;e&#108;&#46;&#x63;&#x6f;&#x2e;&#105;&#100;</a><br>
+			<b>Located at</b> <a href="source-class-Docolight.Support.Fluent.html#10-351" title="Go to source code">Support/Fluent.php</a>
+		<br>
+	</div>
+
+
+
+		<div class="panel panel-default">
+			<div class="panel-heading"><h2>Methods summary</h2></div>
+			<table class="summary table table-bordered table-striped methods" id="methods">
+		<tr data-order="__construct" id="___construct">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___construct">#</a>
+			<code><a href="source-class-Docolight.Support.Fluent.html#31-39" title="Go to source code">__construct</a>( <span>array <var>$default</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+			<div class="description short">
+				<p>Initialize the class.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Initialize the class.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$default</var></dt>
+						<dd>Default attribute inside this class</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="make" id="_make">
+
+			<td class="attributes"><code>
+				 public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_make">#</a>
+			<code><a href="source-class-Docolight.Support.Fluent.html#41-49" title="Go to source code">make</a>( <span>array <var>$default</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+			<div class="description short">
+				<p>Initialize the class statically.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Initialize the class statically.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$default</var></dt>
+						<dd>Default attribute inside this class</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="has" id="_has">
+
+			<td class="attributes"><code>
+				 public 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_has">#</a>
+			<code><a href="source-class-Docolight.Support.Fluent.html#51-61" title="Go to source code">has</a>( <span>string <var>$index</var></span> )</code>
+
+			<div class="description short">
+				<p>Determine if index is exist in attributes.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Determine if index is exist in attributes.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$index</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="remove" id="_remove">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_remove">#</a>
+			<code><a href="source-class-Docolight.Support.Fluent.html#63-73" title="Go to source code">remove</a>( <span>string <var>$index</var></span> )</code>
+
+			<div class="description short">
+				<p>Remove an attributes.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Remove an attributes.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$index</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="set" id="_set">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_set">#</a>
+			<code><a href="source-class-Docolight.Support.Fluent.html#75-84" title="Go to source code">set</a>( <span>string <var>$index</var></span>, <span>mixed <var>$value</var></span> )</code>
+
+			<div class="description short">
+				<p>Set an attribute value.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Set an attribute value.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$index</var></dt>
+						<dd></dd>
+						<dt><var>$value</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="fill" id="_fill">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_fill">#</a>
+			<code><a href="source-class-Docolight.Support.Fluent.html#86-92" title="Go to source code">fill</a>( <span>mixed <var>$attributes</var></span> )</code>
+
+			<div class="description short">
+				<p>Bulk insert attributes.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Bulk insert attributes.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$attributes</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Docolight.Http.Contracts.Arrayable.html#_fill">Docolight\Http\Contracts\Arrayable::fill()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="clear" id="_clear">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_clear">#</a>
+			<code><a href="source-class-Docolight.Support.Fluent.html#94-106" title="Go to source code">clear</a>( <span>array <var>$attributes</var></span> )</code>
+
+			<div class="description short">
+				<p>Bulk remove attributes by an array contains indexes name you want to remove.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Bulk remove attributes by an array contains indexes name you want to remove.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$attributes</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="only" id="_only">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_only">#</a>
+			<code><a href="source-class-Docolight.Support.Fluent.html#108-120" title="Go to source code">only</a>( <span>array <var>$attributes</var></span> )</code>
+
+			<div class="description short">
+				<p>Get a list of array which only if the key is exists on the given argument.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get a list of array which only if the key is exists on the given argument.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$attributes</var></dt>
+						<dd>List of array key you want to get from your attributes.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+					<h4>See</h4>
+					<div class="list">
+							<code><a href="class-Docolight.Support.Arr.html#_only">Docolight\Support\Arr::only()</a></code><br>
+					</div>
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="except" id="_except">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_except">#</a>
+			<code><a href="source-class-Docolight.Support.Fluent.html#122-134" title="Go to source code">except</a>( <span>array <var>$attributes</var></span> )</code>
+
+			<div class="description short">
+				<p>Get a list of array except the given array of index.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get a list of array except the given array of index.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$attributes</var></dt>
+						<dd>List of array keys you want to exclude from your array.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+					<h4>See</h4>
+					<div class="list">
+							<code><a href="class-Docolight.Support.Arr.html#_except">Docolight\Support\Arr::except()</a></code><br>
+					</div>
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="nuke" id="_nuke">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_nuke">#</a>
+			<code><a href="source-class-Docolight.Support.Fluent.html#136-144" title="Go to source code">nuke</a>( <span>array <var>$default</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+			<div class="description short">
+				<p>Reset the attributes.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Reset the attributes.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$default</var></dt>
+						<dd>Default attributes after nuking current attributes.</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="get" id="_get">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_get">#</a>
+			<code><a href="source-class-Docolight.Support.Fluent.html#146-157" title="Go to source code">get</a>( <span>string <var>$index</var></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Get an attribute value.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get an attribute value.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$index</var></dt>
+						<dd></dd>
+						<dt><var>$default</var></dt>
+						<dd>Default value if index doesn't exist</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="attributes" id="_attributes">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_attributes">#</a>
+			<code><a href="source-class-Docolight.Support.Fluent.html#159-180" title="Go to source code">attributes</a>( <span>mixed <var>$attributes</var> = <span class="php-keyword1">null</span></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Get attributes value.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get attributes value.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$attributes</var></dt>
+						<dd>If it's null, it will return the whole attributes, if it's array, it will fetch only the given array value</dd>
+						<dt><var>$default</var></dt>
+						<dd>Default value if attributes don't exist</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="toArray" id="_toArray">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_toArray">#</a>
+			<code><a href="source-class-Docolight.Support.Fluent.html#182-218" title="Go to source code">toArray</a>( <span>mixed <var>$attributes</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Convert this implementation object to array.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Convert this implementation object to array.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$attributes</var></dt>
+						<dd>Something you want to convert to array.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+					<h4>See</h4>
+					<div class="list">
+							<code><a href="class-Docolight.Support.Arr.html#_arToArray">Docolight\Support\Arr::arToArray()</a></code><br>
+					</div>
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="castToArray" id="_castToArray">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_castToArray">#</a>
+			<code><a href="source-class-Docolight.Support.Fluent.html#220-226" title="Go to source code">castToArray</a>( )</code>
+
+			<div class="description short">
+				<p>Convert implementation to an array.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Convert implementation to an array.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-Docolight.Http.Contracts.Arrayable.html#_castToArray">Docolight\Http\Contracts\Arrayable::castToArray()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="toJson" id="_toJson">
+
+			<td class="attributes"><code>
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_toJson">#</a>
+			<code><a href="source-class-Docolight.Support.Fluent.html#228-238" title="Go to source code">toJson</a>( <span>const <var>$options</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Convert attributes to readable JSON.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Convert attributes to readable JSON.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$options</var></dt>
+						<dd>JSON Decoding options.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						string
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="offsetSet" id="_offsetSet">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_offsetSet">#</a>
+			<code><a href="source-class-Docolight.Support.Fluent.html#240-249" title="Go to source code">offsetSet</a>( <span>string <var>$index</var></span>, <span>mized <var>$value</var></span> )</code>
+
+			<div class="description short">
+				<p>Set an attribute value.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Set an attribute value.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$index</var></dt>
+						<dd></dd>
+						<dt><var>$value</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code>ArrayAccess::offsetSet()</code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="offsetExists" id="_offsetExists">
+
+			<td class="attributes"><code>
+				 public 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_offsetExists">#</a>
+			<code><a href="source-class-Docolight.Support.Fluent.html#251-261" title="Go to source code">offsetExists</a>( <span>string <var>$index</var></span> )</code>
+
+			<div class="description short">
+				<p>Determine if index is exist in attributes.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Determine if index is exist in attributes.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$index</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code>ArrayAccess::offsetExists()</code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="offsetUnset" id="_offsetUnset">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_offsetUnset">#</a>
+			<code><a href="source-class-Docolight.Support.Fluent.html#263-271" title="Go to source code">offsetUnset</a>( <span>string <var>$index</var></span> )</code>
+
+			<div class="description short">
+				<p>Remove an attributes.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Remove an attributes.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$index</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code>ArrayAccess::offsetUnset()</code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="offsetGet" id="_offsetGet">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_offsetGet">#</a>
+			<code><a href="source-class-Docolight.Support.Fluent.html#273-284" title="Go to source code">offsetGet</a>( <span>string <var>$index</var></span>, <span>mixed <var>$default</var>,…</span> )</code>
+
+			<div class="description short">
+				<p>Get an attribute value.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get an attribute value.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$index</var></dt>
+						<dd></dd>
+						<dt><var>$default</var>,…</dt>
+						<dd>Default value if index doesn't exist</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code>ArrayAccess::offsetGet()</code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="jsonSerialize" id="_jsonSerialize">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_jsonSerialize">#</a>
+			<code><a href="source-class-Docolight.Support.Fluent.html#286-294" title="Go to source code">jsonSerialize</a>( )</code>
+
+			<div class="description short">
+				<p>JsonSerializable implementation.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>JsonSerializable implementation.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code>JsonSerializable::jsonSerialize()</code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="__set" id="___set">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___set">#</a>
+			<code><a href="source-class-Docolight.Support.Fluent.html#296-305" title="Go to source code">__set</a>( <span>string <var>$index</var></span>, <span>mized <var>$value</var></span> )</code>
+
+			<div class="description short">
+				<p>Set an attribute value.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Set an attribute value.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$index</var></dt>
+						<dd></dd>
+						<dt><var>$value</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="__get" id="___get">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___get">#</a>
+			<code><a href="source-class-Docolight.Support.Fluent.html#307-318" title="Go to source code">__get</a>( <span>string <var>$index</var></span>, <span>mixed <var>$default</var>,…</span> )</code>
+
+			<div class="description short">
+				<p>Get an attribute value.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get an attribute value.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$index</var></dt>
+						<dd></dd>
+						<dt><var>$default</var>,…</dt>
+						<dd>Default value if index doesn't exist</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="__isset" id="___isset">
+
+			<td class="attributes"><code>
+				 public 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___isset">#</a>
+			<code><a href="source-class-Docolight.Support.Fluent.html#320-330" title="Go to source code">__isset</a>( <span>string <var>$index</var></span> )</code>
+
+			<div class="description short">
+				<p>Determine if index exists in attributes.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Determine if index exists in attributes.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$index</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="__unset" id="___unset">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___unset">#</a>
+			<code><a href="source-class-Docolight.Support.Fluent.html#332-340" title="Go to source code">__unset</a>( <span>string <var>$index</var></span> )</code>
+
+			<div class="description short">
+				<p>Remove an attributes.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Remove an attributes.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$index</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="__toString" id="___toString">
+
+			<td class="attributes"><code>
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___toString">#</a>
+			<code><a href="source-class-Docolight.Support.Fluent.html#342-350" title="Go to source code">__toString</a>( )</code>
+
+			<div class="description short">
+				<p>Convert your collection to JSON.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Convert your collection to JSON.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						string
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+			</table>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+		<div class="panel panel-default">
+            <div class="panel-heading"><h2>Properties summary</h2></div>
+			<table class="summary table table-bordered table-striped properties" id="properties">
+		<tr data-order="attributes" id="$attributes">
+			<td class="attributes"><code>
+				protected  
+				array
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Docolight.Support.Fluent.html#17-22" title="Go to source code"><var>$attributes</var></a>
+
+				<div class="description short">
+					<p>Data Attribute in this class.</p>
+				</div>
+
+				<div class="description detailed hidden">
+					<p>Data Attribute in this class.</p>
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$attributes" class="anchor">#</a>
+					<code><span class="php-keyword1">array</span>()</code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="jsonAble" id="$jsonAble">
+			<td class="attributes"><code>
+				protected  
+				array
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Docolight.Support.Fluent.html#24-29" title="Go to source code"><var>$jsonAble</var></a>
+
+				<div class="description short">
+					<p>Use this to convert attributes to json.</p>
+				</div>
+
+				<div class="description detailed hidden">
+					<p>Use this to convert attributes to json.</p>
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$jsonAble" class="anchor">#</a>
+					<code><span class="php-keyword1">null</span></code>
+				</div>
+			</td>
+		</tr>
+			</table>
+		</div>
+
+
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		Doco[L]ight API API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Docolight\Http\Response | Doco[L]ight API</title>
+
+	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
+	<link rel="stylesheet" href="resources/style.css?49f43d3208c5d7e33fa16d36107a345bf11cc00d">
+
+</head>
+
+<body>
+	<nav id="navigation" class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="index.html" class="navbar-brand">Doco[L]ight API</a>
+			</div>
+			<div class="collapse navbar-collapse">
+
+                <form id="search" class="navbar-form navbar-left" role="search">
+                    <input type="hidden" name="cx" value="">
+                    <input type="hidden" name="ie" value="UTF-8">
+                    <div class="form-group">
+                        <input type="text" name="q" class="search-query form-control" placeholder="Search">
+					</div>
+				</form>
+
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="namespace-Docolight.Http.html" title="Summary of Docolight\Http"><span>Namespace</span></a>
+					</li>
+					<li class="active">
+<span>Class</span>					</li>
+
+
+
+
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div id="left">
+	<div id="menu">
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+					<li class="active">
+						<a href="namespace-Docolight.html">
+							Docolight<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Docolight.Container.html">
+							Container						</a>
+							</li>
+					<li class="active">
+						<a href="namespace-Docolight.Http.html">
+							Http<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Docolight.Http.Contracts.html">
+							Contracts						</a>
+							</li>
+								</ul></li>
+					<li>
+						<a href="namespace-Docolight.Support.html">
+							Support<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Docolight.Support.Debug.html">
+							Debug						</a>
+							</li>
+					<li>
+						<a href="namespace-Docolight.Support.Traits.html">
+							Traits						</a>
+							</li>
+								</ul></li></ul></li>
+					<li>
+						<a href="namespace-None.html">
+							None						</a>
+							</li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Docolight.Http.Headers.html">Headers</a></li>
+				<li><a href="class-Docolight.Http.JsonResponse.html">JsonResponse</a></li>
+				<li><a href="class-Docolight.Http.MimeResponse.html">MimeResponse</a></li>
+				<li class="active"><a href="class-Docolight.Http.Response.html">Response</a></li>
+				<li><a href="class-Docolight.Http.ResponseFactory.html">ResponseFactory</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class Response</h1>
+
+
+	<div class="description">
+	<p>This is a simple abstraction over top an HTTP response. This
+provides methods to set the HTTP status, the HTTP headers,
+and the HTTP body.</p>
+
+<pre><span class="php-var">$response</span> = <span class="php-keyword1">new</span> Docolight\Http\Response(<span class="php-keyword1">new</span> Docolight\Http\Headers(<span class="php-keyword1">array</span>(<span class="php-quote">'Content-Type'</span> =&gt; <span class="php-quote">'text/html'</span>)));
+
+<span class="php-comment">// Or you can resolve via factory</span>
+<span class="php-comment">// $response = with(new Docolight\Http\ResponseFactory())-&gt;produce();</span>
+
+<span class="php-comment">// Move even shorter way</span>
+<span class="php-comment">// $response = container('response')-&gt;produce();</span>
+
+<span class="php-comment">// Set your header</span>
+<span class="php-var">$response</span>-&gt;headers-&gt;set(<span class="php-quote">'Foo'</span>, <span class="php-quote">'Bar'</span>);
+
+<span class="php-comment">// Set your response status</span>
+<span class="php-var">$response</span>-&gt;setStatus(<span class="php-num">202</span>);
+
+<span class="php-comment">// Set your response body</span>
+<span class="php-var">$response</span>-&gt;setBody(<span class="php-quote">'PUT YOUR HTML HERE'</span>);
+
+<span class="php-comment">// Send your response to client</span>
+<span class="php-var">$response</span>-&gt;send();
+
+<span class="php-comment">// In shorter way</span>
+<span class="php-comment">// response(</span>
+<span class="php-comment">//    'base',</span>
+<span class="php-comment">//    200,</span>
+<span class="php-comment">//    'PUT YOUR HTML HERE',</span>
+<span class="php-comment">//    array('Foo' =&gt; 'Bar')</span>
+<span class="php-comment">// )-&gt;send();</span></pre>
+	</div>
+
+	<dl class="tree well">
+		<dd style="padding-left:0px">
+CApplicationComponent
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>Docolight\Http\Response</span></b>			
+			 implements 
+<span>ArrayAccess</span>
+			
+			
+		</dd>
+	</dl>
+
+
+	<div>
+		<h3>Direct known subclasses</h3>
+		<p class="elementList">
+			<code><a href="class-Docolight.Http.MimeResponse.html">Docolight\Http\MimeResponse</a></code>
+		</p>
+	</div>
+
+	<div>
+		<h3>Indirect known subclasses</h3>
+		<p class="elementList">
+			<code><a href="class-Docolight.Http.JsonResponse.html">Docolight\Http\JsonResponse</a></code>
+		</p>
+	</div>
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Docolight.html">Docolight</a>\<a href="namespace-Docolight.Http.html">Http</a><br>
+		
+
+				<b>Author:</b>
+				Krisan Alfa Timur <a href="&#109;&#97;&#105;&#x6c;&#x74;o&#58;&#107;&#114;&#x69;&#x73;a&#110;&#97;&#108;&#x66;&#x61;&#64;&#100;&#111;&#x63;&#x6f;&#x74;e&#108;&#46;&#x63;&#x6f;&#x2e;&#105;&#100;">&#107;&#114;&#x69;&#x73;a&#110;&#97;&#108;&#x66;&#x61;&#64;&#100;&#111;&#x63;&#x6f;&#x74;e&#108;&#46;&#x63;&#x6f;&#x2e;&#105;&#100;</a><br>
+			<b>Located at</b> <a href="source-class-Docolight.Http.Response.html#8-421" title="Go to source code">Http/Response.php</a>
+		<br>
+	</div>
+
+
+
+		<div class="panel panel-default">
+			<div class="panel-heading"><h2>Methods summary</h2></div>
+			<table class="summary table table-bordered table-striped methods" id="methods">
+		<tr data-order="__construct" id="___construct">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___construct">#</a>
+			<code><a href="source-class-Docolight.Http.Response.html#145-155" title="Go to source code">__construct</a>( <span><code><a href="class-Docolight.Http.Headers.html">Docolight\Http\Headers</a></code> <var>$headers</var></span> )</code>
+
+			<div class="description short">
+				<p>Constructor</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Constructor</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$headers</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getStatus" id="_getStatus">
+
+			<td class="attributes"><code>
+				 public 
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getStatus">#</a>
+			<code><a href="source-class-Docolight.Http.Response.html#157-165" title="Go to source code">getStatus</a>( )</code>
+
+			<div class="description short">
+				<p>Get current status code</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get current status code</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="setStatus" id="_setStatus">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-Docolight.Http.Response.html">Docolight\Http\Response</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_setStatus">#</a>
+			<code><a href="source-class-Docolight.Http.Response.html#167-179" title="Go to source code">setStatus</a>( <span>integer <var>$status</var></span> )</code>
+
+			<div class="description short">
+				<p>Set current HTTP statuc sode</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Set current HTTP statuc sode</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$status</var></dt>
+						<dd>Current status code</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Docolight.Http.Response.html">Docolight\Http\Response</a></code>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getBody" id="_getBody">
+
+			<td class="attributes"><code>
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getBody">#</a>
+			<code><a href="source-class-Docolight.Http.Response.html#181-189" title="Go to source code">getBody</a>( )</code>
+
+			<div class="description short">
+				<p>Return HTTP response Body</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Return HTTP response Body</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						string
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="setBody" id="_setBody">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-Docolight.Http.Response.html">Docolight\Http\Response</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_setBody">#</a>
+			<code><a href="source-class-Docolight.Http.Response.html#191-203" title="Go to source code">setBody</a>( <span>string <var>$content</var></span> )</code>
+
+			<div class="description short">
+				<p>Set current HTTP response body</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Set current HTTP response body</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$content</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Docolight.Http.Response.html">Docolight\Http\Response</a></code>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="write" id="_write">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-Docolight.Http.Response.html">Docolight\Http\Response</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_write">#</a>
+			<code><a href="source-class-Docolight.Http.Response.html#205-226" title="Go to source code">write</a>( <span>string <var>$body</var></span>, <span>boolean <var>$replace</var> = <span class="php-keyword1">false</span></span> )</code>
+
+			<div class="description short">
+				<p>Append HTTP response body.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Append HTTP response body.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$body</var></dt>
+						<dd>Content to append to the current HTTP response body</dd>
+						<dt><var>$replace</var></dt>
+						<dd>Overwrite existing response body?</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Docolight.Http.Response.html">Docolight\Http\Response</a></code>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getLength" id="_getLength">
+
+			<td class="attributes"><code>
+				 public 
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getLength">#</a>
+			<code><a href="source-class-Docolight.Http.Response.html#228-236" title="Go to source code">getLength</a>( )</code>
+
+			<div class="description short">
+				<p>Get current response length</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get current response length</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="finalize" id="_finalize">
+
+			<td class="attributes"><code>
+				 public 
+				array[int
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_finalize">#</a>
+			<code><a href="source-class-Docolight.Http.Response.html#238-254" title="Go to source code">finalize</a>( )</code>
+
+			<div class="description short">
+				<p>Finalize prepares this response and returns an array
+of [status, headers, body].</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Finalize prepares this response and returns an array
+of [status, headers, body].</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						array[int<br>status, array headers, string body]
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="send" id="_send">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_send">#</a>
+			<code><a href="source-class-Docolight.Http.Response.html#256-267" title="Go to source code">send</a>( )</code>
+
+			<div class="description short">
+				<p>Send response to client</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Send response to client</p>
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="sendBody" id="_sendBody">
+
+			<td class="attributes"><code>
+				 protected 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_sendBody">#</a>
+			<code><a href="source-class-Docolight.Http.Response.html#269-281" title="Go to source code">sendBody</a>( <span>string <var>$body</var></span> )</code>
+
+			<div class="description short">
+				<p>Send body</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Send body</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$body</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="prepareHeaders" id="_prepareHeaders">
+
+			<td class="attributes"><code>
+				 protected 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_prepareHeaders">#</a>
+			<code><a href="source-class-Docolight.Http.Response.html#283-308" title="Go to source code">prepareHeaders</a>( <span>integer <var>$status</var></span>, <span><code><a href="class-Docolight.Http.Headers.html">Docolight\Http\Headers</a></code> <var>$headers</var></span> )</code>
+
+			<div class="description short">
+				<p>Prepare headers before we send them</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Prepare headers before we send them</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$status</var></dt>
+						<dd></dd>
+						<dt><var>$headers</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="redirect" id="_redirect">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-Docolight.Http.Response.html">Docolight\Http\Response</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_redirect">#</a>
+			<code><a href="source-class-Docolight.Http.Response.html#310-327" title="Go to source code">redirect</a>( <span>string <var>$url</var></span>, <span>integer <var>$status</var> = <span class="php-num">302</span></span> )</code>
+
+			<div class="description short">
+				<p>Redirect.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Redirect.</p>
+
+<p>This method prepares this response to return an HTTP Redirect response
+to the HTTP client.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$url</var></dt>
+						<dd>The redirect destination</dd>
+						<dt><var>$status</var></dt>
+						<dd>The redirect HTTP status code</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Docolight.Http.Response.html">Docolight\Http\Response</a></code><br>Maintain chaining access.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="offsetExists" id="_offsetExists">
+
+			<td class="attributes"><code>
+				 public 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_offsetExists">#</a>
+			<code><a href="source-class-Docolight.Http.Response.html#329-337" title="Go to source code">offsetExists</a>( <span> <var>$offset</var></span> )</code>
+
+			<div class="description short">
+				<p>Determine if value is available.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Determine if value is available.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code>ArrayAccess::offsetExists()</code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="offsetGet" id="_offsetGet">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_offsetGet">#</a>
+			<code><a href="source-class-Docolight.Http.Response.html#339-349" title="Go to source code">offsetGet</a>( <span>string <var>$offset</var></span> )</code>
+
+			<div class="description short">
+				<p>Get value</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get value</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$offset</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code>ArrayAccess::offsetGet()</code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="offsetSet" id="_offsetSet">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_offsetSet">#</a>
+			<code><a href="source-class-Docolight.Http.Response.html#351-362" title="Go to source code">offsetSet</a>( <span>string <var>$offset</var></span>, <span>mixed <var>$value</var></span> )</code>
+
+			<div class="description short">
+				<p>Set value</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Set value</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$offset</var></dt>
+						<dd></dd>
+						<dt><var>$value</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code>ArrayAccess::offsetSet()</code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="offsetUnset" id="_offsetUnset">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_offsetUnset">#</a>
+			<code><a href="source-class-Docolight.Http.Response.html#364-374" title="Go to source code">offsetUnset</a>( <span>string <var>$offset</var></span> )</code>
+
+			<div class="description short">
+				<p>Remove a value</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Remove a value</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$offset</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code>ArrayAccess::offsetUnset()</code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getMessageForCode" id="_getMessageForCode">
+
+			<td class="attributes"><code>
+				 public static
+				string|null
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getMessageForCode">#</a>
+			<code><a href="source-class-Docolight.Http.Response.html#376-388" title="Go to source code">getMessageForCode</a>( <span>integer <var>$status</var></span> )</code>
+
+			<div class="description short">
+				<p>Get message for HTTP status code.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get message for HTTP status code.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$status</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						string|null
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="setMessage" id="_setMessage">
+
+			<td class="attributes"><code>
+				 public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_setMessage">#</a>
+			<code><a href="source-class-Docolight.Http.Response.html#390-401" title="Go to source code">setMessage</a>( <span>integer <var>$status</var></span>, <span>string <var>$message</var></span> )</code>
+
+			<div class="description short">
+				<p>Set custom HTTP Status Code message</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Set custom HTTP Status Code message</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$status</var></dt>
+						<dd></dd>
+						<dt><var>$message</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="init" id="_init">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_init">#</a>
+			<code><a href="source-class-Docolight.Http.Response.html#403-410" title="Go to source code">init</a>( )</code>
+
+			<div class="description short">
+				<p>Initialize component.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Initialize component.</p>
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getEmpty" id="_getEmpty">
+
+			<td class="attributes"><code>
+				 protected 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getEmpty">#</a>
+			<code><a href="source-class-Docolight.Http.Response.html#412-420" title="Go to source code">getEmpty</a>( )</code>
+
+			<div class="description short">
+				<p>Default empty data</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Default empty data</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+			</table>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+		<div class="panel panel-default">
+            <div class="panel-heading"><h2>Properties summary</h2></div>
+			<table class="summary table table-bordered table-striped properties" id="properties">
+		<tr data-order="status" id="$status">
+			<td class="attributes"><code>
+				protected  
+				integer
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Docolight.Http.Response.html#47-50" title="Go to source code"><var>$status</var></a>
+
+				<div class="description short">
+					<p>HTTP status code</p>
+				</div>
+
+				<div class="description detailed hidden">
+					<p>HTTP status code</p>
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$status" class="anchor">#</a>
+					<code><span class="php-num">200</span></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="headers" id="$headers">
+			<td class="attributes"><code>
+				public  
+				<code><a href="class-Docolight.Http.Headers.html">Docolight\Http\Headers</a></code>
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Docolight.Http.Response.html#52-55" title="Go to source code"><var>$headers</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$headers" class="anchor">#</a>
+					<code><span class="php-keyword1">null</span></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="body" id="$body">
+			<td class="attributes"><code>
+				protected  
+				string
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Docolight.Http.Response.html#57-60" title="Go to source code"><var>$body</var></a>
+
+				<div class="description short">
+					<p>HTTP response body</p>
+				</div>
+
+				<div class="description detailed hidden">
+					<p>HTTP response body</p>
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$body" class="anchor">#</a>
+					<code><span class="php-quote">''</span></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="length" id="$length">
+			<td class="attributes"><code>
+				protected  
+				integer
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Docolight.Http.Response.html#62-65" title="Go to source code"><var>$length</var></a>
+
+				<div class="description short">
+					<p>Length of HTTP response body</p>
+				</div>
+
+				<div class="description detailed hidden">
+					<p>Length of HTTP response body</p>
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$length" class="anchor">#</a>
+					<code><span class="php-num">0</span></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="messages" id="$messages">
+			<td class="attributes"><code>
+				protected static 
+				array
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Docolight.Http.Response.html#67-143" title="Go to source code"><var>$messages</var></a>
+
+				<div class="description short">
+					<p>HTTP response codes and messages</p>
+				</div>
+
+				<div class="description detailed hidden">
+					<p>HTTP response codes and messages</p>
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$messages" class="anchor">#</a>
+					<code><span class="php-keyword1">array</span>(
+    <span class="php-comment">// Informational 1xx</span>
+    <span class="php-num">100</span> =&gt; <span class="php-quote">'100 Continue'</span>,
+    <span class="php-num">101</span> =&gt; <span class="php-quote">'101 Switching Protocols'</span>,
+    <span class="php-num">102</span> =&gt; <span class="php-quote">'102 Processing'</span>,
+    <span class="php-comment">// Successful 2xx</span>
+    <span class="php-num">200</span> =&gt; <span class="php-quote">'200 OK'</span>,
+    <span class="php-num">201</span> =&gt; <span class="php-quote">'201 Created'</span>,
+    <span class="php-num">202</span> =&gt; <span class="php-quote">'202 Accepted'</span>,
+    <span class="php-num">203</span> =&gt; <span class="php-quote">'203 Non-Authoritative Information'</span>,
+    <span class="php-num">204</span> =&gt; <span class="php-quote">'204 No Content'</span>,
+    <span class="php-num">205</span> =&gt; <span class="php-quote">'205 Reset Content'</span>,
+    <span class="php-num">206</span> =&gt; <span class="php-quote">'206 Partial Content'</span>,
+    <span class="php-num">207</span> =&gt; <span class="php-quote">'207 Multi-Status'</span>,
+    <span class="php-num">208</span> =&gt; <span class="php-quote">'208 Already Reported'</span>,
+    <span class="php-num">226</span> =&gt; <span class="php-quote">'226 IM Used'</span>,
+    <span class="php-comment">// Redirection 3xx</span>
+    <span class="php-num">300</span> =&gt; <span class="php-quote">'300 Multiple Choices'</span>,
+    <span class="php-num">301</span> =&gt; <span class="php-quote">'301 Moved Permanently'</span>,
+    <span class="php-num">302</span> =&gt; <span class="php-quote">'302 Found'</span>,
+    <span class="php-num">303</span> =&gt; <span class="php-quote">'303 See Other'</span>,
+    <span class="php-num">304</span> =&gt; <span class="php-quote">'304 Not Modified'</span>,
+    <span class="php-num">305</span> =&gt; <span class="php-quote">'305 Use Proxy'</span>,
+    <span class="php-num">306</span> =&gt; <span class="php-quote">'306 (Unused)'</span>,
+    <span class="php-num">307</span> =&gt; <span class="php-quote">'307 Temporary Redirect'</span>,
+    <span class="php-num">308</span> =&gt; <span class="php-quote">'308 Permanent Redirect'</span>,
+    <span class="php-comment">// Client Error 4xx</span>
+    <span class="php-num">400</span> =&gt; <span class="php-quote">'400 Bad Request'</span>,
+    <span class="php-num">401</span> =&gt; <span class="php-quote">'401 Unauthorized'</span>,
+    <span class="php-num">402</span> =&gt; <span class="php-quote">'402 Payment Required'</span>,
+    <span class="php-num">403</span> =&gt; <span class="php-quote">'403 Forbidden'</span>,
+    <span class="php-num">404</span> =&gt; <span class="php-quote">'404 Not Found'</span>,
+    <span class="php-num">405</span> =&gt; <span class="php-quote">'405 Method Not Allowed'</span>,
+    <span class="php-num">406</span> =&gt; <span class="php-quote">'406 Not Acceptable'</span>,
+    <span class="php-num">407</span> =&gt; <span class="php-quote">'407 Proxy Authentication Required'</span>,
+    <span class="php-num">408</span> =&gt; <span class="php-quote">'408 Request Timeout'</span>,
+    <span class="php-num">409</span> =&gt; <span class="php-quote">'409 Conflict'</span>,
+    <span class="php-num">410</span> =&gt; <span class="php-quote">'410 Gone'</span>,
+    <span class="php-num">411</span> =&gt; <span class="php-quote">'411 Length Required'</span>,
+    <span class="php-num">412</span> =&gt; <span class="php-quote">'412 Precondition Failed'</span>,
+    <span class="php-num">413</span> =&gt; <span class="php-quote">'413 Request Entity Too Large'</span>,
+    <span class="php-num">414</span> =&gt; <span class="php-quote">'414 Request-URI Too Long'</span>,
+    <span class="php-num">415</span> =&gt; <span class="php-quote">'415 Unsupported Media Type'</span>,
+    <span class="php-num">416</span> =&gt; <span class="php-quote">'416 Requested Range Not Satisfiable'</span>,
+    <span class="php-num">417</span> =&gt; <span class="php-quote">'417 Expectation Failed'</span>,
+    <span class="php-num">418</span> =&gt; <span class="php-quote">'418 I\'m a teapot'</span>,
+    <span class="php-num">419</span> =&gt; <span class="php-quote">'419 Authentication Timeout'</span>,
+    <span class="php-num">420</span> =&gt; <span class="php-quote">'420 Method Failure'</span>,
+    <span class="php-num">421</span> =&gt; <span class="php-quote">'421 Misdirected Request'</span>,
+    <span class="php-num">422</span> =&gt; <span class="php-quote">'422 Unprocessable Entity'</span>,
+    <span class="php-num">423</span> =&gt; <span class="php-quote">'423 Locked'</span>,
+    <span class="php-num">424</span> =&gt; <span class="php-quote">'424 Failed Dependency'</span>,
+    <span class="php-num">426</span> =&gt; <span class="php-quote">'426 Upgrade Required'</span>,
+    <span class="php-num">428</span> =&gt; <span class="php-quote">'428 Precondition Required'</span>,
+    <span class="php-num">429</span> =&gt; <span class="php-quote">'429 Too Many Requests'</span>,
+    <span class="php-num">431</span> =&gt; <span class="php-quote">'431 Request Header Fields Too Large'</span>,
+    <span class="php-num">451</span> =&gt; <span class="php-quote">'451 Unavailable For Legal Reasons'</span>,
+    <span class="php-comment">// Server Error 5xx</span>
+    <span class="php-num">500</span> =&gt; <span class="php-quote">'500 Internal Server Error'</span>,
+    <span class="php-num">501</span> =&gt; <span class="php-quote">'501 Not Implemented'</span>,
+    <span class="php-num">502</span> =&gt; <span class="php-quote">'502 Bad Gateway'</span>,
+    <span class="php-num">503</span> =&gt; <span class="php-quote">'503 Service Unavailable'</span>,
+    <span class="php-num">504</span> =&gt; <span class="php-quote">'504 Gateway Timeout'</span>,
+    <span class="php-num">505</span> =&gt; <span class="php-quote">'505 HTTP Version Not Supported'</span>,
+    <span class="php-num">506</span> =&gt; <span class="php-quote">'506 Variant Also Negotiates'</span>,
+    <span class="php-num">507</span> =&gt; <span class="php-quote">'507 Insufficient Storage'</span>,
+    <span class="php-num">508</span> =&gt; <span class="php-quote">'508 Loop Detected'</span>,
+    <span class="php-num">509</span> =&gt; <span class="php-quote">'509 Bandwidth Limit Exceeded'</span>,
+    <span class="php-num">510</span> =&gt; <span class="php-quote">'510 Not Extended'</span>,
+    <span class="php-num">511</span> =&gt; <span class="php-quote">'511 Network Authentication Required'</span>,
+    <span class="php-num">520</span> =&gt; <span class="php-quote">'520 Unknown Error'</span>,
+    <span class="php-num">598</span> =&gt; <span class="php-quote">'598 Network Read Timeout Error'</span>,
+    <span class="php-num">599</span> =&gt; <span class="php-quote">'599 Network Connect Timeout Error'</span>,
+)</code>
+				</div>
+			</td>
+		</tr>
+			</table>
+		</div>
+
+
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		Doco[L]ight API API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

@@ -1,0 +1,2067 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Docolight\Container\Container | Doco[L]ight API</title>
+
+	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
+	<link rel="stylesheet" href="resources/style.css?49f43d3208c5d7e33fa16d36107a345bf11cc00d">
+
+</head>
+
+<body>
+	<nav id="navigation" class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="index.html" class="navbar-brand">Doco[L]ight API</a>
+			</div>
+			<div class="collapse navbar-collapse">
+
+                <form id="search" class="navbar-form navbar-left" role="search">
+                    <input type="hidden" name="cx" value="">
+                    <input type="hidden" name="ie" value="UTF-8">
+                    <div class="form-group">
+                        <input type="text" name="q" class="search-query form-control" placeholder="Search">
+					</div>
+				</form>
+
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="namespace-Docolight.Container.html" title="Summary of Docolight\Container"><span>Namespace</span></a>
+					</li>
+					<li class="active">
+<span>Class</span>					</li>
+
+
+
+
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div id="left">
+	<div id="menu">
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+					<li class="active">
+						<a href="namespace-Docolight.html">
+							Docolight<span></span>
+						</a>
+							<ul>
+					<li class="active">
+						<a href="namespace-Docolight.Container.html">
+							Container						</a>
+							</li>
+					<li>
+						<a href="namespace-Docolight.Http.html">
+							Http<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Docolight.Http.Contracts.html">
+							Contracts						</a>
+							</li>
+								</ul></li>
+					<li>
+						<a href="namespace-Docolight.Support.html">
+							Support<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Docolight.Support.Debug.html">
+							Debug						</a>
+							</li>
+					<li>
+						<a href="namespace-Docolight.Support.Traits.html">
+							Traits						</a>
+							</li>
+								</ul></li></ul></li>
+					<li>
+						<a href="namespace-None.html">
+							None						</a>
+							</li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-Docolight.Container.Container.html">Container</a></li>
+			</ul>
+
+
+
+			<h3>Exceptions</h3>
+			<ul>
+				<li><a href="class-Docolight.Container.BindingResolutionException.html">BindingResolutionException</a></li>
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class Container</h1>
+
+
+	<div class="description">
+	<p>Inversion of control container is a powerful tool for managing class dependencies. Dependency injection is a method of removing hard-coded class dependencies. Instead, the dependencies are injected at run-time, allowing for greater flexibility as dependency implementations may be swapped easily.</p>
+
+<pre><span class="php-comment">// Instantiate new container</span>
+<span class="php-var">$container</span> = <span class="php-keyword1">new</span> Docolight\Container;
+
+<span class="php-comment">// Bind a container</span>
+<span class="php-var">$container</span>-&gt;bind(<span class="php-quote">'foo'</span>, <span class="php-keyword1">function</span> () { <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> Foo; });
+
+<span class="php-comment">// Resolve type from container:</span>
+<span class="php-var">$container</span>-&gt;make(<span class="php-quote">'foo'</span>); <span class="php-comment">// Foo implementation</span></pre>
+
+<p>Container also has ability to resolve the dependency by itself.</p>
+
+<pre><span class="php-keyword1">interface</span> FooContract { <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> foo(); }
+
+
+<span class="php-keyword1">class</span> Foo <span class="php-keyword1">implements</span> FooContract { <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> foo() {} }
+
+
+<span class="php-keyword1">class</span> FooFactory
+{
+ <span class="php-keyword1">protected</span> <span class="php-var">$foo</span> = <span class="php-keyword1">null</span>;
+ <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> __construct(FooContract <span class="php-var">$foo</span>) { <span class="php-var">$this</span>-&gt;foo = <span class="php-var">$foo</span>; }
+}
+
+
+<span class="php-var">$container</span> = <span class="php-keyword1">new</span> Docolight\Container;
+
+<span class="php-var">$container</span>-&gt;bind(<span class="php-quote">'FooContract'</span>, <span class="php-quote">'Foo'</span>);
+
+<span class="php-var">$fooFactory</span> = <span class="php-var">$container</span>-&gt;make(<span class="php-quote">'FooFactory'</span>); <span class="php-comment">// equals with: $fooFactory = new FooFactory(new Foo);</span></pre>
+	</div>
+
+	<dl class="tree well">
+		<dd style="padding-left:0px">
+CApplicationComponent
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>Docolight\Container\Container</span></b>			
+			 implements 
+<span>ArrayAccess</span>
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Docolight.html">Docolight</a>\<a href="namespace-Docolight.Container.html">Container</a><br>
+		
+
+				<b>Category:</b>
+				Libraries<br>
+				<b>Author:</b>
+				Krisan Alfa Timur <a href="&#109;&#97;&#105;&#x6c;&#x74;o&#58;&#107;&#114;&#x69;&#x73;a&#110;&#97;&#108;&#x66;&#x61;&#64;&#100;&#111;&#x63;&#x6f;&#x74;e&#108;&#46;&#x63;&#x6f;&#x2e;&#105;&#100;">&#107;&#114;&#x69;&#x73;a&#110;&#97;&#108;&#x66;&#x61;&#64;&#100;&#111;&#x63;&#x6f;&#x74;e&#108;&#46;&#x63;&#x6f;&#x2e;&#105;&#100;</a><br>
+				<b>Link:</b>
+				<a href="http://php.net/manual/en/class.arrayaccess.php">Interface to provide accessing objects as arrays.</a><br>
+			<b>Located at</b> <a href="source-class-Docolight.Container.Container.html#11-880" title="Go to source code">Container/Container.php</a>
+		<br>
+	</div>
+
+
+
+		<div class="panel panel-default">
+			<div class="panel-heading"><h2>Methods summary</h2></div>
+			<table class="summary table table-bordered table-striped methods" id="methods">
+		<tr data-order="resolvable" id="_resolvable">
+
+			<td class="attributes"><code>
+				 protected 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_resolvable">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#112-122" title="Go to source code">resolvable</a>( <span>string <var>$abstract</var></span> )</code>
+
+			<div class="description short">
+				<p>Determine if a given string is resolvable.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Determine if a given string is resolvable.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$abstract</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="bound" id="_bound">
+
+			<td class="attributes"><code>
+				 public 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_bound">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#124-134" title="Go to source code">bound</a>( <span>string <var>$abstract</var></span> )</code>
+
+			<div class="description short">
+				<p>Determine if the given abstract type has been bound.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Determine if the given abstract type has been bound.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$abstract</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="resolved" id="_resolved">
+
+			<td class="attributes"><code>
+				 public 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_resolved">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#136-146" title="Go to source code">resolved</a>( <span>string <var>$abstract</var></span> )</code>
+
+			<div class="description short">
+				<p>Determine if the given abstract type has been resolved.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Determine if the given abstract type has been resolved.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$abstract</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="isAlias" id="_isAlias">
+
+			<td class="attributes"><code>
+				 public 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_isAlias">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#148-158" title="Go to source code">isAlias</a>( <span>string <var>$name</var></span> )</code>
+
+			<div class="description short">
+				<p>Determine if a given string is an alias.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Determine if a given string is an alias.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$name</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="bind" id="_bind">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_bind">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#160-202" title="Go to source code">bind</a>( <span>string|array <var>$abstract</var></span>, <span>Closure|string|null <var>$concrete</var> = <span class="php-keyword1">null</span></span>, <span>boolean <var>$shared</var> = <span class="php-keyword1">false</span></span> )</code>
+
+			<div class="description short">
+				<p>Register a binding with the container.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Register a binding with the container.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$abstract</var></dt>
+						<dd></dd>
+						<dt><var>$concrete</var></dt>
+						<dd></dd>
+						<dt><var>$shared</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getClosure" id="_getClosure">
+
+			<td class="attributes"><code>
+				 protected 
+				Closure
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getClosure">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#204-219" title="Go to source code">getClosure</a>( <span>string <var>$abstract</var></span>, <span>string <var>$concrete</var></span> )</code>
+
+			<div class="description short">
+				<p>Get the Closure to be used when building a type.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get the Closure to be used when building a type.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$abstract</var></dt>
+						<dd></dd>
+						<dt><var>$concrete</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						Closure
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="bindIf" id="_bindIf">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_bindIf">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#221-233" title="Go to source code">bindIf</a>( <span>string <var>$abstract</var></span>, <span>Closure|string|null <var>$concrete</var> = <span class="php-keyword1">null</span></span>, <span>boolean <var>$shared</var> = <span class="php-keyword1">false</span></span> )</code>
+
+			<div class="description short">
+				<p>Register a binding if it hasn't already been registered.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Register a binding if it hasn't already been registered.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$abstract</var></dt>
+						<dd></dd>
+						<dt><var>$concrete</var></dt>
+						<dd></dd>
+						<dt><var>$shared</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="singleton" id="_singleton">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_singleton">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#235-244" title="Go to source code">singleton</a>( <span>string <var>$abstract</var></span>, <span>Closure|string|null <var>$concrete</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Register a shared binding in the container.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Register a shared binding in the container.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$abstract</var></dt>
+						<dd></dd>
+						<dt><var>$concrete</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="share" id="_share">
+
+			<td class="attributes"><code>
+				 public 
+				Closure
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_share">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#246-267" title="Go to source code">share</a>( <span>Closure <var>$closure</var></span> )</code>
+
+			<div class="description short">
+				<p>Wrap a Closure such that it is shared.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Wrap a Closure such that it is shared.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$closure</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						Closure
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="bindShared" id="_bindShared">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_bindShared">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#269-278" title="Go to source code">bindShared</a>( <span>string <var>$abstract</var></span>, <span>Closure <var>$closure</var></span> )</code>
+
+			<div class="description short">
+				<p>Bind a shared Closure into the container.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Bind a shared Closure into the container.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$abstract</var></dt>
+						<dd></dd>
+						<dt><var>$closure</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="extend" id="_extend">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_extend">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#280-303" title="Go to source code">extend</a>( <span>string <var>$abstract</var></span>, <span>Closure <var>$closure</var></span> )</code>
+
+			<div class="description short">
+				<p>"Extend" an abstract type in the container.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>"Extend" an abstract type in the container.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$abstract</var></dt>
+						<dd></dd>
+						<dt><var>$closure</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+					<h4>Throws</h4>
+					<div class="list">
+						InvalidArgumentException
+					</div>
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getExtender" id="_getExtender">
+
+			<td class="attributes"><code>
+				 protected 
+				Closure
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getExtender">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#305-323" title="Go to source code">getExtender</a>( <span>string <var>$abstract</var></span>, <span>Closure <var>$closure</var></span> )</code>
+
+			<div class="description short">
+				<p>Get an extender Closure for resolving a type.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get an extender Closure for resolving a type.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$abstract</var></dt>
+						<dd></dd>
+						<dt><var>$closure</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						Closure
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="instance" id="_instance">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_instance">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#325-354" title="Go to source code">instance</a>( <span>string <var>$abstract</var></span>, <span>mixed <var>$instance</var></span> )</code>
+
+			<div class="description short">
+				<p>Register an existing instance as shared in the container.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Register an existing instance as shared in the container.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$abstract</var></dt>
+						<dd></dd>
+						<dt><var>$instance</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="alias" id="_alias">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_alias">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#356-365" title="Go to source code">alias</a>( <span>string <var>$abstract</var></span>, <span>string <var>$alias</var></span> )</code>
+
+			<div class="description short">
+				<p>Alias a type to a shorter name.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Alias a type to a shorter name.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$abstract</var></dt>
+						<dd></dd>
+						<dt><var>$alias</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="extractAlias" id="_extractAlias">
+
+			<td class="attributes"><code>
+				 protected 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_extractAlias">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#367-377" title="Go to source code">extractAlias</a>( <span>array <var>$definition</var></span> )</code>
+
+			<div class="description short">
+				<p>Extract the type and alias from a given definition.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Extract the type and alias from a given definition.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$definition</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="rebinding" id="_rebinding">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_rebinding">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#379-394" title="Go to source code">rebinding</a>( <span>string <var>$abstract</var></span>, <span>Closure <var>$callback</var></span> )</code>
+
+			<div class="description short">
+				<p>Bind a new callback to an abstract's rebind event.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Bind a new callback to an abstract's rebind event.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$abstract</var></dt>
+						<dd></dd>
+						<dt><var>$callback</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="refresh" id="_refresh">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_refresh">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#396-410" title="Go to source code">refresh</a>( <span>string <var>$abstract</var></span>, <span>mixed <var>$target</var></span>, <span>string <var>$method</var></span> )</code>
+
+			<div class="description short">
+				<p>Refresh an instance on the given target and method.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Refresh an instance on the given target and method.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$abstract</var></dt>
+						<dd></dd>
+						<dt><var>$target</var></dt>
+						<dd></dd>
+						<dt><var>$method</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="rebound" id="_rebound">
+
+			<td class="attributes"><code>
+				 protected 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_rebound">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#412-424" title="Go to source code">rebound</a>( <span>string <var>$abstract</var></span> )</code>
+
+			<div class="description short">
+				<p>Fire the "rebound" callbacks for the given abstract type.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Fire the "rebound" callbacks for the given abstract type.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$abstract</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getReboundCallbacks" id="_getReboundCallbacks">
+
+			<td class="attributes"><code>
+				 protected 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getReboundCallbacks">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#426-440" title="Go to source code">getReboundCallbacks</a>( <span>string <var>$abstract</var></span> )</code>
+
+			<div class="description short">
+				<p>Get the rebound callbacks for a given type.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get the rebound callbacks for a given type.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$abstract</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="make" id="_make">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_make">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#442-484" title="Go to source code">make</a>( <span>string <var>$abstract</var></span>, <span>array <var>$parameters</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+			<div class="description short">
+				<p>Resolve the given type from the container.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Resolve the given type from the container.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$abstract</var></dt>
+						<dd></dd>
+						<dt><var>$parameters</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getConcrete" id="_getConcrete">
+
+			<td class="attributes"><code>
+				 protected 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getConcrete">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#486-507" title="Go to source code">getConcrete</a>( <span>string <var>$abstract</var></span> )</code>
+
+			<div class="description short">
+				<p>Get the concrete type for a given abstract.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get the concrete type for a given abstract.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$abstract</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed<br>$concrete
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="missingLeadingSlash" id="_missingLeadingSlash">
+
+			<td class="attributes"><code>
+				 protected 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_missingLeadingSlash">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#509-519" title="Go to source code">missingLeadingSlash</a>( <span>string <var>$abstract</var></span> )</code>
+
+			<div class="description short">
+				<p>Determine if the given abstract has a leading slash.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Determine if the given abstract has a leading slash.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$abstract</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="build" id="_build">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_build">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#521-574" title="Go to source code">build</a>( <span>string <var>$concrete</var></span>, <span>array <var>$parameters</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+			<div class="description short">
+				<p>Instantiate a concrete instance of the given type.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Instantiate a concrete instance of the given type.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$concrete</var></dt>
+						<dd></dd>
+						<dt><var>$parameters</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+					<h4>Throws</h4>
+					<div class="list">
+						<code><a href="class-Docolight.Container.BindingResolutionException.html">Docolight\Container\BindingResolutionException</a></code>
+					</div>
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getDependencies" id="_getDependencies">
+
+			<td class="attributes"><code>
+				 protected 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getDependencies">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#576-604" title="Go to source code">getDependencies</a>( <span>array <var>$parameters</var></span>, <span>array <var>$primitives</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+			<div class="description short">
+				<p>Resolve all of the dependencies from the ReflectionParameters.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Resolve all of the dependencies from the ReflectionParameters.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$parameters</var></dt>
+						<dd></dd>
+						<dt><var>$primitives</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="resolveNonClass" id="_resolveNonClass">
+
+			<td class="attributes"><code>
+				 protected 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_resolveNonClass">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#606-624" title="Go to source code">resolveNonClass</a>( <span>ReflectionParameter <var>$parameter</var></span> )</code>
+
+			<div class="description short">
+				<p>Resolve a non-class hinted dependency.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Resolve a non-class hinted dependency.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$parameter</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+					<h4>Throws</h4>
+					<div class="list">
+						<code><a href="class-Docolight.Container.BindingResolutionException.html">Docolight\Container\BindingResolutionException</a></code>
+					</div>
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="resolveClass" id="_resolveClass">
+
+			<td class="attributes"><code>
+				 protected 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_resolveClass">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#626-651" title="Go to source code">resolveClass</a>( <span>ReflectionParameter <var>$parameter</var></span> )</code>
+
+			<div class="description short">
+				<p>Resolve a class based dependency from the container.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Resolve a class based dependency from the container.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$parameter</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+					<h4>Throws</h4>
+					<div class="list">
+						<code><a href="class-Docolight.Container.BindingResolutionException.html">Docolight\Container\BindingResolutionException</a></code>
+					</div>
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="keyParametersByArgument" id="_keyParametersByArgument">
+
+			<td class="attributes"><code>
+				 protected 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_keyParametersByArgument">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#653-672" title="Go to source code">keyParametersByArgument</a>( <span>array <var>$dependencies</var></span>, <span>array <var>$parameters</var></span> )</code>
+
+			<div class="description short">
+				<p>If extra parameters are passed by numeric ID, rekey them by argument name.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>If extra parameters are passed by numeric ID, rekey them by argument name.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$dependencies</var></dt>
+						<dd></dd>
+						<dt><var>$parameters</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="resolving" id="_resolving">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_resolving">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#674-683" title="Go to source code">resolving</a>( <span>string <var>$abstract</var></span>, <span>Closure <var>$callback</var></span> )</code>
+
+			<div class="description short">
+				<p>Register a new resolving callback.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Register a new resolving callback.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$abstract</var></dt>
+						<dd></dd>
+						<dt><var>$callback</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="resolvingAny" id="_resolvingAny">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_resolvingAny">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#685-693" title="Go to source code">resolvingAny</a>( <span>Closure <var>$callback</var></span> )</code>
+
+			<div class="description short">
+				<p>Register a new resolving callback for all types.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Register a new resolving callback for all types.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$callback</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="fireResolvingCallbacks" id="_fireResolvingCallbacks">
+
+			<td class="attributes"><code>
+				 protected 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_fireResolvingCallbacks">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#695-708" title="Go to source code">fireResolvingCallbacks</a>( <span>string <var>$abstract</var></span>, <span>mixed <var>$object</var></span> )</code>
+
+			<div class="description short">
+				<p>Fire all of the resolving callbacks.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Fire all of the resolving callbacks.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$abstract</var></dt>
+						<dd></dd>
+						<dt><var>$object</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="fireCallbackArray" id="_fireCallbackArray">
+
+			<td class="attributes"><code>
+				 protected 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_fireCallbackArray">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#710-721" title="Go to source code">fireCallbackArray</a>( <span>mixed <var>$object</var></span>, <span>array <var>$callbacks</var></span> )</code>
+
+			<div class="description short">
+				<p>Fire an array of callbacks with an object.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Fire an array of callbacks with an object.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$object</var></dt>
+						<dd></dd>
+						<dt><var>$callbacks</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="isShared" id="_isShared">
+
+			<td class="attributes"><code>
+				 public 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_isShared">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#723-739" title="Go to source code">isShared</a>( <span>string <var>$abstract</var></span> )</code>
+
+			<div class="description short">
+				<p>Determine if a given type is shared.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Determine if a given type is shared.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$abstract</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="isBuildable" id="_isBuildable">
+
+			<td class="attributes"><code>
+				 protected 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_isBuildable">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#741-752" title="Go to source code">isBuildable</a>( <span>mixed <var>$concrete</var></span>, <span>string <var>$abstract</var></span> )</code>
+
+			<div class="description short">
+				<p>Determine if the given concrete is buildable.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Determine if the given concrete is buildable.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$concrete</var></dt>
+						<dd></dd>
+						<dt><var>$abstract</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getAlias" id="_getAlias">
+
+			<td class="attributes"><code>
+				 protected 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getAlias">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#754-764" title="Go to source code">getAlias</a>( <span>string <var>$abstract</var></span> )</code>
+
+			<div class="description short">
+				<p>Get the alias for an abstract if available.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get the alias for an abstract if available.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$abstract</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						string
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getBindings" id="_getBindings">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getBindings">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#766-774" title="Go to source code">getBindings</a>( )</code>
+
+			<div class="description short">
+				<p>Get the container's bindings.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get the container's bindings.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="dropStaleInstances" id="_dropStaleInstances">
+
+			<td class="attributes"><code>
+				 protected 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_dropStaleInstances">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#776-784" title="Go to source code">dropStaleInstances</a>( <span>string <var>$abstract</var></span> )</code>
+
+			<div class="description short">
+				<p>Drop all of the stale instances and aliases.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Drop all of the stale instances and aliases.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$abstract</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="forgetInstance" id="_forgetInstance">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_forgetInstance">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#786-794" title="Go to source code">forgetInstance</a>( <span>string <var>$abstract</var></span> )</code>
+
+			<div class="description short">
+				<p>Remove a resolved instance from the instance cache.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Remove a resolved instance from the instance cache.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$abstract</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="forgetInstances" id="_forgetInstances">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_forgetInstances">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#796-802" title="Go to source code">forgetInstances</a>( )</code>
+
+			<div class="description short">
+				<p>Clear all of the instances from the container.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Clear all of the instances from the container.</p>
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="offsetExists" id="_offsetExists">
+
+			<td class="attributes"><code>
+				 public 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_offsetExists">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#804-814" title="Go to source code">offsetExists</a>( <span>string <var>$key</var></span> )</code>
+
+			<div class="description short">
+				<p>Determine if a given offset exists.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Determine if a given offset exists.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code>ArrayAccess::offsetExists()</code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="offsetGet" id="_offsetGet">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_offsetGet">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#816-826" title="Go to source code">offsetGet</a>( <span>string <var>$key</var></span> )</code>
+
+			<div class="description short">
+				<p>Get the value at a given offset.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get the value at a given offset.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code>ArrayAccess::offsetGet()</code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="offsetSet" id="_offsetSet">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_offsetSet">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#828-846" title="Go to source code">offsetSet</a>( <span>string <var>$key</var></span>, <span>mixed <var>$value</var></span> )</code>
+
+			<div class="description short">
+				<p>Set the value at a given offset.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Set the value at a given offset.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+						<dt><var>$value</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code>ArrayAccess::offsetSet()</code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="offsetUnset" id="_offsetUnset">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_offsetUnset">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#848-856" title="Go to source code">offsetUnset</a>( <span>string <var>$key</var></span> )</code>
+
+			<div class="description short">
+				<p>Unset the value at a given offset.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Unset the value at a given offset.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code>ArrayAccess::offsetUnset()</code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="__get" id="___get">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___get">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#858-868" title="Go to source code">__get</a>( <span>string <var>$key</var></span> )</code>
+
+			<div class="description short">
+				<p>Dynamically access container services.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Dynamically access container services.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="__set" id="___set">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___set">#</a>
+			<code><a href="source-class-Docolight.Container.Container.html#870-879" title="Go to source code">__set</a>( <span>string <var>$key</var></span>, <span>mixed <var>$value</var></span> )</code>
+
+			<div class="description short">
+				<p>Dynamically set container services.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Dynamically set container services.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+						<dt><var>$value</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+			</table>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+		<div class="panel panel-default">
+            <div class="panel-heading"><h2>Properties summary</h2></div>
+			<table class="summary table table-bordered table-striped properties" id="properties">
+		<tr data-order="resolved" id="$resolved">
+			<td class="attributes"><code>
+				protected  
+				array
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Docolight.Container.Container.html#63-68" title="Go to source code"><var>$resolved</var></a>
+
+				<div class="description short">
+					<p>An array of the types that have been resolved.</p>
+				</div>
+
+				<div class="description detailed hidden">
+					<p>An array of the types that have been resolved.</p>
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$resolved" class="anchor">#</a>
+					<code><span class="php-keyword1">array</span>()</code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="bindings" id="$bindings">
+			<td class="attributes"><code>
+				protected  
+				array
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Docolight.Container.Container.html#70-75" title="Go to source code"><var>$bindings</var></a>
+
+				<div class="description short">
+					<p>The container's bindings.</p>
+				</div>
+
+				<div class="description detailed hidden">
+					<p>The container's bindings.</p>
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$bindings" class="anchor">#</a>
+					<code><span class="php-keyword1">array</span>()</code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="instances" id="$instances">
+			<td class="attributes"><code>
+				protected  
+				array
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Docolight.Container.Container.html#77-82" title="Go to source code"><var>$instances</var></a>
+
+				<div class="description short">
+					<p>The container's shared instances.</p>
+				</div>
+
+				<div class="description detailed hidden">
+					<p>The container's shared instances.</p>
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$instances" class="anchor">#</a>
+					<code><span class="php-keyword1">array</span>()</code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="aliases" id="$aliases">
+			<td class="attributes"><code>
+				protected  
+				array
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Docolight.Container.Container.html#84-89" title="Go to source code"><var>$aliases</var></a>
+
+				<div class="description short">
+					<p>The registered type aliases.</p>
+				</div>
+
+				<div class="description detailed hidden">
+					<p>The registered type aliases.</p>
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$aliases" class="anchor">#</a>
+					<code><span class="php-keyword1">array</span>()</code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="reboundCallbacks" id="$reboundCallbacks">
+			<td class="attributes"><code>
+				protected  
+				array
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Docolight.Container.Container.html#91-96" title="Go to source code"><var>$reboundCallbacks</var></a>
+
+				<div class="description short">
+					<p>All of the registered rebound callbacks.</p>
+				</div>
+
+				<div class="description detailed hidden">
+					<p>All of the registered rebound callbacks.</p>
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$reboundCallbacks" class="anchor">#</a>
+					<code><span class="php-keyword1">array</span>()</code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="resolvingCallbacks" id="$resolvingCallbacks">
+			<td class="attributes"><code>
+				protected  
+				array
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Docolight.Container.Container.html#98-103" title="Go to source code"><var>$resolvingCallbacks</var></a>
+
+				<div class="description short">
+					<p>All of the registered resolving callbacks.</p>
+				</div>
+
+				<div class="description detailed hidden">
+					<p>All of the registered resolving callbacks.</p>
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$resolvingCallbacks" class="anchor">#</a>
+					<code><span class="php-keyword1">array</span>()</code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="globalResolvingCallbacks" id="$globalResolvingCallbacks">
+			<td class="attributes"><code>
+				protected  
+				array
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Docolight.Container.Container.html#105-110" title="Go to source code"><var>$globalResolvingCallbacks</var></a>
+
+				<div class="description short">
+					<p>All of the global resolving callbacks.</p>
+				</div>
+
+				<div class="description detailed hidden">
+					<p>All of the global resolving callbacks.</p>
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$globalResolvingCallbacks" class="anchor">#</a>
+					<code><span class="php-keyword1">array</span>()</code>
+				</div>
+			</td>
+		</tr>
+			</table>
+		</div>
+
+
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		Doco[L]ight API API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

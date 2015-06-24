@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Docolight\Support\Arr | Doco[L]ight API</title>
+
+	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
+	<link rel="stylesheet" href="resources/style.css?49f43d3208c5d7e33fa16d36107a345bf11cc00d">
+
+</head>
+
+<body>
+	<nav id="navigation" class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="index.html" class="navbar-brand">Doco[L]ight API</a>
+			</div>
+			<div class="collapse navbar-collapse">
+
+                <form id="search" class="navbar-form navbar-left" role="search">
+                    <input type="hidden" name="cx" value="">
+                    <input type="hidden" name="ie" value="UTF-8">
+                    <div class="form-group">
+                        <input type="text" name="q" class="search-query form-control" placeholder="Search">
+					</div>
+				</form>
+
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="namespace-Docolight.Support.html" title="Summary of Docolight\Support"><span>Namespace</span></a>
+					</li>
+					<li class="active">
+<span>Class</span>					</li>
+
+
+
+
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div id="left">
+	<div id="menu">
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+					<li class="active">
+						<a href="namespace-Docolight.html">
+							Docolight<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Docolight.Container.html">
+							Container						</a>
+							</li>
+					<li>
+						<a href="namespace-Docolight.Http.html">
+							Http<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Docolight.Http.Contracts.html">
+							Contracts						</a>
+							</li>
+								</ul></li>
+					<li class="active">
+						<a href="namespace-Docolight.Support.html">
+							Support<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Docolight.Support.Debug.html">
+							Debug						</a>
+							</li>
+					<li>
+						<a href="namespace-Docolight.Support.Traits.html">
+							Traits						</a>
+							</li>
+								</ul></li></ul></li>
+					<li>
+						<a href="namespace-None.html">
+							None						</a>
+							</li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Docolight.Support.ActiveRecordWrapper.html">ActiveRecordWrapper</a></li>
+				<li class="active"><a href="class-Docolight.Support.Arr.html">Arr</a></li>
+				<li><a href="class-Docolight.Support.Carbonate.html">Carbonate</a></li>
+				<li><a href="class-Docolight.Support.ClassLoader.html">ClassLoader</a></li>
+				<li><a href="class-Docolight.Support.Collection.html">Collection</a></li>
+				<li><a href="class-Docolight.Support.Facade.html">Facade</a></li>
+				<li><a href="class-Docolight.Support.Factory.html">Factory</a></li>
+				<li><a href="class-Docolight.Support.Fluent.html">Fluent</a></li>
+				<li><a href="class-Docolight.Support.Html.html">Html</a></li>
+				<li><a href="class-Docolight.Support.IterablePager.html">IterablePager</a></li>
+				<li><a href="class-Docolight.Support.Repository.html">Repository</a></li>
+				<li><a href="class-Docolight.Support.Set.html">Set</a></li>
+				<li><a href="class-Docolight.Support.Str.html">Str</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class Arr</h1>
+
+
+	<div class="description">
+	<p>Array helper.</p>
+	</div>
+
+	<dl class="tree well">
+		<dd style="padding-left:0px">
+<b><span>Docolight\Support\Arr</span></b>			
+			
+			 uses 
+					<a href="class-Docolight.Support.Traits.Macroable.html"><span>Docolight\Support\Traits\Macroable</span></a>
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Docolight.html">Docolight</a>\<a href="namespace-Docolight.Support.html">Support</a><br>
+		
+
+				<b>Author:</b>
+				Krisan Alfa Timur <a href="&#109;&#97;&#105;&#x6c;&#x74;o&#58;&#107;&#114;&#x69;&#x73;a&#110;&#97;&#108;&#x66;&#x61;&#64;&#100;&#111;&#x63;&#x6f;&#x74;e&#108;&#46;&#x63;&#x6f;&#x2e;&#105;&#100;">&#107;&#114;&#x69;&#x73;a&#110;&#97;&#108;&#x66;&#x61;&#64;&#100;&#111;&#x63;&#x6f;&#x74;e&#108;&#46;&#x63;&#x6f;&#x2e;&#105;&#100;</a><br>
+			<b>Located at</b> <a href="source-class-Docolight.Support.Arr.html#9-696" title="Go to source code">Support/Arr.php</a>
+		<br>
+	</div>
+
+
+
+		<div class="panel panel-default">
+			<div class="panel-heading"><h2>Methods summary</h2></div>
+			<table class="summary table table-bordered table-striped methods" id="methods">
+		<tr data-order="add" id="_add">
+
+			<td class="attributes"><code>
+				 public static
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_add">#</a>
+			<code><a href="source-class-Docolight.Support.Arr.html#20-36" title="Go to source code">add</a>( <span>array <var>$array</var></span>, <span>string <var>$key</var></span>, <span>mixed <var>$value</var></span> )</code>
+
+			<div class="description short">
+				<p>Add an element to an array using "dot" notation if it doesn't exist.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Add an element to an array using "dot" notation if it doesn't exist.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$array</var></dt>
+						<dd></dd>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+						<dt><var>$value</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="build" id="_build">
+
+			<td class="attributes"><code>
+				 public static
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_build">#</a>
+			<code><a href="source-class-Docolight.Support.Arr.html#38-57" title="Go to source code">build</a>( <span>array <var>$array</var></span>, <span>callable <var>$callback</var></span> )</code>
+
+			<div class="description short">
+				<p>Build a new array using a callback.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Build a new array using a callback.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$array</var></dt>
+						<dd></dd>
+						<dt><var>$callback</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="collapse" id="_collapse">
+
+			<td class="attributes"><code>
+				 public static
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_collapse">#</a>
+			<code><a href="source-class-Docolight.Support.Arr.html#59-79" title="Go to source code">collapse</a>( <span>array|ArrayAccess <var>$array</var></span> )</code>
+
+			<div class="description short">
+				<p>Collapse an array of arrays into a single array.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Collapse an array of arrays into a single array.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$array</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="divide" id="_divide">
+
+			<td class="attributes"><code>
+				 public static
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_divide">#</a>
+			<code><a href="source-class-Docolight.Support.Arr.html#81-91" title="Go to source code">divide</a>( <span>array <var>$array</var></span> )</code>
+
+			<div class="description short">
+				<p>Divide an array into two arrays. One with keys and the other with values.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Divide an array into two arrays. One with keys and the other with values.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$array</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="dot" id="_dot">
+
+			<td class="attributes"><code>
+				 public static
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_dot">#</a>
+			<code><a href="source-class-Docolight.Support.Arr.html#93-114" title="Go to source code">dot</a>( <span>array <var>$array</var></span>, <span>string <var>$prepend</var> = <span class="php-quote">''</span></span> )</code>
+
+			<div class="description short">
+				<p>Flatten a multi-dimensional associative array with dots.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Flatten a multi-dimensional associative array with dots.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$array</var></dt>
+						<dd></dd>
+						<dt><var>$prepend</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="except" id="_except">
+
+			<td class="attributes"><code>
+				 public static
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_except">#</a>
+			<code><a href="source-class-Docolight.Support.Arr.html#116-129" title="Go to source code">except</a>( <span>array <var>$array</var></span>, <span>array|string <var>$keys</var></span> )</code>
+
+			<div class="description short">
+				<p>Get all of the given array except for a specified array of items.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get all of the given array except for a specified array of items.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$array</var></dt>
+						<dd></dd>
+						<dt><var>$keys</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="first" id="_first">
+
+			<td class="attributes"><code>
+				 public static
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_first">#</a>
+			<code><a href="source-class-Docolight.Support.Arr.html#131-153" title="Go to source code">first</a>( <span>array <var>$array</var></span>, <span>callable <var>$callback</var> = <span class="php-keyword1">null</span></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Return the first element in an array passing a given truth test.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Return the first element in an array passing a given truth test.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$array</var></dt>
+						<dd></dd>
+						<dt><var>$callback</var></dt>
+						<dd></dd>
+						<dt><var>$default</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="last" id="_last">
+
+			<td class="attributes"><code>
+				 public static
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_last">#</a>
+			<code><a href="source-class-Docolight.Support.Arr.html#155-171" title="Go to source code">last</a>( <span>array <var>$array</var></span>, <span>callable <var>$callback</var> = <span class="php-keyword1">null</span></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Return the last element in an array passing a given truth test.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Return the last element in an array passing a given truth test.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$array</var></dt>
+						<dd></dd>
+						<dt><var>$callback</var></dt>
+						<dd></dd>
+						<dt><var>$default</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="flatten" id="_flatten">
+
+			<td class="attributes"><code>
+				 public static
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_flatten">#</a>
+			<code><a href="source-class-Docolight.Support.Arr.html#173-187" title="Go to source code">flatten</a>( <span>array <var>$array</var></span> )</code>
+
+			<div class="description short">
+				<p>Flatten a multi-dimensional array into a single level.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Flatten a multi-dimensional array into a single level.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$array</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="forget" id="_forget">
+
+			<td class="attributes"><code>
+				 public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_forget">#</a>
+			<code><a href="source-class-Docolight.Support.Arr.html#189-215" title="Go to source code">forget</a>( <span>array <var>&amp; $array</var></span>, <span>array|string <var>$keys</var></span> )</code>
+
+			<div class="description short">
+				<p>Remove one or many array items from a given array using "dot" notation.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Remove one or many array items from a given array using "dot" notation.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$array</var></dt>
+						<dd></dd>
+						<dt><var>$keys</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="get" id="_get">
+
+			<td class="attributes"><code>
+				 public static
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_get">#</a>
+			<code><a href="source-class-Docolight.Support.Arr.html#217-245" title="Go to source code">get</a>( <span>array <var>$array</var></span>, <span>string <var>$key</var></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Get an item from an array using "dot" notation.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get an item from an array using "dot" notation.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$array</var></dt>
+						<dd></dd>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+						<dt><var>$default</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="has" id="_has">
+
+			<td class="attributes"><code>
+				 public static
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_has">#</a>
+			<code><a href="source-class-Docolight.Support.Arr.html#247-274" title="Go to source code">has</a>( <span>array <var>$array</var></span>, <span>string <var>$key</var></span> )</code>
+
+			<div class="description short">
+				<p>Check if an item exists in an array using "dot" notation.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Check if an item exists in an array using "dot" notation.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$array</var></dt>
+						<dd></dd>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="only" id="_only">
+
+			<td class="attributes"><code>
+				 public static
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_only">#</a>
+			<code><a href="source-class-Docolight.Support.Arr.html#276-287" title="Go to source code">only</a>( <span>array <var>$array</var></span>, <span>array|string <var>$keys</var></span> )</code>
+
+			<div class="description short">
+				<p>Get a subset of the items from the given array.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get a subset of the items from the given array.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$array</var></dt>
+						<dd></dd>
+						<dt><var>$keys</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="pluck" id="_pluck">
+
+			<td class="attributes"><code>
+				 public static
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_pluck">#</a>
+			<code><a href="source-class-Docolight.Support.Arr.html#289-320" title="Go to source code">pluck</a>( <span>array <var>$array</var></span>, <span>string|array <var>$value</var></span>, <span>string|array|null <var>$key</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Pluck an array of values from an array.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Pluck an array of values from an array.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$array</var></dt>
+						<dd></dd>
+						<dt><var>$value</var></dt>
+						<dd></dd>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="explodePluckParameters" id="_explodePluckParameters">
+
+			<td class="attributes"><code>
+				 protected static
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_explodePluckParameters">#</a>
+			<code><a href="source-class-Docolight.Support.Arr.html#322-337" title="Go to source code">explodePluckParameters</a>( <span>string|array <var>$value</var></span>, <span>string|array|null <var>$key</var></span> )</code>
+
+			<div class="description short">
+				<p>Explode the "value" and "key" arguments passed to "pluck".</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Explode the "value" and "key" arguments passed to "pluck".</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$value</var></dt>
+						<dd></dd>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="pull" id="_pull">
+
+			<td class="attributes"><code>
+				 public static
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_pull">#</a>
+			<code><a href="source-class-Docolight.Support.Arr.html#339-355" title="Go to source code">pull</a>( <span>array <var>&amp; $array</var></span>, <span>string <var>$key</var></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Get a value from the array, and remove it.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get a value from the array, and remove it.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$array</var></dt>
+						<dd></dd>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+						<dt><var>$default</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="set" id="_set">
+
+			<td class="attributes"><code>
+				 public static
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_set">#</a>
+			<code><a href="source-class-Docolight.Support.Arr.html#357-392" title="Go to source code">set</a>( <span>array <var>&amp; $array</var></span>, <span>string <var>$key</var></span>, <span>mixed <var>$value</var></span> )</code>
+
+			<div class="description short">
+				<p>Set an array item to a given value using "dot" notation.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Set an array item to a given value using "dot" notation.</p>
+
+<p>If no key is given to the method, the entire array will be replaced.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$array</var></dt>
+						<dd></dd>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+						<dt><var>$value</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="sort" id="_sort">
+
+			<td class="attributes"><code>
+				 public static
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_sort">#</a>
+			<code><a href="source-class-Docolight.Support.Arr.html#394-405" title="Go to source code">sort</a>( <span>array <var>$array</var></span>, <span>callable <var>$callback</var></span> )</code>
+
+			<div class="description short">
+				<p>Sort the array using the given callback.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Sort the array using the given callback.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$array</var></dt>
+						<dd></dd>
+						<dt><var>$callback</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="where" id="_where">
+
+			<td class="attributes"><code>
+				 public static
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_where">#</a>
+			<code><a href="source-class-Docolight.Support.Arr.html#407-426" title="Go to source code">where</a>( <span>array <var>$array</var></span>, <span>callable <var>$callback</var></span> )</code>
+
+			<div class="description short">
+				<p>Filter the array using the given callback.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Filter the array using the given callback.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$array</var></dt>
+						<dd></dd>
+						<dt><var>$callback</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="arToArray" id="_arToArray">
+
+			<td class="attributes"><code>
+				 public static
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_arToArray">#</a>
+			<code><a href="source-class-Docolight.Support.Arr.html#428-472" title="Go to source code">arToArray</a>( <span>CActiveRecord <var>$model</var></span>, <span>boolean <var>$withRelation</var> = <span class="php-keyword1">true</span></span>, <span>boolean <var>$store</var> = <span class="php-keyword1">true</span></span> )</code>
+
+			<div class="description short">
+				<p>Convert <code>CActiveRecord</code> implemetation to array, including all of it's relation.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Convert <code>CActiveRecord</code> implemetation to array, including all of it's relation.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$model</var></dt>
+						<dd>Your model implementation.</dd>
+						<dt><var>$withRelation</var></dt>
+						<dd>Choose whether to fetch with your relation too or not.</dd>
+						<dt><var>$store</var></dt>
+						<dd>Store relation name in a temporary container. Useful to prefent infinite loop.</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+					<h4>Link</h4>
+					<div class="list">
+							<a href="http://www.yiiframework.com/doc/api/1.1/CActiveRecord">CActiveRecord is the base class for classes representing relational data.</a><br>
+					</div>
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="group" id="_group">
+
+			<td class="attributes"><code>
+				 public static
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_group">#</a>
+			<code><a href="source-class-Docolight.Support.Arr.html#474-530" title="Go to source code">group</a>( <span>array <var>$array</var></span> )</code>
+
+			<div class="description short">
+				<p>Flip your array, mostly comes from stackable form like this:.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Flip your array, mostly comes from stackable form like this:.</p>
+
+<pre>&lt;input name=<span class="php-quote">&quot;first-name[]&quot;</span> /&gt;
+&lt;input name=<span class="php-quote">&quot;last-name[]&quot;</span> /&gt;
+
+<span class="php-comment">// It will produce $_POST array like this:</span>
+
+[ <span class="php-quote">&quot;first-name&quot;</span> =&gt; [<span class="php-quote">&quot;Ganesha&quot;</span>, <span class="php-quote">&quot;Krisan&quot;</span>, <span class="php-quote">&quot;Farid&quot;</span>], <span class="php-quote">&quot;last-name&quot;</span>  =&gt; [<span class="php-quote">&quot;Muharso&quot;</span>, <span class="php-quote">&quot;Timur&quot;</span>, <span class="php-quote">&quot;Hidayat&quot;</span>] ]
+
+<span class="php-comment">// This method will convert the array into this form:</span>
+
+[
+ [ <span class="php-quote">&quot;first-name&quot;</span> =&gt; <span class="php-quote">&quot;Ganesha&quot;</span>, <span class="php-quote">&quot;last-name&quot;</span> =&gt; <span class="php-quote">&quot;Muharso&quot;</span> ],
+ [ <span class="php-quote">&quot;first-name&quot;</span> =&gt; <span class="php-quote">&quot;Krisan&quot;</span>, <span class="php-quote">&quot;last-name&quot;</span> =&gt; <span class="php-quote">&quot;Timur&quot;</span> ],
+ [ <span class="php-quote">&quot;first-name&quot;</span> =&gt; <span class="php-quote">&quot;Farid&quot;</span>, <span class="php-quote">&quot;last-name&quot;</span> =&gt; <span class="php-quote">&quot;Hidayat&quot;</span> ]
+]
+
+<span class="php-comment">// So you can loop them, and save them to your model via:</span>
+
+<span class="php-keyword1">foreach</span>(Arr::group(<span class="php-var">$personInput</span>) <span class="php-keyword1">as</span> <span class="php-var">$person</span>) { <span class="php-var">$model</span> = <span class="php-keyword1">new</span> User;
+ <span class="php-var">$model</span>-&gt;set(<span class="php-var">$person</span>)-&gt;save();
+}</pre>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$array</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="groupBy" id="_groupBy">
+
+			<td class="attributes"><code>
+				 public static
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_groupBy">#</a>
+			<code><a href="source-class-Docolight.Support.Arr.html#532-551" title="Go to source code">groupBy</a>( <span>array <var>$array</var></span>, <span>Closure <var>$callback</var></span> )</code>
+
+			<div class="description short">
+				<p>Group array based on return from closure.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Group array based on return from closure.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$array</var></dt>
+						<dd></dd>
+						<dt><var>$callback</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="pregOnly" id="_pregOnly">
+
+			<td class="attributes"><code>
+				 public static
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_pregOnly">#</a>
+			<code><a href="source-class-Docolight.Support.Arr.html#553-565" title="Go to source code">pregOnly</a>( <span>string <var>$pattern</var></span>, <span>array <var>$input</var></span>, <span>integer <var>$flags</var> = <span class="php-num">0</span></span> )</code>
+
+			<div class="description short">
+				<p>Get get array identified by a regex for it's index name.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get get array identified by a regex for it's index name.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$pattern</var></dt>
+						<dd></dd>
+						<dt><var>$input</var></dt>
+						<dd></dd>
+						<dt><var>$flags</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="replaceKey" id="_replaceKey">
+
+			<td class="attributes"><code>
+				 public static
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_replaceKey">#</a>
+			<code><a href="source-class-Docolight.Support.Arr.html#567-607" title="Go to source code">replaceKey</a>( <span>array <var>$input</var></span>, <span>string|callable <var>$search</var></span>, <span>string <var>$replacement</var> = <span class="php-quote">''</span></span> )</code>
+
+			<div class="description short">
+				<p>Replace your array keys.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Replace your array keys.</p>
+
+<pre><span class="php-var">$array</span> = [ <span class="php-quote">':type_address'</span>     =&gt; <span class="php-quote">'Foo'</span>, <span class="php-quote">':type_citizenship'</span> =&gt; <span class="php-quote">'Bar'</span>, <span class="php-quote">':type_city'</span>        =&gt; <span class="php-quote">'Baz'</span>, <span class="php-quote">':type_country'</span>     =&gt; <span class="php-quote">'Qux'</span> ]
+
+Arr::replaceKey(<span class="php-var">$array</span>, <span class="php-quote">':type'</span>, <span class="php-quote">'user'</span>)
+
+<span class="php-comment">// Will produce</span>
+
+<span class="php-var">$array</span> = [ <span class="php-quote">'user_address'</span>     =&gt; <span class="php-quote">'Foo'</span>, <span class="php-quote">'user_citizenship'</span> =&gt; <span class="php-quote">'Bar'</span>, <span class="php-quote">'user_city'</span>        =&gt; <span class="php-quote">'Baz'</span>, <span class="php-quote">'user_country'</span>     =&gt; <span class="php-quote">'Qux'</span> ]</pre>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$input</var></dt>
+						<dd></dd>
+						<dt><var>$search</var></dt>
+						<dd></dd>
+						<dt><var>$replacement</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="replaceValue" id="_replaceValue">
+
+			<td class="attributes"><code>
+				 public static
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_replaceValue">#</a>
+			<code><a href="source-class-Docolight.Support.Arr.html#609-649" title="Go to source code">replaceValue</a>( <span>array <var>$input</var></span>, <span>string|callable <var>$search</var></span>, <span>string <var>$replacement</var> = <span class="php-quote">''</span></span> )</code>
+
+			<div class="description short">
+				<p>Replace your array value.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Replace your array value.</p>
+
+<pre><span class="php-var">$header</span> = [ <span class="php-quote">':type_address'</span>, <span class="php-quote">':type_citizenship'</span>, <span class="php-quote">':type_city'</span>, <span class="php-quote">':type_country'</span> ]
+
+Arr::replaceValue(<span class="php-var">$header</span>, <span class="php-quote">':type_'</span>)
+
+<span class="php-comment">// Will produce:</span>
+
+<span class="php-var">$header</span> = [ <span class="php-quote">'address'</span>, <span class="php-quote">'citizenship'</span>, <span class="php-quote">'city'</span>, <span class="php-quote">'country'</span> ]</pre>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$input</var></dt>
+						<dd></dd>
+						<dt><var>$search</var></dt>
+						<dd></dd>
+						<dt><var>$replacement</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="depth" id="_depth">
+
+			<td class="attributes"><code>
+				 public static
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_depth">#</a>
+			<code><a href="source-class-Docolight.Support.Arr.html#651-673" title="Go to source code">depth</a>( <span>array <var>$array</var></span> )</code>
+
+			<div class="description short">
+				<p>Determine your multidimension array depth.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Determine your multidimension array depth.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$array</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="isEmpty" id="_isEmpty">
+
+			<td class="attributes"><code>
+				 public static
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_isEmpty">#</a>
+			<code><a href="source-class-Docolight.Support.Arr.html#675-695" title="Go to source code">isEmpty</a>( <span>array <var>$array</var></span> )</code>
+
+			<div class="description short">
+				<p>Determine if array is empty, works on multidimension array.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Determine if array is empty, works on multidimension array.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$array</var></dt>
+						<dd>Array you want to check whether it's empty or not</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+			</table>
+		</div>
+
+
+		<div class="panel panel-default">
+	        <div class="panel-heading"><h3>Methods used from <a href="class-Docolight.Support.Traits.Macroable.html#methods">Docolight\Support\Traits\Macroable</a></h3></div>
+			<p class="elementList">
+				<code><a href="class-Docolight.Support.Traits.Macroable.html#___call">__call()</a></code>, 
+				<code><a href="class-Docolight.Support.Traits.Macroable.html#___callStatic">__callStatic()</a></code>, 
+				<code><a href="class-Docolight.Support.Traits.Macroable.html#_hasMacro">hasMacro()</a></code>, 
+				<code><a href="class-Docolight.Support.Traits.Macroable.html#_macro">macro()</a></code>
+			</p>
+		</div>
+
+
+
+
+
+
+
+
+
+		<div class="panel panel-default">
+            <div class="panel-heading"><h2>Properties summary</h2></div>
+			<table class="summary table table-bordered table-striped properties" id="properties">
+		<tr data-order="fetchedRelated" id="$fetchedRelated">
+			<td class="attributes"><code>
+				protected static 
+				array
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Docolight.Support.Arr.html#18" title="Go to source code"><var>$fetchedRelated</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$fetchedRelated" class="anchor">#</a>
+					<code><span class="php-keyword1">array</span>()</code>
+				</div>
+			</td>
+		</tr>
+			</table>
+		</div>
+
+
+		<div class="panel panel-default">
+            <div class="panel-heading"><h3>Properties used from <a href="class-Docolight.Support.Traits.Macroable.html#properties">Docolight\Support\Traits\Macroable</a></h3></div>
+			<p class="elementList">
+				<code><a href="class-Docolight.Support.Traits.Macroable.html#$macros"><var>$macros</var></a></code>
+			</p>
+		</div>
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		Doco[L]ight API API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

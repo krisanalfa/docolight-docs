@@ -840,11 +840,11 @@
 </span><span id="637" class="l"><a href="#637">637 </a>    {
 </span><span id="638" class="l"><a href="#638">638 </a>        <span class="php-var">$array</span> = <span class="php-keyword1">array</span>();
 </span><span id="639" class="l"><a href="#639">639 </a>
-</span><span id="640" class="l"><a href="#640">640 </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$input</span> <span class="php-keyword1">as</span> <span class="php-var">$value</span>) {
+</span><span id="640" class="l"><a href="#640">640 </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$input</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$value</span>) {
 </span><span id="641" class="l"><a href="#641">641 </a>            <span class="php-keyword1">if</span> (<span class="php-keyword2">is_callable</span>(<span class="php-var">$search</span>)) {
-</span><span id="642" class="l"><a href="#642">642 </a>                <span class="php-var">$array</span>[] = <span class="php-var">$search</span>(<span class="php-var">$value</span>);
+</span><span id="642" class="l"><a href="#642">642 </a>                <span class="php-var">$array</span>[<span class="php-var">$key</span>] = <span class="php-var">$search</span>(<span class="php-var">$value</span>);
 </span><span id="643" class="l"><a href="#643">643 </a>            } <span class="php-keyword1">else</span> {
-</span><span id="644" class="l"><a href="#644">644 </a>                <span class="php-var">$array</span>[] = <span class="php-keyword2">str_replace</span>(<span class="php-var">$search</span>, <span class="php-var">$replacement</span>, <span class="php-var">$value</span>);
+</span><span id="644" class="l"><a href="#644">644 </a>                <span class="php-var">$array</span>[<span class="php-var">$key</span>] = <span class="php-keyword2">str_replace</span>(<span class="php-var">$search</span>, <span class="php-var">$replacement</span>, <span class="php-var">$value</span>);
 </span><span id="645" class="l"><a href="#645">645 </a>            }
 </span><span id="646" class="l"><a href="#646">646 </a>        }
 </span><span id="647" class="l"><a href="#647">647 </a>

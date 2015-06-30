@@ -1369,31 +1369,35 @@
 </span></span><span id="1166" class="l"><a href="#1166">1166 </a><span class="php-comment">     */</span>
 </span><span id="1167" class="l"><a href="#1167">1167 </a>    <span class="php-keyword1">function</span> response(<span class="php-var">$driver</span> = <span class="php-quote">'base'</span>, <span class="php-var">$status</span> = <span class="php-num">200</span>, <span class="php-var">$body</span> = <span class="php-quote">''</span>, <span class="php-keyword1">array</span> <span class="php-var">$headers</span> = <span class="php-keyword1">array</span>(), <span class="php-var">$immediatelySend</span> = <span class="php-keyword1">false</span>)
 </span><span id="1168" class="l"><a href="#1168">1168 </a>    {
-</span><span id="1169" class="l"><a href="#1169">1169 </a>        <span class="php-var">$numberOfArguments</span> = <span class="php-keyword2">func_num_args</span>();
-</span><span id="1170" class="l"><a href="#1170">1170 </a>
-</span><span id="1171" class="l"><a href="#1171">1171 </a>        <span class="php-var">$response</span> = container(<span class="php-quote">'response'</span>);
+</span><span id="1169" class="l"><a href="#1169">1169 </a>        <span class="php-keyword1">if</span> (! container()-&gt;bound(<span class="php-quote">'Docolight\Http\ResponseFactory'</span>)) {
+</span><span id="1170" class="l"><a href="#1170">1170 </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> RuntimeException(<span class="php-quote">'Class [Docolight\Http\ResponseFactory] has not been bound yet.'</span>);
+</span><span id="1171" class="l"><a href="#1171">1171 </a>        }
 </span><span id="1172" class="l"><a href="#1172">1172 </a>
-</span><span id="1173" class="l"><a href="#1173">1173 </a>        <span class="php-keyword1">if</span> (<span class="php-var">$numberOfArguments</span> === <span class="php-num">0</span>) {
-</span><span id="1174" class="l"><a href="#1174">1174 </a>            <span class="php-keyword1">return</span> <span class="php-var">$response</span>;
-</span><span id="1175" class="l"><a href="#1175">1175 </a>        } <span class="php-keyword1">elseif</span> (<span class="php-var">$numberOfArguments</span> === <span class="php-num">1</span>) {
-</span><span id="1176" class="l"><a href="#1176">1176 </a>            <span class="php-keyword1">return</span> <span class="php-var">$response</span>-&gt;produce(((!<span class="php-var">$driver</span>) ? <span class="php-quote">'base'</span> : <span class="php-var">$driver</span>));
-</span><span id="1177" class="l"><a href="#1177">1177 </a>        }
-</span><span id="1178" class="l"><a href="#1178">1178 </a>
-</span><span id="1179" class="l"><a href="#1179">1179 </a>        <span class="php-var">$response</span> = <span class="php-var">$response</span>-&gt;produce(<span class="php-var">$driver</span>);
-</span><span id="1180" class="l"><a href="#1180">1180 </a>
-</span><span id="1181" class="l"><a href="#1181">1181 </a>        <span class="php-var">$response</span>-&gt;setStatus(<span class="php-var">$status</span>);
+</span><span id="1173" class="l"><a href="#1173">1173 </a>        <span class="php-var">$numberOfArguments</span> = <span class="php-keyword2">func_num_args</span>();
+</span><span id="1174" class="l"><a href="#1174">1174 </a>
+</span><span id="1175" class="l"><a href="#1175">1175 </a>        <span class="php-var">$response</span> = container(<span class="php-quote">'response'</span>);
+</span><span id="1176" class="l"><a href="#1176">1176 </a>
+</span><span id="1177" class="l"><a href="#1177">1177 </a>        <span class="php-keyword1">if</span> (<span class="php-var">$numberOfArguments</span> === <span class="php-num">0</span>) {
+</span><span id="1178" class="l"><a href="#1178">1178 </a>            <span class="php-keyword1">return</span> <span class="php-var">$response</span>;
+</span><span id="1179" class="l"><a href="#1179">1179 </a>        } <span class="php-keyword1">elseif</span> (<span class="php-var">$numberOfArguments</span> === <span class="php-num">1</span>) {
+</span><span id="1180" class="l"><a href="#1180">1180 </a>            <span class="php-keyword1">return</span> <span class="php-var">$response</span>-&gt;produce(((!<span class="php-var">$driver</span>) ? <span class="php-quote">'base'</span> : <span class="php-var">$driver</span>));
+</span><span id="1181" class="l"><a href="#1181">1181 </a>        }
 </span><span id="1182" class="l"><a href="#1182">1182 </a>
-</span><span id="1183" class="l"><a href="#1183">1183 </a>        <span class="php-var">$response</span>-&gt;setBody(<span class="php-var">$body</span>);
+</span><span id="1183" class="l"><a href="#1183">1183 </a>        <span class="php-var">$response</span> = <span class="php-var">$response</span>-&gt;produce(<span class="php-var">$driver</span>);
 </span><span id="1184" class="l"><a href="#1184">1184 </a>
-</span><span id="1185" class="l"><a href="#1185">1185 </a>        <span class="php-keyword2">array_walk</span>(<span class="php-var">$headers</span>, <span class="php-keyword1">function</span> (<span class="php-var">$value</span>, <span class="php-var">$key</span>) <span class="php-keyword1">use</span> (<span class="php-var">$response</span>) {
-</span><span id="1186" class="l"><a href="#1186">1186 </a>            <span class="php-var">$response</span>-&gt;headers-&gt;set(<span class="php-var">$key</span>, <span class="php-var">$value</span>);
-</span><span id="1187" class="l"><a href="#1187">1187 </a>        });
+</span><span id="1185" class="l"><a href="#1185">1185 </a>        <span class="php-var">$response</span>-&gt;setStatus(<span class="php-var">$status</span>);
+</span><span id="1186" class="l"><a href="#1186">1186 </a>
+</span><span id="1187" class="l"><a href="#1187">1187 </a>        <span class="php-var">$response</span>-&gt;setBody(<span class="php-var">$body</span>);
 </span><span id="1188" class="l"><a href="#1188">1188 </a>
-</span><span id="1189" class="l"><a href="#1189">1189 </a>        <span class="php-keyword1">return</span> (<span class="php-var">$immediatelySend</span>) ? <span class="php-var">$response</span>-&gt;send()
-</span><span id="1190" class="l"><a href="#1190">1190 </a>                                  : <span class="php-var">$response</span>;
-</span><span id="1191" class="l"><a href="#1191">1191 </a>    }
-</span><span id="1192" class="l"><a href="#1192">1192 </a>}
-</span><span id="1193" class="l"><a href="#1193">1193 </a></span></code></pre>
+</span><span id="1189" class="l"><a href="#1189">1189 </a>        <span class="php-keyword2">array_walk</span>(<span class="php-var">$headers</span>, <span class="php-keyword1">function</span> (<span class="php-var">$value</span>, <span class="php-var">$key</span>) <span class="php-keyword1">use</span> (<span class="php-var">$response</span>) {
+</span><span id="1190" class="l"><a href="#1190">1190 </a>            <span class="php-var">$response</span>-&gt;headers-&gt;set(<span class="php-var">$key</span>, <span class="php-var">$value</span>);
+</span><span id="1191" class="l"><a href="#1191">1191 </a>        });
+</span><span id="1192" class="l"><a href="#1192">1192 </a>
+</span><span id="1193" class="l"><a href="#1193">1193 </a>        <span class="php-keyword1">return</span> (<span class="php-var">$immediatelySend</span>) ? <span class="php-var">$response</span>-&gt;send()
+</span><span id="1194" class="l"><a href="#1194">1194 </a>                                  : <span class="php-var">$response</span>;
+</span><span id="1195" class="l"><a href="#1195">1195 </a>    }
+</span><span id="1196" class="l"><a href="#1196">1196 </a>}
+</span><span id="1197" class="l"><a href="#1197">1197 </a></span></code></pre>
 	</div>
 
 	<div id="footer">

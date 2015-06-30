@@ -125,7 +125,52 @@
 
 
 	<div class="description">
-	<p>Fluent collection.</p>
+	<p>Collection contains a lot of handy methods that will make your work so much easier.</p>
+
+<pre><span class="php-var">$results</span> = <span class="php-keyword2">json_decode</span>(<span class="php-var">$github</span>-&gt;request(<span class="php-quote">'users/krisanalfa/repos'</span>));
+
+<span class="php-comment">// Wrap them in a collection.</span>
+<span class="php-var">$collection</span> = <span class="php-keyword1">new</span> \Docolight\Support\Collection(<span class="php-var">$results</span>);
+
+<span class="php-comment">// Sort descending by stars.</span>
+<span class="php-var">$collection</span>-&gt;sortByDesc(<span class="php-quote">'stargazers_count'</span>);
+
+<span class="php-comment">// Get top 5 repositories.</span>
+<span class="php-var">$topFiveRepo</span> = <span class="php-var">$leaderboard</span>-&gt;take(<span class="php-num">5</span>);
+
+<span class="php-comment">// This method will return every value of a given key. The following example returns every user's email address, indexed by their user id.</span>
+<span class="php-var">$collection</span>-&gt;lists(<span class="php-quote">'email'</span>, <span class="php-quote">'id'</span>);
+
+<span class="php-comment">// This will run a filter function over each of the items. If the callback returns true, it will be present in the resulting collection.</span>
+<span class="php-var">$collection</span>-&gt;filter(<span class="php-keyword1">function</span>(<span class="php-var">$user</span>) { <span class="php-keyword1">if</span> (<span class="php-var">$user</span>-&gt;isNearby(<span class="php-var">$me</span>)) <span class="php-keyword1">return</span> <span class="php-keyword1">true</span>; });
+
+<span class="php-comment">// Another great thing about collections is that they can easily be converted to json.</span>
+<span class="php-keyword1">echo</span> <span class="php-var">$collection</span>-&gt;toJson();
+
+<span class="php-comment">// When you cast a collection to a string, it will actually call the toJson method</span>
+<span class="php-keyword1">echo</span> <span class="php-var">$collection</span>;
+
+<span class="php-comment">// Something that's quite obvious is the count method, which just returns you how many items there are in the collection.</span>
+<span class="php-var">$collection</span>-&gt;<span class="php-keyword2">count</span>();
+
+<span class="php-comment">// Works just like the query, takes the first or last number of items.</span>
+<span class="php-var">$fiveFirst</span> = <span class="php-var">$collection</span>-&gt;take(<span class="php-num">5</span>);
+<span class="php-var">$fiveLast</span> = <span class="php-var">$collection</span>-&gt;take(-<span class="php-num">5</span>);
+
+<span class="php-comment">// The sum method will return the sum based on the key or a callback function:</span>
+<span class="php-var">$collection</span>-&gt;sum(<span class="php-quote">'points'</span>);
+
+<span class="php-comment">// You can use sortBy or sortByDesc to sort the collection based on a key or a callback function:</span>
+<span class="php-var">$collection</span>-&gt;sortBy(<span class="php-quote">'name'</span>);
+
+<span class="php-comment">// Sort descending by rating.</span>
+<span class="php-var">$collection</span>-&gt;sortByDesc(<span class="php-keyword1">function</span>(<span class="php-var">$item</span>) { <span class="php-keyword1">return</span> <span class="php-var">$item</span>-&gt;rating; });
+
+<span class="php-comment">// You can also filter your items</span>
+<span class="php-var">$collection</span>-&gt;filter(<span class="php-keyword1">function</span> (<span class="php-var">$item</span>) { <span class="php-var">$item</span>-&gt;foo === <span class="php-keyword1">true</span>; }); <span class="php-comment">// will return the collection with foo === true</span>
+
+<span class="php-comment">// You can paginate the collection too!</span>
+<span class="php-var">$collection</span>-&gt;forPage(<span class="php-num">1</span>, <span class="php-num">20</span>); <span class="php-comment">// For page 1, each page has 20 items in it</span></pre>
 	</div>
 
 	<dl class="tree well">
@@ -161,7 +206,7 @@
 
 				<b>Author:</b>
 				Krisan Alfa Timur <a href="&#109;&#97;&#105;&#x6c;&#x74;o&#58;&#107;&#114;&#x69;&#x73;a&#110;&#97;&#108;&#x66;&#x61;&#64;&#100;&#111;&#x63;&#x6f;&#x74;e&#108;&#46;&#x63;&#x6f;&#x2e;&#105;&#100;">&#107;&#114;&#x69;&#x73;a&#110;&#97;&#108;&#x66;&#x61;&#64;&#100;&#111;&#x63;&#x6f;&#x74;e&#108;&#46;&#x63;&#x6f;&#x2e;&#105;&#100;</a><br>
-			<b>Located at</b> <a href="source-class-Docolight.Support.Collection.html#14-1092" title="Go to source code">Docolight/Support/Collection.php</a>
+			<b>Located at</b> <a href="source-class-Docolight.Support.Collection.html#14-1139" title="Go to source code">Docolight/Support/Collection.php</a>
 		<br>
 	</div>
 
@@ -181,7 +226,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#___construct">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#35-43" title="Go to source code">__construct</a>( <span>mixed <var>$items</var> = []</span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#82-90" title="Go to source code">__construct</a>( <span>mixed <var>$items</var> = []</span> )</code>
 
 			<div class="description short">
 				<p>Create a new collection.</p>
@@ -215,7 +260,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_make">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#45-55" title="Go to source code">make</a>( <span>mixed <var>$items</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#92-102" title="Go to source code">make</a>( <span>mixed <var>$items</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Create a new collection instance if the value isn't one already.</p>
@@ -253,7 +298,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_fill">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#57-65" title="Go to source code">fill</a>( <span>mixed <var>$attributes</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#104-112" title="Go to source code">fill</a>( <span>mixed <var>$attributes</var></span> )</code>
 
 			<div class="description short">
 				<p>Bulk insert attributes.</p>
@@ -289,7 +334,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_all">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#67-75" title="Go to source code">all</a>( )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#114-122" title="Go to source code">all</a>( )</code>
 
 			<div class="description short">
 				<p>Get all of the items in the collection.</p>
@@ -322,7 +367,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_collapse">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#77-85" title="Go to source code">collapse</a>( )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#124-132" title="Go to source code">collapse</a>( )</code>
 
 			<div class="description short">
 				<p>Collapse the collection of items into a single array.</p>
@@ -355,7 +400,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_contains">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#87-108" title="Go to source code">contains</a>( <span>mixed <var>$key</var></span>, <span>mixed <var>$value</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#134-155" title="Go to source code">contains</a>( <span>mixed <var>$key</var></span>, <span>mixed <var>$value</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Determine if an item exists in the collection.</p>
@@ -395,7 +440,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_diff">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#110-120" title="Go to source code">diff</a>( <span>mixed <var>$items</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#157-167" title="Go to source code">diff</a>( <span>mixed <var>$items</var></span> )</code>
 
 			<div class="description short">
 				<p>Diff the collection with the given items.</p>
@@ -433,7 +478,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_each">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#122-138" title="Go to source code">each</a>( <span>callable <var>$callback</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#169-185" title="Go to source code">each</a>( <span>callable <var>$callback</var></span> )</code>
 
 			<div class="description short">
 				<p>Execute a callback over each item.</p>
@@ -471,7 +516,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_fetch">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#140-152" title="Go to source code">fetch</a>( <span>string <var>$key</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#187-199" title="Go to source code">fetch</a>( <span>string <var>$key</var></span> )</code>
 
 			<div class="description short">
 				<p>Fetch a nested element of the collection.</p>
@@ -513,7 +558,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_filter">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#154-168" title="Go to source code">filter</a>( <span>callable <var>$callback</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#201-215" title="Go to source code">filter</a>( <span>callable <var>$callback</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Run a filter over each of the items.</p>
@@ -551,7 +596,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_where">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#170-185" title="Go to source code">where</a>( <span>string <var>$key</var></span>, <span>mixed <var>$value</var></span>, <span>boolean <var>$strict</var> = <span class="php-keyword1">true</span></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#217-232" title="Go to source code">where</a>( <span>string <var>$key</var></span>, <span>mixed <var>$value</var></span>, <span>boolean <var>$strict</var> = <span class="php-keyword1">true</span></span> )</code>
 
 			<div class="description short">
 				<p>Filter items by the given key value pair.</p>
@@ -593,7 +638,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_whereLoose">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#187-198" title="Go to source code">whereLoose</a>( <span>string <var>$key</var></span>, <span>mixed <var>$value</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#234-245" title="Go to source code">whereLoose</a>( <span>string <var>$key</var></span>, <span>mixed <var>$value</var></span> )</code>
 
 			<div class="description short">
 				<p>Filter items by the given key value pair using loose comparison.</p>
@@ -633,7 +678,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_first">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#200-215" title="Go to source code">first</a>( <span>callable <var>$callback</var> = <span class="php-keyword1">null</span></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#247-262" title="Go to source code">first</a>( <span>callable <var>$callback</var> = <span class="php-keyword1">null</span></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Get the first item from the collection.</p>
@@ -673,7 +718,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_flatten">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#217-225" title="Go to source code">flatten</a>( )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#264-272" title="Go to source code">flatten</a>( )</code>
 
 			<div class="description short">
 				<p>Get a flattened array of the items in the collection.</p>
@@ -706,7 +751,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_flip">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#227-235" title="Go to source code">flip</a>( )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#274-282" title="Go to source code">flip</a>( )</code>
 
 			<div class="description short">
 				<p>Flip the items in the collection.</p>
@@ -739,7 +784,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_forget">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#237-249" title="Go to source code">forget</a>( <span>mixed <var>$key</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#284-296" title="Go to source code">forget</a>( <span>mixed <var>$key</var></span> )</code>
 
 			<div class="description short">
 				<p>Remove an item from the collection by key.</p>
@@ -777,7 +822,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_get">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#251-266" title="Go to source code">get</a>( <span>mixed <var>$key</var></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#298-313" title="Go to source code">get</a>( <span>mixed <var>$key</var></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Get an item from the collection by key.</p>
@@ -817,7 +862,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_groupBy">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#268-293" title="Go to source code">groupBy</a>( <span>callable|string <var>$groupBy</var></span>, <span>boolean <var>$preserveKeys</var> = <span class="php-keyword1">false</span></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#315-340" title="Go to source code">groupBy</a>( <span>callable|string <var>$groupBy</var></span>, <span>boolean <var>$preserveKeys</var> = <span class="php-keyword1">false</span></span> )</code>
 
 			<div class="description short">
 				<p>Group an associative array by a field or using a callback.</p>
@@ -857,7 +902,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_keyBy">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#295-313" title="Go to source code">keyBy</a>( <span>callable|string <var>$keyBy</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#342-360" title="Go to source code">keyBy</a>( <span>callable|string <var>$keyBy</var></span> )</code>
 
 			<div class="description short">
 				<p>Key an associative array by a field or using a callback.</p>
@@ -895,7 +940,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_has">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#315-325" title="Go to source code">has</a>( <span>mixed <var>$key</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#362-372" title="Go to source code">has</a>( <span>mixed <var>$key</var></span> )</code>
 
 			<div class="description short">
 				<p>Determine if an item exists in the collection by key.</p>
@@ -933,7 +978,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_implode">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#327-344" title="Go to source code">implode</a>( <span>string <var>$value</var></span>, <span>string <var>$glue</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#374-391" title="Go to source code">implode</a>( <span>string <var>$value</var></span>, <span>string <var>$glue</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Concatenate values of a given key as a string.</p>
@@ -973,7 +1018,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_intersect">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#346-356" title="Go to source code">intersect</a>( <span>mixed <var>$items</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#393-403" title="Go to source code">intersect</a>( <span>mixed <var>$items</var></span> )</code>
 
 			<div class="description short">
 				<p>Intersect the collection with the given items.</p>
@@ -1011,7 +1056,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_isEmpty">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#358-366" title="Go to source code">isEmpty</a>( )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#405-413" title="Go to source code">isEmpty</a>( )</code>
 
 			<div class="description short">
 				<p>Determine if the collection is empty or not.</p>
@@ -1044,7 +1089,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_useAsCallable">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#368-378" title="Go to source code">useAsCallable</a>( <span>mixed <var>$value</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#415-425" title="Go to source code">useAsCallable</a>( <span>mixed <var>$value</var></span> )</code>
 
 			<div class="description short">
 				<p>Determine if the given value is callable, but not a string.</p>
@@ -1082,7 +1127,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_keys">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#380-388" title="Go to source code">keys</a>( )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#427-435" title="Go to source code">keys</a>( )</code>
 
 			<div class="description short">
 				<p>Get the keys of the collection items.</p>
@@ -1115,7 +1160,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_last">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#390-405" title="Go to source code">last</a>( <span>callable <var>$callback</var> = <span class="php-keyword1">null</span></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#437-452" title="Go to source code">last</a>( <span>callable <var>$callback</var> = <span class="php-keyword1">null</span></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Get the last item from the collection.</p>
@@ -1155,7 +1200,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_pluck">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#407-418" title="Go to source code">pluck</a>( <span>string <var>$value</var></span>, <span>string <var>$key</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#454-465" title="Go to source code">pluck</a>( <span>string <var>$value</var></span>, <span>string <var>$key</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Get an array with the values of a given key.</p>
@@ -1195,7 +1240,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_lists">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#420-431" title="Go to source code">lists</a>( <span>string <var>$value</var></span>, <span>string <var>$key</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#467-478" title="Go to source code">lists</a>( <span>string <var>$value</var></span>, <span>string <var>$key</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Alias for the "pluck" method.</p>
@@ -1235,7 +1280,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_map">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#433-447" title="Go to source code">map</a>( <span>callable <var>$callback</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#480-494" title="Go to source code">map</a>( <span>callable <var>$callback</var></span> )</code>
 
 			<div class="description short">
 				<p>Run a map over each of the items.</p>
@@ -1273,7 +1318,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_merge">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#449-459" title="Go to source code">merge</a>( <span>mixed <var>$items</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#496-506" title="Go to source code">merge</a>( <span>mixed <var>$items</var></span> )</code>
 
 			<div class="description short">
 				<p>Merge the collection with the given items.</p>
@@ -1311,7 +1356,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_forPage">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#461-472" title="Go to source code">forPage</a>( <span>integer <var>$page</var></span>, <span>integer <var>$perPage</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#508-519" title="Go to source code">forPage</a>( <span>integer <var>$page</var></span>, <span>integer <var>$perPage</var></span> )</code>
 
 			<div class="description short">
 				<p>"Paginate" the collection by slicing it into a smaller collection.</p>
@@ -1351,7 +1396,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_pop">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#474-482" title="Go to source code">pop</a>( )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#521-529" title="Go to source code">pop</a>( )</code>
 
 			<div class="description short">
 				<p>Get and remove the last item from the collection.</p>
@@ -1384,7 +1429,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_prepend">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#484-496" title="Go to source code">prepend</a>( <span>mixed <var>$value</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#531-543" title="Go to source code">prepend</a>( <span>mixed <var>$value</var></span> )</code>
 
 			<div class="description short">
 				<p>Push an item onto the beginning of the collection.</p>
@@ -1422,7 +1467,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_push">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#498-510" title="Go to source code">push</a>( <span>mixed <var>$value</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#545-557" title="Go to source code">push</a>( <span>mixed <var>$value</var></span> )</code>
 
 			<div class="description short">
 				<p>Push an item onto the end of the collection.</p>
@@ -1460,7 +1505,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_pull">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#512-523" title="Go to source code">pull</a>( <span>mixed <var>$key</var></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#559-570" title="Go to source code">pull</a>( <span>mixed <var>$key</var></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Pulls an item from the collection.</p>
@@ -1500,7 +1545,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_put">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#525-538" title="Go to source code">put</a>( <span>mixed <var>$key</var></span>, <span>mixed <var>$value</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#572-585" title="Go to source code">put</a>( <span>mixed <var>$key</var></span>, <span>mixed <var>$value</var></span> )</code>
 
 			<div class="description short">
 				<p>Put an item in the collection by key.</p>
@@ -1540,7 +1585,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_random">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#540-562" title="Go to source code">random</a>( <span>integer <var>$amount</var> = <span class="php-num">1</span></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#587-609" title="Go to source code">random</a>( <span>integer <var>$amount</var> = <span class="php-num">1</span></span> )</code>
 
 			<div class="description short">
 				<p>Get one or more items randomly from the collection.</p>
@@ -1582,7 +1627,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_reduce">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#564-575" title="Go to source code">reduce</a>( <span>callable <var>$callback</var></span>, <span>mixed <var>$initial</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#611-622" title="Go to source code">reduce</a>( <span>callable <var>$callback</var></span>, <span>mixed <var>$initial</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Reduce the collection to a single value.</p>
@@ -1622,7 +1667,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_reject">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#577-595" title="Go to source code">reject</a>( <span>callable|mixed <var>$callback</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#624-642" title="Go to source code">reject</a>( <span>callable|mixed <var>$callback</var></span> )</code>
 
 			<div class="description short">
 				<p>Create a collection of all elements that do not pass a given truth test.</p>
@@ -1660,7 +1705,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_reverse">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#597-605" title="Go to source code">reverse</a>( )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#644-652" title="Go to source code">reverse</a>( )</code>
 
 			<div class="description short">
 				<p>Reverse items order.</p>
@@ -1693,7 +1738,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_search">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#607-628" title="Go to source code">search</a>( <span>mixed <var>$value</var></span>, <span>boolean <var>$strict</var> = <span class="php-keyword1">false</span></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#654-675" title="Go to source code">search</a>( <span>mixed <var>$value</var></span>, <span>boolean <var>$strict</var> = <span class="php-keyword1">false</span></span> )</code>
 
 			<div class="description short">
 				<p>Search the collection for a given value and return the corresponding key if successful.</p>
@@ -1733,7 +1778,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_shift">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#630-638" title="Go to source code">shift</a>( )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#677-685" title="Go to source code">shift</a>( )</code>
 
 			<div class="description short">
 				<p>Get and remove the first item from the collection.</p>
@@ -1766,7 +1811,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_shuffle">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#640-652" title="Go to source code">shuffle</a>( )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#687-699" title="Go to source code">shuffle</a>( )</code>
 
 			<div class="description short">
 				<p>Shuffle the items in the collection.</p>
@@ -1799,7 +1844,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_slice">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#654-666" title="Go to source code">slice</a>( <span>integer <var>$offset</var></span>, <span>integer <var>$length</var> = <span class="php-keyword1">null</span></span>, <span>boolean <var>$preserveKeys</var> = <span class="php-keyword1">false</span></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#701-713" title="Go to source code">slice</a>( <span>integer <var>$offset</var></span>, <span>integer <var>$length</var> = <span class="php-keyword1">null</span></span>, <span>boolean <var>$preserveKeys</var> = <span class="php-keyword1">false</span></span> )</code>
 
 			<div class="description short">
 				<p>Slice the underlying collection array.</p>
@@ -1841,7 +1886,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_chunk">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#668-685" title="Go to source code">chunk</a>( <span>integer <var>$size</var></span>, <span>boolean <var>$preserveKeys</var> = <span class="php-keyword1">false</span></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#715-732" title="Go to source code">chunk</a>( <span>integer <var>$size</var></span>, <span>boolean <var>$preserveKeys</var> = <span class="php-keyword1">false</span></span> )</code>
 
 			<div class="description short">
 				<p>Chunk the underlying collection array.</p>
@@ -1881,7 +1926,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_sort">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#687-701" title="Go to source code">sort</a>( <span>callable <var>$callback</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#734-748" title="Go to source code">sort</a>( <span>callable <var>$callback</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Sort through each item with a callback.</p>
@@ -1919,7 +1964,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_sortBy">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#703-736" title="Go to source code">sortBy</a>( <span>callable|string <var>$callback</var></span>, <span>integer <var>$options</var> = SORT_REGULAR</span>, <span>boolean <var>$descending</var> = <span class="php-keyword1">false</span></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#750-783" title="Go to source code">sortBy</a>( <span>callable|string <var>$callback</var></span>, <span>integer <var>$options</var> = SORT_REGULAR</span>, <span>boolean <var>$descending</var> = <span class="php-keyword1">false</span></span> )</code>
 
 			<div class="description short">
 				<p>Sort the collection using the given callback.</p>
@@ -1961,7 +2006,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_sortByDesc">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#738-749" title="Go to source code">sortByDesc</a>( <span>callable|string <var>$callback</var></span>, <span>integer <var>$options</var> = SORT_REGULAR</span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#785-796" title="Go to source code">sortByDesc</a>( <span>callable|string <var>$callback</var></span>, <span>integer <var>$options</var> = SORT_REGULAR</span> )</code>
 
 			<div class="description short">
 				<p>Sort the collection in descending order using the given callback.</p>
@@ -2001,7 +2046,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_splice">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#751-767" title="Go to source code">splice</a>( <span>integer <var>$offset</var></span>, <span>integer|null <var>$length</var> = <span class="php-keyword1">null</span></span>, <span>mixed <var>$replacement</var> = []</span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#798-814" title="Go to source code">splice</a>( <span>integer <var>$offset</var></span>, <span>integer|null <var>$length</var> = <span class="php-keyword1">null</span></span>, <span>mixed <var>$replacement</var> = []</span> )</code>
 
 			<div class="description short">
 				<p>Splice a portion of the underlying collection array.</p>
@@ -2043,7 +2088,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_sum">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#769-787" title="Go to source code">sum</a>( <span>callable|string|null <var>$callback</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#816-834" title="Go to source code">sum</a>( <span>callable|string|null <var>$callback</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Get the sum of the given values.</p>
@@ -2081,7 +2126,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_take">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#789-803" title="Go to source code">take</a>( <span>integer <var>$limit</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#836-850" title="Go to source code">take</a>( <span>integer <var>$limit</var></span> )</code>
 
 			<div class="description short">
 				<p>Take the first or last {$limit} items.</p>
@@ -2119,7 +2164,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_transform">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#805-817" title="Go to source code">transform</a>( <span>callable <var>$callback</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#852-864" title="Go to source code">transform</a>( <span>callable <var>$callback</var></span> )</code>
 
 			<div class="description short">
 				<p>Transform each item in the collection using a callback.</p>
@@ -2157,7 +2202,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_unique">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#819-843" title="Go to source code">unique</a>( <span>string|callable|null <var>$key</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#866-890" title="Go to source code">unique</a>( <span>string|callable|null <var>$key</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Return only unique items from the collection array.</p>
@@ -2195,7 +2240,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_values">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#845-853" title="Go to source code">values</a>( )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#892-900" title="Go to source code">values</a>( )</code>
 
 			<div class="description short">
 				<p>Reset the keys on the underlying array.</p>
@@ -2228,7 +2273,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_valueRetriever">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#855-871" title="Go to source code">valueRetriever</a>( <span>string <var>$value</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#902-918" title="Go to source code">valueRetriever</a>( <span>string <var>$value</var></span> )</code>
 
 			<div class="description short">
 				<p>Get a value retrieving callback.</p>
@@ -2266,7 +2311,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_zip">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#873-894" title="Go to source code">zip</a>( <span>mixed <var>$items</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#920-941" title="Go to source code">zip</a>( <span>mixed <var>$items</var></span> )</code>
 
 			<div class="description short">
 				<p>Zip the collection together with one or more arrays.</p>
@@ -2306,7 +2351,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_toArray">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#896-906" title="Go to source code">toArray</a>( )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#943-953" title="Go to source code">toArray</a>( )</code>
 
 			<div class="description short">
 				<p>Get the collection of items as a plain array.</p>
@@ -2339,7 +2384,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_castToArray">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#908-914" title="Go to source code">castToArray</a>( )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#955-961" title="Go to source code">castToArray</a>( )</code>
 
 			<div class="description short">
 				<p>Convert implementation to an array.</p>
@@ -2374,7 +2419,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_jsonSerialize">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#916-924" title="Go to source code">jsonSerialize</a>( )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#963-971" title="Go to source code">jsonSerialize</a>( )</code>
 
 			<div class="description short">
 				<p>Convert the object into something JSON serializable.</p>
@@ -2409,7 +2454,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_toJson">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#926-936" title="Go to source code">toJson</a>( <span>integer <var>$options</var> = <span class="php-num">0</span></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#973-983" title="Go to source code">toJson</a>( <span>integer <var>$options</var> = <span class="php-num">0</span></span> )</code>
 
 			<div class="description short">
 				<p>Get the collection of items as JSON.</p>
@@ -2447,7 +2492,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getIterator">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#938-946" title="Go to source code">getIterator</a>( )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#985-993" title="Go to source code">getIterator</a>( )</code>
 
 			<div class="description short">
 				<p>Get an iterator for the items.</p>
@@ -2482,7 +2527,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getCachingIterator">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#948-958" title="Go to source code">getCachingIterator</a>( <span>integer <var>$flags</var> = Docolight\Support\CachingIterator::CALL_TOSTRING</span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#995-1005" title="Go to source code">getCachingIterator</a>( <span>integer <var>$flags</var> = Docolight\Support\CachingIterator::CALL_TOSTRING</span> )</code>
 
 			<div class="description short">
 				<p>Get a CachingIterator instance.</p>
@@ -2520,7 +2565,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_count">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#960-968" title="Go to source code">count</a>( )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#1007-1015" title="Go to source code">count</a>( )</code>
 
 			<div class="description short">
 				<p>Count the number of items in the collection.</p>
@@ -2555,7 +2600,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_offsetExists">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#970-980" title="Go to source code">offsetExists</a>( <span>mixed <var>$key</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#1017-1027" title="Go to source code">offsetExists</a>( <span>mixed <var>$key</var></span> )</code>
 
 			<div class="description short">
 				<p>Determine if an item exists at an offset.</p>
@@ -2595,7 +2640,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_offsetGet">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#982-992" title="Go to source code">offsetGet</a>( <span>mixed <var>$key</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#1029-1039" title="Go to source code">offsetGet</a>( <span>mixed <var>$key</var></span> )</code>
 
 			<div class="description short">
 				<p>Get an item at a given offset.</p>
@@ -2635,7 +2680,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_offsetSet">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#994-1007" title="Go to source code">offsetSet</a>( <span>mixed <var>$key</var></span>, <span>mixed <var>$value</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#1041-1054" title="Go to source code">offsetSet</a>( <span>mixed <var>$key</var></span>, <span>mixed <var>$value</var></span> )</code>
 
 			<div class="description short">
 				<p>Set the item at a given offset.</p>
@@ -2673,7 +2718,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_offsetUnset">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#1009-1017" title="Go to source code">offsetUnset</a>( <span>string <var>$key</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#1056-1064" title="Go to source code">offsetUnset</a>( <span>string <var>$key</var></span> )</code>
 
 			<div class="description short">
 				<p>Unset the item at a given offset.</p>
@@ -2709,7 +2754,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#___toString">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#1019-1027" title="Go to source code">__toString</a>( )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#1066-1074" title="Go to source code">__toString</a>( )</code>
 
 			<div class="description short">
 				<p>Convert the collection to its string representation.</p>
@@ -2742,7 +2787,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_hasErrors">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#1029-1037" title="Go to source code">hasErrors</a>( )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#1076-1084" title="Go to source code">hasErrors</a>( )</code>
 
 			<div class="description short">
 				<p>Hack method to render CGridView.</p>
@@ -2775,7 +2820,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getValidators">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#1039-1049" title="Go to source code">getValidators</a>( <span>string <var>$attribute</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#1086-1096" title="Go to source code">getValidators</a>( <span>string <var>$attribute</var></span> )</code>
 
 			<div class="description short">
 				<p>Hack method to render CGridView.</p>
@@ -2813,7 +2858,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_setFilters">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#1051-1059" title="Go to source code">setFilters</a>( <span>array <var>$filters</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#1098-1106" title="Go to source code">setFilters</a>( <span>array <var>$filters</var></span> )</code>
 
 			<div class="description short">
 				<p>Set current filter to this collection.</p>
@@ -2847,7 +2892,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getArrayableItems">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#1061-1077" title="Go to source code">getArrayableItems</a>( <span>mixed <var>$items</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#1108-1124" title="Go to source code">getArrayableItems</a>( <span>mixed <var>$items</var></span> )</code>
 
 			<div class="description short">
 				<p>Results array of items from Collection or Arrayable.</p>
@@ -2885,7 +2930,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#___get">#</a>
-			<code><a href="source-class-Docolight.Support.Collection.html#1079-1091" title="Go to source code">__get</a>( <span>string <var>$name</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Collection.html#1126-1138" title="Go to source code">__get</a>( <span>string <var>$name</var></span> )</code>
 
 			<div class="description short">
 				<p>Method overloading to get current filter attribute. Useful if we want to render CGridView.</p>
@@ -2935,7 +2980,7 @@
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-Docolight.Support.Collection.html#21-26" title="Go to source code"><var>$items</var></a>
+					<a href="source-class-Docolight.Support.Collection.html#68-73" title="Go to source code"><var>$items</var></a>
 
 				<div class="description short">
 					<p>The items contained in the collection.</p>
@@ -2960,7 +3005,7 @@
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-Docolight.Support.Collection.html#28-33" title="Go to source code"><var>$filters</var></a>
+					<a href="source-class-Docolight.Support.Collection.html#75-80" title="Go to source code"><var>$filters</var></a>
 
 				<div class="description short">
 					<p>The items contained in the collection.</p>

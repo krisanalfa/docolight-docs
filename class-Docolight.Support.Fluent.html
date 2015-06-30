@@ -125,7 +125,76 @@
 
 
 	<div class="description">
-	<p>Magic class like a model.</p>
+	<p>This class can wrap your array to an object, make it more safe to access and maintain it's attributes. You can try to fill the attribute with your Model Attributes or a bunch of collection of models.</p>
+
+<p>Let's take an example:</p>
+
+<pre><span class="php-comment">// This is your array:</span>
+
+<span class="php-var">$array</span> = <span class="php-keyword1">array</span>( <span class="php-quote">'foo'</span> =&gt; <span class="php-quote">'bar'</span>, <span class="php-quote">'baz'</span> =&gt; <span class="php-quote">'qux'</span> );
+
+<span class="php-comment">// Wrap your array with this class:</span>
+
+<span class="php-var">$myCoolArray</span> = <span class="php-keyword1">new</span> \Docolight\Support\Fluent(<span class="php-var">$array</span>);
+
+<span class="php-comment">// After that you can do something like this:</span>
+
+<span class="php-keyword1">echo</span> <span class="php-var">$myCoolArray</span>-&gt;foo;    <span class="php-comment">// bar  // equals with: echo $myCoolArray['foo'];</span>
+<span class="php-keyword1">echo</span> <span class="php-var">$myCoolArray</span>-&gt;baz;    <span class="php-comment">// qux  // equals with: echo $myCoolArray['baz'];</span>
+<span class="php-keyword1">echo</span> <span class="php-var">$myCoolArray</span>-&gt;blah;   <span class="php-comment">// null // equals with: echo $myCoolArray['blah'];</span>
+
+<span class="php-var">$myCoolArray</span>-&gt;blah = <span class="php-quote">'bruh'</span>; <span class="php-comment">// equals with $myCoolArray['blah'] = 'bruh';</span>
+
+<span class="php-keyword1">echo</span> <span class="php-var">$myCoolArray</span>-&gt;blah;   <span class="php-comment">// bruh</span>
+<span class="php-keyword1">echo</span> <span class="php-var">$myCoolArray</span>[<span class="php-quote">'blah'</span>]; <span class="php-comment">// bruh</span>
+
+<span class="php-comment">// To get single attribute</span>
+
+<span class="php-var">$foo</span> = <span class="php-var">$myCoolArray</span>-&gt;get(<span class="php-quote">'foo'</span>);
+
+
+<span class="php-comment">// To get specific attributes:</span>
+
+<span class="php-var">$fooBaz</span> = <span class="php-var">$myCoolArray</span>-&gt;only(<span class="php-keyword1">array</span>(<span class="php-quote">'foo'</span>, <span class="php-quote">'bar'</span>));
+
+
+<span class="php-comment">// To get all atributes except some attributes:</span>
+
+<span class="php-var">$fooBlah</span> = <span class="php-var">$myCoolArray</span>-&gt;except(<span class="php-keyword1">array</span>(<span class="php-quote">'baz'</span>));
+
+
+<span class="php-comment">// To get all attributes:</span>
+
+<span class="php-var">$attributes</span> = <span class="php-var">$myCoolArray</span>-&gt;get();
+
+
+<span class="php-comment">// To remove single attribute:</span>
+
+<span class="php-var">$this</span>-&gt;remove(<span class="php-quote">'foo'</span>);
+
+
+<span class="php-comment">// To remove specific attributes:</span>
+
+<span class="php-var">$this</span>-&gt;clear(<span class="php-keyword1">array</span>(<span class="php-quote">'foo'</span>, <span class="php-quote">'baz'</span>));
+
+
+<span class="php-comment">// To clear all attributes:</span>
+
+<span class="php-var">$myCoolArray</span>-&gt;nuke();
+
+
+<span class="php-comment">// To convert all atributes to normal array:</span>
+
+<span class="php-var">$myArray</span> = <span class="php-var">$myCoolArray</span>-&gt;toArray();
+
+
+<span class="php-comment">// Oh, once more, you can also echoing the object, and convert them to JSON automagically!</span>
+
+<span class="php-keyword1">echo</span> <span class="php-var">$myCoolArray</span>; <span class="php-comment">// Output is a JSON // or equal with: echo $myCoolArray-&gt;toJson();</span>
+
+<span class="php-comment">// In PHP &gt;= 5.4, you can convert this object to json by:</span>
+
+<span class="php-var">$myJSON</span> = <span class="php-keyword2">json_encode</span>(<span class="php-var">$myCollArray</span>); <span class="php-comment">// Equals with: $myJSON = json_encode($myCoolArray-&gt;toArray());</span></pre>
 	</div>
 
 	<dl class="tree well">
@@ -157,7 +226,7 @@
 
 				<b>Author:</b>
 				Krisan Alfa Timur <a href="&#109;&#97;&#105;&#x6c;&#x74;o&#58;&#107;&#114;&#x69;&#x73;a&#110;&#97;&#108;&#x66;&#x61;&#64;&#100;&#111;&#x63;&#x6f;&#x74;e&#108;&#46;&#x63;&#x6f;&#x2e;&#105;&#100;">&#107;&#114;&#x69;&#x73;a&#110;&#97;&#108;&#x66;&#x61;&#64;&#100;&#111;&#x63;&#x6f;&#x74;e&#108;&#46;&#x63;&#x6f;&#x2e;&#105;&#100;</a><br>
-			<b>Located at</b> <a href="source-class-Docolight.Support.Fluent.html#10-351" title="Go to source code">Docolight/Support/Fluent.php</a>
+			<b>Located at</b> <a href="source-class-Docolight.Support.Fluent.html#10-423" title="Go to source code">Docolight/Support/Fluent.php</a>
 		<br>
 	</div>
 
@@ -177,7 +246,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#___construct">#</a>
-			<code><a href="source-class-Docolight.Support.Fluent.html#31-39" title="Go to source code">__construct</a>( <span>array <var>$default</var> = <span class="php-keyword1">array</span>()</span> )</code>
+			<code><a href="source-class-Docolight.Support.Fluent.html#103-111" title="Go to source code">__construct</a>( <span>array <var>$default</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 			<div class="description short">
 				<p>Initialize the class.</p>
@@ -211,7 +280,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_make">#</a>
-			<code><a href="source-class-Docolight.Support.Fluent.html#41-49" title="Go to source code">make</a>( <span>array <var>$default</var> = <span class="php-keyword1">array</span>()</span> )</code>
+			<code><a href="source-class-Docolight.Support.Fluent.html#113-121" title="Go to source code">make</a>( <span>array <var>$default</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 			<div class="description short">
 				<p>Initialize the class statically.</p>
@@ -245,7 +314,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_has">#</a>
-			<code><a href="source-class-Docolight.Support.Fluent.html#51-61" title="Go to source code">has</a>( <span>string <var>$index</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Fluent.html#123-133" title="Go to source code">has</a>( <span>string <var>$index</var></span> )</code>
 
 			<div class="description short">
 				<p>Determine if index is exist in attributes.</p>
@@ -283,7 +352,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_remove">#</a>
-			<code><a href="source-class-Docolight.Support.Fluent.html#63-73" title="Go to source code">remove</a>( <span>string <var>$index</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Fluent.html#135-145" title="Go to source code">remove</a>( <span>string <var>$index</var></span> )</code>
 
 			<div class="description short">
 				<p>Remove an attributes.</p>
@@ -317,7 +386,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_set">#</a>
-			<code><a href="source-class-Docolight.Support.Fluent.html#75-84" title="Go to source code">set</a>( <span>string <var>$index</var></span>, <span>mixed <var>$value</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Fluent.html#147-156" title="Go to source code">set</a>( <span>string <var>$index</var></span>, <span>mixed <var>$value</var></span> )</code>
 
 			<div class="description short">
 				<p>Set an attribute value.</p>
@@ -353,7 +422,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_fill">#</a>
-			<code><a href="source-class-Docolight.Support.Fluent.html#86-92" title="Go to source code">fill</a>( <span>mixed <var>$attributes</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Fluent.html#158-164" title="Go to source code">fill</a>( <span>mixed <var>$attributes</var></span> )</code>
 
 			<div class="description short">
 				<p>Bulk insert attributes.</p>
@@ -389,7 +458,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_clear">#</a>
-			<code><a href="source-class-Docolight.Support.Fluent.html#94-106" title="Go to source code">clear</a>( <span>array <var>$attributes</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Fluent.html#166-178" title="Go to source code">clear</a>( <span>array <var>$attributes</var></span> )</code>
 
 			<div class="description short">
 				<p>Bulk remove attributes by an array contains indexes name you want to remove.</p>
@@ -427,7 +496,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_only">#</a>
-			<code><a href="source-class-Docolight.Support.Fluent.html#108-120" title="Go to source code">only</a>( <span>array <var>$attributes</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Fluent.html#180-192" title="Go to source code">only</a>( <span>array <var>$attributes</var></span> )</code>
 
 			<div class="description short">
 				<p>Get a list of array which only if the key is exists on the given argument.</p>
@@ -469,7 +538,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_except">#</a>
-			<code><a href="source-class-Docolight.Support.Fluent.html#122-134" title="Go to source code">except</a>( <span>array <var>$attributes</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Fluent.html#194-206" title="Go to source code">except</a>( <span>array <var>$attributes</var></span> )</code>
 
 			<div class="description short">
 				<p>Get a list of array except the given array of index.</p>
@@ -511,7 +580,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_nuke">#</a>
-			<code><a href="source-class-Docolight.Support.Fluent.html#136-144" title="Go to source code">nuke</a>( <span>array <var>$default</var> = <span class="php-keyword1">array</span>()</span> )</code>
+			<code><a href="source-class-Docolight.Support.Fluent.html#208-216" title="Go to source code">nuke</a>( <span>array <var>$default</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 			<div class="description short">
 				<p>Reset the attributes.</p>
@@ -545,7 +614,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_get">#</a>
-			<code><a href="source-class-Docolight.Support.Fluent.html#146-157" title="Go to source code">get</a>( <span>string <var>$index</var></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Docolight.Support.Fluent.html#218-229" title="Go to source code">get</a>( <span>string <var>$index</var></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Get an attribute value.</p>
@@ -585,7 +654,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_attributes">#</a>
-			<code><a href="source-class-Docolight.Support.Fluent.html#159-180" title="Go to source code">attributes</a>( <span>mixed <var>$attributes</var> = <span class="php-keyword1">null</span></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Docolight.Support.Fluent.html#231-252" title="Go to source code">attributes</a>( <span>mixed <var>$attributes</var> = <span class="php-keyword1">null</span></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Get attributes value.</p>
@@ -625,7 +694,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_toArray">#</a>
-			<code><a href="source-class-Docolight.Support.Fluent.html#182-218" title="Go to source code">toArray</a>( <span>mixed <var>$attributes</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Docolight.Support.Fluent.html#254-290" title="Go to source code">toArray</a>( <span>mixed <var>$attributes</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Convert this implementation object to array.</p>
@@ -667,7 +736,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_castToArray">#</a>
-			<code><a href="source-class-Docolight.Support.Fluent.html#220-226" title="Go to source code">castToArray</a>( )</code>
+			<code><a href="source-class-Docolight.Support.Fluent.html#292-298" title="Go to source code">castToArray</a>( )</code>
 
 			<div class="description short">
 				<p>Convert implementation to an array.</p>
@@ -702,7 +771,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_toJson">#</a>
-			<code><a href="source-class-Docolight.Support.Fluent.html#228-238" title="Go to source code">toJson</a>( <span>const <var>$options</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-Docolight.Support.Fluent.html#300-310" title="Go to source code">toJson</a>( <span>const <var>$options</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Convert attributes to readable JSON.</p>
@@ -740,7 +809,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_offsetSet">#</a>
-			<code><a href="source-class-Docolight.Support.Fluent.html#240-249" title="Go to source code">offsetSet</a>( <span>string <var>$index</var></span>, <span>mized <var>$value</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Fluent.html#312-321" title="Go to source code">offsetSet</a>( <span>string <var>$index</var></span>, <span>mized <var>$value</var></span> )</code>
 
 			<div class="description short">
 				<p>Set an attribute value.</p>
@@ -778,7 +847,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_offsetExists">#</a>
-			<code><a href="source-class-Docolight.Support.Fluent.html#251-261" title="Go to source code">offsetExists</a>( <span>string <var>$index</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Fluent.html#323-333" title="Go to source code">offsetExists</a>( <span>string <var>$index</var></span> )</code>
 
 			<div class="description short">
 				<p>Determine if index is exist in attributes.</p>
@@ -818,7 +887,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_offsetUnset">#</a>
-			<code><a href="source-class-Docolight.Support.Fluent.html#263-271" title="Go to source code">offsetUnset</a>( <span>string <var>$index</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Fluent.html#335-343" title="Go to source code">offsetUnset</a>( <span>string <var>$index</var></span> )</code>
 
 			<div class="description short">
 				<p>Remove an attributes.</p>
@@ -854,7 +923,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_offsetGet">#</a>
-			<code><a href="source-class-Docolight.Support.Fluent.html#273-284" title="Go to source code">offsetGet</a>( <span>string <var>$index</var></span>, <span>mixed <var>$default</var>,…</span> )</code>
+			<code><a href="source-class-Docolight.Support.Fluent.html#345-356" title="Go to source code">offsetGet</a>( <span>string <var>$index</var></span>, <span>mixed <var>$default</var>,…</span> )</code>
 
 			<div class="description short">
 				<p>Get an attribute value.</p>
@@ -896,7 +965,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_jsonSerialize">#</a>
-			<code><a href="source-class-Docolight.Support.Fluent.html#286-294" title="Go to source code">jsonSerialize</a>( )</code>
+			<code><a href="source-class-Docolight.Support.Fluent.html#358-366" title="Go to source code">jsonSerialize</a>( )</code>
 
 			<div class="description short">
 				<p>JsonSerializable implementation.</p>
@@ -931,7 +1000,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#___set">#</a>
-			<code><a href="source-class-Docolight.Support.Fluent.html#296-305" title="Go to source code">__set</a>( <span>string <var>$index</var></span>, <span>mized <var>$value</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Fluent.html#368-377" title="Go to source code">__set</a>( <span>string <var>$index</var></span>, <span>mized <var>$value</var></span> )</code>
 
 			<div class="description short">
 				<p>Set an attribute value.</p>
@@ -967,7 +1036,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#___get">#</a>
-			<code><a href="source-class-Docolight.Support.Fluent.html#307-318" title="Go to source code">__get</a>( <span>string <var>$index</var></span>, <span>mixed <var>$default</var>,…</span> )</code>
+			<code><a href="source-class-Docolight.Support.Fluent.html#379-390" title="Go to source code">__get</a>( <span>string <var>$index</var></span>, <span>mixed <var>$default</var>,…</span> )</code>
 
 			<div class="description short">
 				<p>Get an attribute value.</p>
@@ -1007,7 +1076,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#___isset">#</a>
-			<code><a href="source-class-Docolight.Support.Fluent.html#320-330" title="Go to source code">__isset</a>( <span>string <var>$index</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Fluent.html#392-402" title="Go to source code">__isset</a>( <span>string <var>$index</var></span> )</code>
 
 			<div class="description short">
 				<p>Determine if index exists in attributes.</p>
@@ -1045,7 +1114,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#___unset">#</a>
-			<code><a href="source-class-Docolight.Support.Fluent.html#332-340" title="Go to source code">__unset</a>( <span>string <var>$index</var></span> )</code>
+			<code><a href="source-class-Docolight.Support.Fluent.html#404-412" title="Go to source code">__unset</a>( <span>string <var>$index</var></span> )</code>
 
 			<div class="description short">
 				<p>Remove an attributes.</p>
@@ -1079,7 +1148,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#___toString">#</a>
-			<code><a href="source-class-Docolight.Support.Fluent.html#342-350" title="Go to source code">__toString</a>( )</code>
+			<code><a href="source-class-Docolight.Support.Fluent.html#414-422" title="Go to source code">__toString</a>( )</code>
 
 			<div class="description short">
 				<p>Convert your collection to JSON.</p>
@@ -1124,7 +1193,7 @@
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-Docolight.Support.Fluent.html#17-22" title="Go to source code"><var>$attributes</var></a>
+					<a href="source-class-Docolight.Support.Fluent.html#89-94" title="Go to source code"><var>$attributes</var></a>
 
 				<div class="description short">
 					<p>Data Attribute in this class.</p>
@@ -1149,7 +1218,7 @@
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-Docolight.Support.Fluent.html#24-29" title="Go to source code"><var>$jsonAble</var></a>
+					<a href="source-class-Docolight.Support.Fluent.html#96-101" title="Go to source code"><var>$jsonAble</var></a>
 
 				<div class="description short">
 					<p>Use this to convert attributes to json.</p>

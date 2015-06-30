@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Class Docolight\Support\IterablePager | Doco[L]ight</title>
+	<title>Class Docolight\Support\CollectionDataProvider | Doco[L]ight</title>
 
 	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
 	<link rel="stylesheet" href="resources/style.css?49f43d3208c5d7e33fa16d36107a345bf11cc00d">
@@ -97,12 +97,12 @@
 				<li><a href="class-Docolight.Support.Carbonate.html">Carbonate</a></li>
 				<li><a href="class-Docolight.Support.ClassLoader.html">ClassLoader</a></li>
 				<li><a href="class-Docolight.Support.Collection.html">Collection</a></li>
-				<li><a href="class-Docolight.Support.CollectionDataProvider.html">CollectionDataProvider</a></li>
+				<li class="active"><a href="class-Docolight.Support.CollectionDataProvider.html">CollectionDataProvider</a></li>
 				<li><a href="class-Docolight.Support.Facade.html">Facade</a></li>
 				<li><a href="class-Docolight.Support.Factory.html">Factory</a></li>
 				<li><a href="class-Docolight.Support.Fluent.html">Fluent</a></li>
 				<li><a href="class-Docolight.Support.Html.html">Html</a></li>
-				<li class="active"><a href="class-Docolight.Support.IterablePager.html">IterablePager</a></li>
+				<li><a href="class-Docolight.Support.IterablePager.html">IterablePager</a></li>
 				<li><a href="class-Docolight.Support.Repository.html">Repository</a></li>
 				<li><a href="class-Docolight.Support.Set.html">Set</a></li>
 				<li><a href="class-Docolight.Support.Str.html">Str</a></li>
@@ -121,27 +121,22 @@
 <div id="right">
 	<div id="rightInner">
 <div id="content" class="class">
-	<h1>Class IterablePager</h1>
+	<h1>Class CollectionDataProvider</h1>
 
 
 	<div class="description">
-	<p>Iterate your active record in a page. Usefull to make a paging report.</p>
-
-<pre><span class="php-var">$model</span> = MyModel::model()-&gt;findByPk(<span class="php-num">1</span>);
-
-<span class="php-var">$pager</span> = <span class="php-keyword1">new</span> IterablePager(<span class="php-var">$model</span>, <span class="php-num">20</span>);
-
-
-<span class="php-keyword1">foreach</span>(<span class="php-var">$pager</span> <span class="php-keyword1">as</span> <span class="php-var">$stack</span>)
-{ <span class="php-comment">// $stack = array with 20 length, contains MyModel implementation // next loop will be the next 20 and so on until the last of your // data. it respects your criteria also.</span>
-}</pre>
+	<p>Array helper.</p>
 	</div>
 
 	<dl class="tree well">
 		<dd style="padding-left:0px">
-<b><span>Docolight\Support\IterablePager</span></b>			
-			 implements 
-<span>Iterator</span>
+CDataProvider
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>Docolight\Support\CollectionDataProvider</span></b>			
 			
 			
 		</dd>
@@ -155,12 +150,14 @@
 
 
 	<div class="alert alert-info">
-		<b>Abstract</b><br>
+		
 		
 		<b>Namespace:</b> <a href="namespace-Docolight.html">Docolight</a>\<a href="namespace-Docolight.Support.html">Support</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Docolight.Support.IterablePager.html#8-147" title="Go to source code">Docolight/Support/IterablePager.php</a>
+				<b>Author:</b>
+				Krisan Alfa Timur <a href="&#109;&#97;&#105;&#x6c;&#x74;o&#58;&#107;&#114;&#x69;&#x73;a&#110;&#97;&#108;&#x66;&#x61;&#64;&#100;&#111;&#x63;&#x6f;&#x74;e&#108;&#46;&#x63;&#x6f;&#x2e;&#105;&#100;">&#107;&#114;&#x69;&#x73;a&#110;&#97;&#108;&#x66;&#x61;&#64;&#100;&#111;&#x63;&#x6f;&#x74;e&#108;&#46;&#x63;&#x6f;&#x2e;&#105;&#100;</a><br>
+			<b>Located at</b> <a href="source-class-Docolight.Support.CollectionDataProvider.html#10-195" title="Go to source code">Docolight/Support/CollectionDataProvider.php</a>
 		<br>
 	</div>
 
@@ -180,21 +177,21 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#___construct">#</a>
-			<code><a href="source-class-Docolight.Support.IterablePager.html#56-85" title="Go to source code">__construct</a>( <span>CActiveRecord <var>$model</var></span>, <span>integer <var>$limit</var> = <span class="php-num">10</span></span> )</code>
+			<code><a href="source-class-Docolight.Support.CollectionDataProvider.html#31-74" title="Go to source code">__construct</a>( <span><code><a href="class-Docolight.Support.Collection.html">Docolight\Support\Collection</a></code> <var>$collection</var></span>, <span>array <var>$freeTextField</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 			<div class="description short">
-				<p>Class constructor.</p>
+				<p>Class construction.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Class constructor.</p>
+				<p>Class construction.</p>
 
 
 					<h4>Parameters</h4>
 					<div class="list"><dl>
-						<dt><var>$model</var></dt>
+						<dt><var>$collection</var></dt>
 						<dd></dd>
-						<dt><var>$limit</var></dt>
+						<dt><var>$freeTextField</var></dt>
 						<dd></dd>
 					</dl></div>
 
@@ -205,203 +202,170 @@
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="rewind" id="_rewind">
+		<tr data-order="getCollection" id="_getCollection">
 
 			<td class="attributes"><code>
 				 public 
-				
+				<code><a href="class-Docolight.Support.Collection.html">Docolight\Support\Collection</a></code>
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
-			<a class="anchor" href="#_rewind">#</a>
-			<code><a href="source-class-Docolight.Support.IterablePager.html#87-93" title="Go to source code">rewind</a>( )</code>
+			<a class="anchor" href="#_getCollection">#</a>
+			<code><a href="source-class-Docolight.Support.CollectionDataProvider.html#76-84" title="Go to source code">getCollection</a>( )</code>
 
 			<div class="description short">
-				<p>Rewind cursor.</p>
+				<p>Get collection</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Rewind cursor.</p>
+				<p>Get collection</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Docolight.Support.Collection.html">Docolight\Support\Collection</a></code>
+					</div>
 
 
 
 
-
-
-
-					<h4>Implementation of</h4>
-					<div class="list"><code>Iterator::rewind()</code></div>
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="current" id="_current">
+		<tr data-order="fetchData" id="_fetchData">
 
 			<td class="attributes"><code>
-				 public 
+				 protected 
 				array
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
-			<a class="anchor" href="#_current">#</a>
-			<code><a href="source-class-Docolight.Support.IterablePager.html#95-106" title="Go to source code">current</a>( )</code>
+			<a class="anchor" href="#_fetchData">#</a>
+			<code><a href="source-class-Docolight.Support.CollectionDataProvider.html#86-101" title="Go to source code">fetchData</a>( )</code>
 
 			<div class="description short">
-				<p>Get current cursor.</p>
+				<p>Fetches the data from the persistent data storage.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Get current cursor.</p>
+				<p>Fetches the data from the persistent data storage.</p>
 
 
 
 					<h4>Returns</h4>
 					<div class="list">
-						array
+						array<br>list of data items
 					</div>
 
 
 
 
-					<h4>Implementation of</h4>
-					<div class="list"><code>Iterator::current()</code></div>
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="next" id="_next">
+		<tr data-order="calculateTotalItemCount" id="_calculateTotalItemCount">
 
 			<td class="attributes"><code>
-				 public 
-				
-				
-				</code>
-			</td>
-
-			<td class="name"><div>
-			<a class="anchor" href="#_next">#</a>
-			<code><a href="source-class-Docolight.Support.IterablePager.html#108-117" title="Go to source code">next</a>( )</code>
-
-			<div class="description short">
-				<p>Fetch next page.</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>Fetch next page.</p>
-
-
-
-
-
-
-
-					<h4>Implementation of</h4>
-					<div class="list"><code>Iterator::next()</code></div>
-			</div>
-			</div></td>
-		</tr>
-		<tr data-order="valid" id="_valid">
-
-			<td class="attributes"><code>
-				 public 
-				boolean
-				
-				</code>
-			</td>
-
-			<td class="name"><div>
-			<a class="anchor" href="#_valid">#</a>
-			<code><a href="source-class-Docolight.Support.IterablePager.html#119-127" title="Go to source code">valid</a>( )</code>
-
-			<div class="description short">
-				<p>Determine whether next page exists.</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>Determine whether next page exists.</p>
-
-
-
-					<h4>Returns</h4>
-					<div class="list">
-						boolean
-					</div>
-
-
-
-
-					<h4>Implementation of</h4>
-					<div class="list"><code>Iterator::valid()</code></div>
-			</div>
-			</div></td>
-		</tr>
-		<tr data-order="key" id="_key">
-
-			<td class="attributes"><code>
-				 public 
+				 protected 
 				integer
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
-			<a class="anchor" href="#_key">#</a>
-			<code><a href="source-class-Docolight.Support.IterablePager.html#129-137" title="Go to source code">key</a>( )</code>
+			<a class="anchor" href="#_calculateTotalItemCount">#</a>
+			<code><a href="source-class-Docolight.Support.CollectionDataProvider.html#103-123" title="Go to source code">calculateTotalItemCount</a>( )</code>
 
 			<div class="description short">
-				<p>Get current offset.</p>
+				<p>Calculates the total number of data items.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Get current offset.</p>
+				<p>Calculates the total number of data items.</p>
 
 
 
 					<h4>Returns</h4>
 					<div class="list">
-						integer
+						integer<br>the total number of data items.
 					</div>
 
 
 
 
-					<h4>Implementation of</h4>
-					<div class="list"><code>Iterator::key()</code></div>
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="prepare" id="_prepare">
+		<tr data-order="fetchKeys" id="_fetchKeys">
 
 			<td class="attributes"><code>
-				abstract protected 
-				mixed
+				 protected 
+				array
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
-			<a class="anchor" href="#_prepare">#</a>
-			<code><a href="source-class-Docolight.Support.IterablePager.html#139-146" title="Go to source code">prepare</a>( <span>array <var>$items</var></span> )</code>
+			<a class="anchor" href="#_fetchKeys">#</a>
+			<code><a href="source-class-Docolight.Support.CollectionDataProvider.html#125-133" title="Go to source code">fetchKeys</a>( )</code>
 
 			<div class="description short">
-				<p>Prepare the data before we store them in $current property.</p>
+				<p>Fetches the data item keys from the persistent data storage.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Prepare the data before we store them in $current property.</p>
+				<p>Fetches the data item keys from the persistent data storage.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						array<br>list of data item keys.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="filterCollection" id="_filterCollection">
+
+			<td class="attributes"><code>
+				 protected 
+				<code><a href="class-Docolight.Support.Collection.html">Docolight\Support\Collection</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_filterCollection">#</a>
+			<code><a href="source-class-Docolight.Support.CollectionDataProvider.html#135-194" title="Go to source code">filterCollection</a>( <span><code><a href="class-Docolight.Support.Collection.html">Docolight\Support\Collection</a></code> <var>$collection</var></span>, <span>array <var>$filter</var></span> )</code>
+
+			<div class="description short">
+				<p>Filter collection by criteria</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Filter collection by criteria</p>
 
 
 					<h4>Parameters</h4>
 					<div class="list"><dl>
-						<dt><var>$items</var></dt>
+						<dt><var>$collection</var></dt>
+						<dd></dd>
+						<dt><var>$filter</var></dt>
 						<dd></dd>
 					</dl></div>
 
 					<h4>Returns</h4>
 					<div class="list">
-						mixed
+						<code><a href="class-Docolight.Support.Collection.html">Docolight\Support\Collection</a></code>
 					</div>
 
 
@@ -426,103 +390,53 @@
 		<div class="panel panel-default">
             <div class="panel-heading"><h2>Properties summary</h2></div>
 			<table class="summary table table-bordered table-striped properties" id="properties">
-		<tr data-order="total" id="$total">
+		<tr data-order="collection" id="$collection">
 			<td class="attributes"><code>
 				protected  
-				integer
+				<code><a href="class-Docolight.Support.Collection.html">Docolight\Support\Collection</a></code>
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-Docolight.Support.IterablePager.html#28-33" title="Go to source code"><var>$total</var></a>
+					<a href="source-class-Docolight.Support.CollectionDataProvider.html#17-22" title="Go to source code"><var>$collection</var></a>
 
 				<div class="description short">
-					<p>Total data.</p>
+					<p>Collection file</p>
 				</div>
 
 				<div class="description detailed hidden">
-					<p>Total data.</p>
+					<p>Collection file</p>
 
 				</div>
 			</td>
 			<td class="value">
 				<div>
-					<a href="#$total" class="anchor">#</a>
-					<code></code>
+					<a href="#$collection" class="anchor">#</a>
+					<code><span class="php-keyword1">null</span></code>
 				</div>
 			</td>
 		</tr>
-		<tr data-order="current" id="$current">
+		<tr data-order="freeTextField" id="$freeTextField">
 			<td class="attributes"><code>
 				protected  
 				array
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-Docolight.Support.IterablePager.html#35-40" title="Go to source code"><var>$current</var></a>
+					<a href="source-class-Docolight.Support.CollectionDataProvider.html#24-29" title="Go to source code"><var>$freeTextField</var></a>
 
 				<div class="description short">
-					<p>Current data.</p>
+					<p>Free text field</p>
 				</div>
 
 				<div class="description detailed hidden">
-					<p>Current data.</p>
+					<p>Free text field</p>
 
 				</div>
 			</td>
 			<td class="value">
 				<div>
-					<a href="#$current" class="anchor">#</a>
-					<code></code>
-				</div>
-			</td>
-		</tr>
-		<tr data-order="model" id="$model">
-			<td class="attributes"><code>
-				protected  
-				CActiveRecord
-			</code></td>
-
-			<td class="name">
-					<a href="source-class-Docolight.Support.IterablePager.html#42-47" title="Go to source code"><var>$model</var></a>
-
-				<div class="description short">
-					<p>Model.</p>
-				</div>
-
-				<div class="description detailed hidden">
-					<p>Model.</p>
-
-				</div>
-			</td>
-			<td class="value">
-				<div>
-					<a href="#$model" class="anchor">#</a>
-					<code></code>
-				</div>
-			</td>
-		</tr>
-		<tr data-order="criteria" id="$criteria">
-			<td class="attributes"><code>
-				protected  
-				CDbCriteria
-			</code></td>
-
-			<td class="name">
-					<a href="source-class-Docolight.Support.IterablePager.html#49-54" title="Go to source code"><var>$criteria</var></a>
-
-				<div class="description short">
-					<p>Criteria.</p>
-				</div>
-
-				<div class="description detailed hidden">
-					<p>Criteria.</p>
-
-				</div>
-			</td>
-			<td class="value">
-				<div>
-					<a href="#$criteria" class="anchor">#</a>
-					<code></code>
+					<a href="#$freeTextField" class="anchor">#</a>
+					<code><span class="php-keyword1">array</span>()</code>
 				</div>
 			</td>
 		</tr>

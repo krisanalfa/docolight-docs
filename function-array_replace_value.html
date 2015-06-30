@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Function request | Doco[L]ight</title>
+	<title>Function array_replace_value | Doco[L]ight</title>
 
 	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
 	<link rel="stylesheet" href="resources/style.css?49f43d3208c5d7e33fa16d36107a345bf11cc00d">
@@ -116,7 +116,7 @@
 				<li><a href="function-array_only.html">array_only</a></li>
 				<li><a href="function-array_pluck.html">array_pluck</a></li>
 				<li><a href="function-array_pull.html">array_pull</a></li>
-				<li><a href="function-array_replace_value.html">array_replace_value</a></li>
+				<li class="active"><a href="function-array_replace_value.html">array_replace_value</a></li>
 				<li><a href="function-array_set.html">array_set</a></li>
 				<li><a href="function-array_sort.html">array_sort</a></li>
 				<li><a href="function-array_sort_recursive.html">array_sort_recursive</a></li>
@@ -140,7 +140,7 @@
 				<li><a href="function-last.html">last</a></li>
 				<li><a href="function-object_get.html">object_get</a></li>
 				<li><a href="function-preg_replace_sub.html">preg_replace_sub</a></li>
-				<li class="active"><a href="function-request.html">request</a></li>
+				<li><a href="function-request.html">request</a></li>
 				<li><a href="function-response.html">response</a></li>
 				<li><a href="function-session.html">session</a></li>
 				<li><a href="function-snake_case.html">snake_case</a></li>
@@ -169,11 +169,19 @@
 <div id="right">
 	<div id="rightInner">
 <div id="content" class="function">
-	<h1>Function request</h1>
+	<h1>Function array_replace_value</h1>
 
 
 	<div class="description">
-	<p>Get post / get value</p>
+	<p>Replace your array value.</p>
+
+<pre><span class="php-var">$header</span> = [ <span class="php-quote">':type_address'</span>, <span class="php-quote">':type_citizenship'</span>, <span class="php-quote">':type_city'</span>, <span class="php-quote">':type_country'</span> ]
+
+Arr::replaceValue(<span class="php-var">$header</span>, <span class="php-quote">':type_'</span>)
+
+<span class="php-comment">// Will produce:</span>
+
+<span class="php-var">$header</span> = [ <span class="php-quote">'address'</span>, <span class="php-quote">'citizenship'</span>, <span class="php-quote">'city'</span>, <span class="php-quote">'country'</span> ]</pre>
 	</div>
 
 	<div class="alert alert-info">
@@ -182,7 +190,7 @@
 				<b>Author:</b>
 				Krisan Alfa Timur <a href="&#109;&#97;&#105;&#x6c;&#x74;o&#58;&#107;&#114;&#x69;&#x73;a&#110;&#97;&#108;&#x66;&#x61;&#64;&#100;&#111;&#x63;&#x6f;&#x74;e&#108;&#46;&#x63;&#x6f;&#x2e;&#105;&#100;">&#107;&#114;&#x69;&#x73;a&#110;&#97;&#108;&#x66;&#x61;&#64;&#100;&#111;&#x63;&#x6f;&#x74;e&#108;&#46;&#x63;&#x6f;&#x2e;&#105;&#100;</a><br>
 		<b>Located at</b>
-		<a href="source-function-request.html#1043-1066" title="Go to source code">
+		<a href="source-function-array_replace_value.html#1091-1123" title="Go to source code">
 			Docolight/Support/helpers.php
 		</a><br>
 	</div>
@@ -191,14 +199,19 @@
 	<div class="panel panel-default">
         <div class="panel-heading"><h2>Parameters summary</h2></div>
 		<table class="summary table table-bordered table-striped" id="parameters">
-		<tr id="$identifier">
-			<td class="name"><code>null|string</code></td>
-			<td class="value"><code><var>$identifier</var> = <span class="php-keyword1">null</span></code></td>
+		<tr id="$input">
+			<td class="name"><code>array</code></td>
+			<td class="value"><code><var>$input</var></code></td>
 			<td></td>
 		</tr>
-		<tr id="$default">
-			<td class="name"><code>mixed</code></td>
-			<td class="value"><code><var>$default</var> = <span class="php-keyword1">null</span></code></td>
+		<tr id="$search">
+			<td class="name"><code>string|callable</code></td>
+			<td class="value"><code><var>$search</var></code></td>
+			<td></td>
+		</tr>
+		<tr id="$replacement">
+			<td class="name"><code>string</code></td>
+			<td class="value"><code><var>$replacement</var> = <span class="php-quote">''</span></code></td>
 			<td></td>
 		</tr>
 		</table>
@@ -209,10 +222,10 @@
 		<table class="summary table table-bordered table-striped" id="returns">
 		<tr>
 			<td class="name"><code>
-				mixed
+				array
 			</code></td>
 			<td>
-				mixed
+				array
 			</td>
 		</tr>
 		</table>

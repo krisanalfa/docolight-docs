@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Function request | Doco[L]ight</title>
+	<title>Function trimtolower | Doco[L]ight</title>
 
 	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
 	<link rel="stylesheet" href="resources/style.css?49f43d3208c5d7e33fa16d36107a345bf11cc00d">
@@ -140,7 +140,7 @@
 				<li><a href="function-last.html">last</a></li>
 				<li><a href="function-object_get.html">object_get</a></li>
 				<li><a href="function-preg_replace_sub.html">preg_replace_sub</a></li>
-				<li class="active"><a href="function-request.html">request</a></li>
+				<li><a href="function-request.html">request</a></li>
 				<li><a href="function-response.html">response</a></li>
 				<li><a href="function-session.html">session</a></li>
 				<li><a href="function-snake_case.html">snake_case</a></li>
@@ -156,7 +156,7 @@
 				<li><a href="function-title_case.html">title_case</a></li>
 				<li><a href="function-trait_uses_recursive.html">trait_uses_recursive</a></li>
 				<li><a href="function-transaction.html">transaction</a></li>
-				<li><a href="function-trimtolower.html">trimtolower</a></li>
+				<li class="active"><a href="function-trimtolower.html">trimtolower</a></li>
 				<li><a href="function-value.html">value</a></li>
 				<li><a href="function-with.html">with</a></li>
 			</ul>
@@ -169,11 +169,11 @@
 <div id="right">
 	<div id="rightInner">
 <div id="content" class="function">
-	<h1>Function request</h1>
+	<h1>Function trimtolower</h1>
 
 
 	<div class="description">
-	<p>Get post / get value</p>
+	<p>Trim and convert a value to lowercase.</p>
 	</div>
 
 	<div class="alert alert-info">
@@ -182,7 +182,7 @@
 				<b>Author:</b>
 				Krisan Alfa Timur <a href="&#109;&#97;&#105;&#x6c;&#x74;o&#58;&#107;&#114;&#x69;&#x73;a&#110;&#97;&#108;&#x66;&#x61;&#64;&#100;&#111;&#x63;&#x6f;&#x74;e&#108;&#46;&#x63;&#x6f;&#x2e;&#105;&#100;">&#107;&#114;&#x69;&#x73;a&#110;&#97;&#108;&#x66;&#x61;&#64;&#100;&#111;&#x63;&#x6f;&#x74;e&#108;&#46;&#x63;&#x6f;&#x2e;&#105;&#100;</a><br>
 		<b>Located at</b>
-		<a href="source-function-request.html#1043-1066" title="Go to source code">
+		<a href="source-function-trimtolower.html#790-802" title="Go to source code">
 			Docolight/Support/helpers.php
 		</a><br>
 	</div>
@@ -191,14 +191,9 @@
 	<div class="panel panel-default">
         <div class="panel-heading"><h2>Parameters summary</h2></div>
 		<table class="summary table table-bordered table-striped" id="parameters">
-		<tr id="$identifier">
-			<td class="name"><code>null|string</code></td>
-			<td class="value"><code><var>$identifier</var> = <span class="php-keyword1">null</span></code></td>
-			<td></td>
-		</tr>
-		<tr id="$default">
-			<td class="name"><code>mixed</code></td>
-			<td class="value"><code><var>$default</var> = <span class="php-keyword1">null</span></code></td>
+		<tr id="$value">
+			<td class="name"><code>string</code></td>
+			<td class="value"><code><var>$value</var></code></td>
 			<td></td>
 		</tr>
 		</table>
@@ -209,10 +204,10 @@
 		<table class="summary table table-bordered table-striped" id="returns">
 		<tr>
 			<td class="name"><code>
-				mixed
+				string
 			</code></td>
 			<td>
-				mixed
+				string
 			</td>
 		</tr>
 		</table>

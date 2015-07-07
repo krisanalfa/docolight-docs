@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Docoflow\Docoflow | Doco[L]ight + Doco[F]low</title>
+
+	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
+	<link rel="stylesheet" href="resources/style.css?49f43d3208c5d7e33fa16d36107a345bf11cc00d">
+
+</head>
+
+<body>
+	<nav id="navigation" class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="index.html" class="navbar-brand">Doco[L]ight + Doco[F]low</a>
+			</div>
+			<div class="collapse navbar-collapse">
+
+                <form id="search" class="navbar-form navbar-left" role="search">
+                    <input type="hidden" name="cx" value="">
+                    <input type="hidden" name="ie" value="UTF-8">
+                    <div class="form-group">
+                        <input type="text" name="q" class="search-query form-control" placeholder="Search">
+					</div>
+				</form>
+
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="namespace-Docoflow.html" title="Summary of Docoflow"><span>Namespace</span></a>
+					</li>
+					<li class="active">
+<span>Class</span>					</li>
+
+
+
+
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div id="left">
+	<div id="menu">
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+					<li class="active">
+						<a href="namespace-Docoflow.html">
+							Docoflow<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Docoflow.Contracts.html">
+							Contracts						</a>
+							</li>
+					<li>
+						<a href="namespace-Docoflow.Entity.html">
+							Entity						</a>
+							</li>
+					<li>
+						<a href="namespace-Docoflow.Models.html">
+							Models						</a>
+							</li>
+					<li>
+						<a href="namespace-Docoflow.Traits.html">
+							Traits						</a>
+							</li>
+								</ul></li>
+					<li>
+						<a href="namespace-Docolight.html">
+							Docolight<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Docolight.Container.html">
+							Container						</a>
+							</li>
+					<li>
+						<a href="namespace-Docolight.Http.html">
+							Http<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Docolight.Http.Contracts.html">
+							Contracts						</a>
+							</li>
+								</ul></li>
+					<li>
+						<a href="namespace-Docolight.Support.html">
+							Support<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Docolight.Support.Debug.html">
+							Debug						</a>
+							</li>
+					<li>
+						<a href="namespace-Docolight.Support.Traits.html">
+							Traits						</a>
+							</li>
+								</ul></li></ul></li>
+					<li>
+						<a href="namespace-None.html">
+							None						</a>
+							</li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-Docoflow.Docoflow.html">Docoflow</a></li>
+				<li><a href="class-Docoflow.Flo.html">Flo</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class Docoflow</h1>
+
+
+	<div class="description">
+	<p>Workflow model. Use this class to save your workflow.</p>
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Docoflow.html">Docoflow</a><br>
+		
+
+				<b>Author:</b>
+				Krisan Alfa Timur <a href="&#109;&#97;&#105;&#x6c;&#x74;o&#58;&#107;&#114;&#x69;&#x73;a&#110;&#97;&#108;&#x66;&#x61;&#64;&#100;&#111;&#x63;&#x6f;&#x74;e&#108;&#46;&#x63;&#x6f;&#x2e;&#105;&#100;">&#107;&#114;&#x69;&#x73;a&#110;&#97;&#108;&#x66;&#x61;&#64;&#100;&#111;&#x63;&#x6f;&#x74;e&#108;&#46;&#x63;&#x6f;&#x2e;&#105;&#100;</a><br>
+			<b>Located at</b> <a href="source-class-Docoflow.Docoflow.html#16-314" title="Go to source code">Docoflow/Docoflow.php</a>
+		<br>
+	</div>
+
+
+
+		<div class="panel panel-default">
+			<div class="panel-heading"><h2>Methods summary</h2></div>
+			<table class="summary table table-bordered table-striped methods" id="methods">
+		<tr data-order="__construct" id="___construct">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___construct">#</a>
+			<code><a href="source-class-Docoflow.Docoflow.html#65-79" title="Go to source code">__construct</a>( <span>string <var>$name</var></span>, <span><code><a href="class-Docoflow.Entity.Step.html">Docoflow\Entity\Step</a></code> <var>$step</var> = <span class="php-keyword1">null</span></span>, <span><code><a href="class-Docoflow.Entity.Group.html">Docoflow\Entity\Group</a></code> <var>$group</var> = <span class="php-keyword1">null</span></span>, <span><code><a href="class-Docoflow.Entity.Verificator.html">Docoflow\Entity\Verificator</a></code> <var>$verificator</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Docoflow class constructor.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Docoflow class constructor.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$name</var></dt>
+						<dd>Your workflow name</dd>
+						<dt><var>$step</var></dt>
+						<dd>Your workflow step entities</dd>
+						<dt><var>$group</var></dt>
+						<dd>Your workflow group entities</dd>
+						<dt><var>$verificator</var></dt>
+						<dd>Your workflow verificator entities</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="make" id="_make">
+
+			<td class="attributes"><code>
+				 public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_make">#</a>
+			<code><a href="source-class-Docoflow.Docoflow.html#81-92" title="Go to source code">make</a>( <span>string <var>$name</var></span>, <span><code><a href="class-Docoflow.Entity.Step.html">Docoflow\Entity\Step</a></code> <var>$step</var> = <span class="php-keyword1">null</span></span>, <span><code><a href="class-Docoflow.Entity.Group.html">Docoflow\Entity\Group</a></code> <var>$group</var> = <span class="php-keyword1">null</span></span>, <span><code><a href="class-Docoflow.Entity.Verificator.html">Docoflow\Entity\Verificator</a></code> <var>$verificator</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Statically create Docoflow instance.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Statically create Docoflow instance.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$name</var></dt>
+						<dd>Your workflow name</dd>
+						<dt><var>$step</var></dt>
+						<dd>Your workflow step entities</dd>
+						<dt><var>$group</var></dt>
+						<dd>Your workflow group entities</dd>
+						<dt><var>$verificator</var></dt>
+						<dd>Your workflow verificator entities</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="withStep" id="_withStep">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-Docoflow.Docoflow.html">Docoflow\Docoflow</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_withStep">#</a>
+			<code><a href="source-class-Docoflow.Docoflow.html#94-106" title="Go to source code">withStep</a>( <span><code><a href="class-Docoflow.Entity.Step.html">Docoflow\Entity\Step</a></code> <var>$step</var></span> )</code>
+
+			<div class="description short">
+				<p>Inject step entities to a record.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Inject step entities to a record.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$step</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Docoflow.Docoflow.html">Docoflow\Docoflow</a></code>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="withGroup" id="_withGroup">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-Docoflow.Docoflow.html">Docoflow\Docoflow</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_withGroup">#</a>
+			<code><a href="source-class-Docoflow.Docoflow.html#108-120" title="Go to source code">withGroup</a>( <span><code><a href="class-Docoflow.Entity.Group.html">Docoflow\Entity\Group</a></code> <var>$group</var></span> )</code>
+
+			<div class="description short">
+				<p>Inject step group entities to a record.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Inject step group entities to a record.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$group</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Docoflow.Docoflow.html">Docoflow\Docoflow</a></code>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="withVerificator" id="_withVerificator">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-Docoflow.Docoflow.html">Docoflow\Docoflow</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_withVerificator">#</a>
+			<code><a href="source-class-Docoflow.Docoflow.html#122-134" title="Go to source code">withVerificator</a>( <span><code><a href="class-Docoflow.Entity.Verificator.html">Docoflow\Entity\Verificator</a></code> <var>$verificator</var></span> )</code>
+
+			<div class="description short">
+				<p>Inject verificator entities to a record.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Inject verificator entities to a record.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$verificator</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Docoflow.Docoflow.html">Docoflow\Docoflow</a></code>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="validUntil" id="_validUntil">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-Docoflow.Docoflow.html">Docoflow\Docoflow</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_validUntil">#</a>
+			<code><a href="source-class-Docoflow.Docoflow.html#136-148" title="Go to source code">validUntil</a>( <span>Datetime <var>$expiredDate</var></span> )</code>
+
+			<div class="description short">
+				<p>Make a workflow valid until certain time.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Make a workflow valid until certain time.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$expiredDate</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Docoflow.Docoflow.html">Docoflow\Docoflow</a></code>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="save" id="_save">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-Docoflow.Models.Workflow.html">Docoflow\Models\Workflow</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_save">#</a>
+			<code><a href="source-class-Docoflow.Docoflow.html#150-176" title="Go to source code">save</a>( )</code>
+
+			<div class="description short">
+				<p>Save a workflow.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Save a workflow.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Docoflow.Models.Workflow.html">Docoflow\Models\Workflow</a></code>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="prepare" id="_prepare">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-Docoflow.Docoflow.html">Docoflow\Docoflow</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_prepare">#</a>
+			<code><a href="source-class-Docoflow.Docoflow.html#178-206" title="Go to source code">prepare</a>( )</code>
+
+			<div class="description short">
+				<p>Prepare data before saving</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Prepare data before saving</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Docoflow.Docoflow.html">Docoflow\Docoflow</a></code>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getPreparedData" id="_getPreparedData">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-Docoflow.Entity.Step.html">Docoflow\Entity\Step</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getPreparedData">#</a>
+			<code><a href="source-class-Docoflow.Docoflow.html#208-220" title="Go to source code">getPreparedData</a>( )</code>
+
+			<div class="description short">
+				<p>Get prepared data.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get prepared data.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Docoflow.Entity.Step.html">Docoflow\Entity\Step</a></code>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="createNewWorkFlow" id="_createNewWorkFlow">
+
+			<td class="attributes"><code>
+				 protected 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_createNewWorkFlow">#</a>
+			<code><a href="source-class-Docoflow.Docoflow.html#222-242" title="Go to source code">createNewWorkFlow</a>( )</code>
+
+			<div class="description short">
+				<p>Make a new workflow.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Make a new workflow.</p>
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="createWorkflowDefinition" id="_createWorkflowDefinition">
+
+			<td class="attributes"><code>
+				 protected 
+				id
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_createWorkflowDefinition">#</a>
+			<code><a href="source-class-Docoflow.Docoflow.html#244-271" title="Go to source code">createWorkflowDefinition</a>( <span>id <var>$newWorkFlowId</var></span> )</code>
+
+			<div class="description short">
+				<p>Create steps, groups, and verificators definition.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Create steps, groups, and verificators definition.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$newWorkFlowId</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						id<br>Newly saved workflow id.
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="createWorkflowGroup" id="_createWorkflowGroup">
+
+			<td class="attributes"><code>
+				 protected 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_createWorkflowGroup">#</a>
+			<code><a href="source-class-Docoflow.Docoflow.html#273-293" title="Go to source code">createWorkflowGroup</a>( <span><code><a href="class-Docoflow.Entity.Group.html">Docoflow\Entity\Group</a></code> <var>$groups</var></span>, <span>id <var>$newStepId</var></span> )</code>
+
+			<div class="description short">
+				<p>Create workflow group.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Create workflow group.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$groups</var></dt>
+						<dd></dd>
+						<dt><var>$newStepId</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="createWorkflowVerificator" id="_createWorkflowVerificator">
+
+			<td class="attributes"><code>
+				 protected 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_createWorkflowVerificator">#</a>
+			<code><a href="source-class-Docoflow.Docoflow.html#295-313" title="Go to source code">createWorkflowVerificator</a>( <span><code><a href="class-Docoflow.Entity.Verificator.html">Docoflow\Entity\Verificator</a></code> <var>$verificators</var></span>, <span>id <var>$newGroupId</var></span> )</code>
+
+			<div class="description short">
+				<p>Create workflow verificators.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Create workflow verificators.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$verificators</var></dt>
+						<dd></dd>
+						<dt><var>$newGroupId</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+			</table>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+		<div class="panel panel-default">
+            <div class="panel-heading"><h2>Properties summary</h2></div>
+			<table class="summary table table-bordered table-striped properties" id="properties">
+		<tr data-order="prepared" id="$prepared">
+			<td class="attributes"><code>
+				protected  
+				<code><a href="class-Docoflow.Entity.Step.html">Docoflow\Entity\Step</a></code>
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Docoflow.Docoflow.html#23-28" title="Go to source code"><var>$prepared</var></a>
+
+				<div class="description short">
+					<p>Prepare a data to be stored in database.</p>
+				</div>
+
+				<div class="description detailed hidden">
+					<p>Prepare a data to be stored in database.</p>
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$prepared" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="workflow" id="$workflow">
+			<td class="attributes"><code>
+				protected  
+				<code><a href="class-Docoflow.Models.Workflow.html">Docoflow\Models\Workflow</a></code>
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Docoflow.Docoflow.html#30-35" title="Go to source code"><var>$workflow</var></a>
+
+				<div class="description short">
+					<p>Workflow active record.</p>
+				</div>
+
+				<div class="description detailed hidden">
+					<p>Workflow active record.</p>
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$workflow" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="step" id="$step">
+			<td class="attributes"><code>
+				protected  
+				<code><a href="class-Docoflow.Entity.Step.html">Docoflow\Entity\Step</a></code>
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Docoflow.Docoflow.html#37-42" title="Go to source code"><var>$step</var></a>
+
+				<div class="description short">
+					<p>Workflow step entities.</p>
+				</div>
+
+				<div class="description detailed hidden">
+					<p>Workflow step entities.</p>
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$step" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="group" id="$group">
+			<td class="attributes"><code>
+				protected  
+				<code><a href="class-Docoflow.Entity.Group.html">Docoflow\Entity\Group</a></code>
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Docoflow.Docoflow.html#44-49" title="Go to source code"><var>$group</var></a>
+
+				<div class="description short">
+					<p>Workflow group entities.</p>
+				</div>
+
+				<div class="description detailed hidden">
+					<p>Workflow group entities.</p>
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$group" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="verificator" id="$verificator">
+			<td class="attributes"><code>
+				protected  
+				<code><a href="class-Docoflow.Entity.Verificator.html">Docoflow\Entity\Verificator</a></code>
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Docoflow.Docoflow.html#51-56" title="Go to source code"><var>$verificator</var></a>
+
+				<div class="description short">
+					<p>Verificator entities.</p>
+				</div>
+
+				<div class="description detailed hidden">
+					<p>Verificator entities.</p>
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$verificator" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="expiredDate" id="$expiredDate">
+			<td class="attributes"><code>
+				protected  
+				Datetime
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Docoflow.Docoflow.html#58-63" title="Go to source code"><var>$expiredDate</var></a>
+
+				<div class="description short">
+					<p>Expiracy date of this workflow.</p>
+				</div>
+
+				<div class="description detailed hidden">
+					<p>Expiracy date of this workflow.</p>
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$expiredDate" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+			</table>
+		</div>
+
+
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		Doco[L]ight + Doco[F]low API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

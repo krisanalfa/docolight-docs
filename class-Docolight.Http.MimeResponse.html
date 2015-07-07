@@ -57,6 +57,24 @@
 						<a href="namespace-Docolight.Container.html">
 							Container						</a>
 							</li>
+					<li>
+						<a href="namespace-Docolight.Docoflow.html">
+							Docoflow<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Docolight.Docoflow.Entity.html">
+							Entity						</a>
+							</li>
+					<li>
+						<a href="namespace-Docolight.Docoflow.Models.html">
+							Models						</a>
+							</li>
+					<li>
+						<a href="namespace-Docolight.Docoflow.Traits.html">
+							Traits						</a>
+							</li>
+								</ul></li>
 					<li class="active">
 						<a href="namespace-Docolight.Http.html">
 							Http<span></span>
@@ -163,7 +181,7 @@ CApplicationComponent
 
 				<b>Author:</b>
 				Krisan Alfa Timur <a href="&#109;&#97;&#105;&#x6c;&#x74;o&#58;&#107;&#114;&#x69;&#x73;a&#110;&#97;&#108;&#x66;&#x61;&#64;&#100;&#111;&#x63;&#x6f;&#x74;e&#108;&#46;&#x63;&#x6f;&#x2e;&#105;&#100;">&#107;&#114;&#x69;&#x73;a&#110;&#97;&#108;&#x66;&#x61;&#64;&#100;&#111;&#x63;&#x6f;&#x74;e&#108;&#46;&#x63;&#x6f;&#x2e;&#105;&#100;</a><br>
-			<b>Located at</b> <a href="source-class-Docolight.Http.MimeResponse.html#8-91" title="Go to source code">Docolight/Http/MimeResponse.php</a>
+			<b>Located at</b> <a href="source-class-Docolight.Http.MimeResponse.html#8-101" title="Go to source code">Docolight/Http/MimeResponse.php</a>
 		<br>
 	</div>
 
@@ -172,6 +190,41 @@ CApplicationComponent
 		<div class="panel panel-default">
 			<div class="panel-heading"><h2>Methods summary</h2></div>
 			<table class="summary table table-bordered table-striped methods" id="methods">
+		<tr data-order="getBody" id="_getBody">
+
+			<td class="attributes"><code>
+				 public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getBody">#</a>
+			<code><a href="source-class-Docolight.Http.MimeResponse.html#22-28" title="Go to source code">getBody</a>( )</code>
+
+			<div class="description short">
+				<p>Return HTTP response Body</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Return HTTP response Body</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						string
+					</div>
+
+
+
+					<h4>Overrides</h4>
+					<div class="list"><code><a href="class-Docolight.Http.Response.html#_getBody">Docolight\Http\Response::getBody</a></code></div>
+
+			</div>
+			</div></td>
+		</tr>
 		<tr data-order="finalize" id="_finalize">
 
 			<td class="attributes"><code>
@@ -183,7 +236,7 @@ CApplicationComponent
 
 			<td class="name"><div>
 			<a class="anchor" href="#_finalize">#</a>
-			<code><a href="source-class-Docolight.Http.MimeResponse.html#22-36" title="Go to source code">finalize</a>( )</code>
+			<code><a href="source-class-Docolight.Http.MimeResponse.html#30-44" title="Go to source code">finalize</a>( )</code>
 
 			<div class="description short">
 				<p>Finalize prepares this response and returns an array
@@ -220,7 +273,7 @@ of [status, headers, body].</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_write">#</a>
-			<code><a href="source-class-Docolight.Http.MimeResponse.html#38-44" title="Go to source code">write</a>( <span>string <var>$body</var></span>, <span>boolean <var>$replace</var> = <span class="php-keyword1">false</span></span> )</code>
+			<code><a href="source-class-Docolight.Http.MimeResponse.html#46-54" title="Go to source code">write</a>( <span>string <var>$body</var></span>, <span>boolean <var>$replace</var> = <span class="php-keyword1">false</span></span> )</code>
 
 			<div class="description short">
 				<p>Append HTTP response body.</p>
@@ -262,7 +315,7 @@ of [status, headers, body].</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_innerWrite">#</a>
-			<code><a href="source-class-Docolight.Http.MimeResponse.html#46-63" title="Go to source code">innerWrite</a>( <span><code><a href="class-Docolight.Http.Contracts.Arrayable.html">Docolight\Http\Contracts\Arrayable</a></code> <var>$body</var></span>, <span>boolean <var>$replace</var> = <span class="php-keyword1">false</span></span> )</code>
+			<code><a href="source-class-Docolight.Http.MimeResponse.html#56-73" title="Go to source code">innerWrite</a>( <span><code><a href="class-Docolight.Http.Contracts.Arrayable.html">Docolight\Http\Contracts\Arrayable</a></code> <var>$body</var></span>, <span>boolean <var>$replace</var> = <span class="php-keyword1">false</span></span> )</code>
 
 			<div class="description short">
 				<p>Inner write.</p>
@@ -302,7 +355,7 @@ of [status, headers, body].</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_sendBody">#</a>
-			<code><a href="source-class-Docolight.Http.MimeResponse.html#65-73" title="Go to source code">sendBody</a>( <span>string <var>$body</var></span> )</code>
+			<code><a href="source-class-Docolight.Http.MimeResponse.html#75-83" title="Go to source code">sendBody</a>( <span>string <var>$body</var></span> )</code>
 
 			<div class="description short">
 				<p>Send body</p>
@@ -338,7 +391,7 @@ of [status, headers, body].</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_convertToStringRepresentation">#</a>
-			<code><a href="source-class-Docolight.Http.MimeResponse.html#75-82" title="Go to source code">convertToStringRepresentation</a>( <span><code><a href="class-Docolight.Http.Contracts.Arrayable.html">Docolight\Http\Contracts\Arrayable</a></code> <var>$body</var></span> )</code>
+			<code><a href="source-class-Docolight.Http.MimeResponse.html#85-92" title="Go to source code">convertToStringRepresentation</a>( <span><code><a href="class-Docolight.Http.Contracts.Arrayable.html">Docolight\Http\Contracts\Arrayable</a></code> <var>$body</var></span> )</code>
 
 			<div class="description short">
 				<p>Convert to a string representation.</p>
@@ -376,7 +429,7 @@ of [status, headers, body].</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getContentType">#</a>
-			<code><a href="source-class-Docolight.Http.MimeResponse.html#85-90" title="Go to source code">getContentType</a>( )</code>
+			<code><a href="source-class-Docolight.Http.MimeResponse.html#95-100" title="Go to source code">getContentType</a>( )</code>
 
 			<div class="description short">
 				<p>Get content type specified for this class.</p>
@@ -405,7 +458,6 @@ of [status, headers, body].</p>
 	        <div class="panel-heading"><h3>Methods inherited from <a href="class-Docolight.Http.Response.html#methods">Docolight\Http\Response</a></h3></div>
 			<p class="elementList">
 				<code><a href="class-Docolight.Http.Response.html#___construct">__construct()</a></code>, 
-				<code><a href="class-Docolight.Http.Response.html#_getBody">getBody()</a></code>, 
 				<code><a href="class-Docolight.Http.Response.html#_getEmpty">getEmpty()</a></code>, 
 				<code><a href="class-Docolight.Http.Response.html#_getLength">getLength()</a></code>, 
 				<code><a href="class-Docolight.Http.Response.html#_getMessageForCode">getMessageForCode()</a></code>, 
